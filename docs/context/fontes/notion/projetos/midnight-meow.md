@@ -1,0 +1,33 @@
+- (page icon=/icons/cat_purple.svg) Midnight Meow
+  - (sub_sub_header) Role:
+  - (text) My role in this project was Soundtrack Production. The game was developed for Game Jam Plus 2025/2026, and the team consisted of 2 programmers, 1 artist, 1 game designer, and 2 sound designers.
+  - (divider) 
+  - (sub_header) Game Teaser:
+  - (video src=https://youtu.be/ugLLJmAIxQo) 
+  - (text) 
+  - (divider) 
+  - (sub_header) Audios from the Game:
+  - (quote) In the game, enemy waves are audio-driven. They spawn as the music's tension increases. To achieve this, I divided the soundtrack into several distinct tension levels.
+  - (column_list) 
+    - (column) 
+      - (embed src=https://drive.google.com/file/d/1US4rB0xXWhni5zzyvy7XAt-MJL1s3MW3/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/1SDO0woQsFaCir_QvIQI249Du67mJ_vky/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/1ZOz-40c_rCR-HzN5djfe8dxwfsIap2Yk/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/175aEA52gmjD6ox56vm1z27tcbda-a_ix/view?usp=sharing) 
+    - (column) 
+      - (embed src=https://drive.google.com/file/d/1R91hqZN6yHfu7PUqwHYLHOVyLDiyUBNS/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/1XGczoUsf992AYFv83snyn1J0EQfL0UsM/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/1hWtpIDrGRb4sefNV-xAArnWt0mcEW_YK/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/1tk4YplilbjFKv3Ah1kr2RYVqjm7iKclt/view?usp=sharing) 
+  - (callout icon=/icons/light-bulb_gray.svg) 
+    - (text) For this project, I wanted the soundtrack to do justice to Nyxie, our grumpy-looking protagonist. Additionally, since the enemies are rats, I incorporated sounds reminiscent of them into the track.
+  - (column_list) 
+    - (column) 
+      - (embed src=https://drive.google.com/file/d/1miXOPYkLEoEHzemc-RqnHqAetpy0VjQA/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/1_oSTxkEl2m3qcPIkMvrvFzKUybseSY89/view?usp=sharing) 
+      - (embed src=https://drive.google.com/file/d/1FnuR1Fr4NTkdZdiu1Ni9g2QJSBh-LVKj/view?usp=sharing) 
+    - (column) 
+      - (callout icon=/icons/light-bulb_pink.svg) 
+        - (text) Additionally, I produced the Menu, Credits, and Game Over themes. For the Game Over track, I aimed to avoid a punishing tone, ensuring the player wouldn't feel discouraged.
+      - (text) 
+  - (divider) 

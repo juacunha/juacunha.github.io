@@ -1,0 +1,66 @@
+- (page) Portfolio - Juliana Acunha
+  - (divider) 
+  - (column_list) 
+    - (column) 
+      - (video src=https://youtu.be/JByBcjKhWck) 
+      - (column_list) 
+        - (column) 
+          - (image src=https://i.imgur.com/jSD9c9g.jpeg) Firefly_Gemini Flash_deixe o fundo branco 231741.png
+          - (button automation=1d57d106-c759-8361-8380-9919eedf37de) 
+          - (button automation=3b27d106-c759-8286-a004-99792f597525) 
+          - (button automation=7277d106-c759-83e9-83a2-99432b573c1e) 
+        - (column) 
+          - (quote) Welcome to my portfolio! I’m a Sound Designer seeking to bring memorable sensations and deep immersion to games!
+          - (sub_sub_header) Contact & Information ✨
+          - (column_list) 
+            - (column) 
+              - (callout) 
+                - (text)  juhaacunha@gmail.com 
+              - (callout) 
+                - (text) +55 53 991078829
+            - (column) 
+              - (callout) 
+                - (file src=attachment:4a568e39-5e72-4a1a-89b9-55ab88c7a5d0:Resume_Juliana_Acunha.pdf) Resume_Juliana_Acunha.pdf
+              - (callout) 
+                - (button automation=4d77d106-c759-832d-8e01-191eb8b3e686) 
+      - (divider) 
+      - (column_list) 
+        - (column) 
+          - (header_4) Main Tools
+            - (divider) 
+            - (collection_view) 
+          - (header_4) Languages
+            - (divider) 
+            - (text) 🇧🇷 Portuguese: Native
+            - (text) 🇺🇸 English: Advanced
+        - (column) 
+          - (header_4) Skills
+            - (divider) 
+            - (text) Technical Skills (Hard Skills)
+            - (bulleted_list) Sound Design & Audio: Editing, Mixing, and Sound Synthesis.
+            - (bulleted_list) Project Management & Workflow: Jira, Trello, Miro, Agile Methodologies (Scrum/Kanban), Google Workspace/Office 365.
+            - (bulleted_list) Audio Implementation: FMOD implementation for creating immersive audio experiences and soundscapes.
+            - (text) Soft Skills
+            - (bulleted_list) Collaborative Communication: Strong ability to align creative vision with directors and developers.
+            - (bulleted_list) Organization & Pipeline: Efficient asset management and strict adherence to deadlines.
+            - (bulleted_list) Adaptability & Fast Learning: Quick to master new software, plugins, and production workflows.
+          - (header_4) Academic Background
+            - (text) Bachelor's Degree in Game Design
+            - (text) UFPel – Fedral University of Pelotas
+            - (text) 🗓️ Jun/2023 – Dec/2026 (in progress)
+            - (quote) The Bachelor's Degree in Game Design at UFPel, offered by the Arts Center, aims to train professionals for the complete development of games, covering not only programming but also scriptwriting, narrative, rules, aesthetics, animation, and soundtracks. 
+              - (text) June 2023 - December 2026
+      - (divider) 
+      - (sub_sub_header) Creating Some SFXs
+        - (column_list) 
+          - (column) 
+            - (video src=https://drive.google.com/file/d/1zP8S7t8n_fgrxMXpSue5setvi4svpccE/view?usp=sharing) https://drive.google.com/file/d/1zP8S7t8n_fgrxMXpSue5setvi4svpccE/view?usp=sharing
+            - (video src=https://drive.google.com/file/d/14vSTVGEsihI8352h-C8Kw8Mlny7jDTjl/view?usp=sharing) https://drive.google.com/file/d/14vSTVGEsihI8352h-C8Kw8Mlny7jDTjl/view?usp=sharing
+          - (column) 
+            - (video src=https://drive.google.com/file/d/16T6-OOLyh9dCH0YOcisIhC67sT6hbNFn/view?usp=sharing) https://drive.google.com/file/d/16T6-OOLyh9dCH0YOcisIhC67sT6hbNFn/view?usp=sharing
+            - (video src=https://drive.google.com/file/d/1le9Cr7p7nFNGgx1YkpJDcHWtkzALSLgV/view?usp=sharing) https://drive.google.com/file/d/1le9Cr7p7nFNGgx1YkpJDcHWtkzALSLgV/view?usp=sharing
+        - (divider) 
+    - (column) 
+      - (collection_view) 
+      - (text) 
+  - (text) 

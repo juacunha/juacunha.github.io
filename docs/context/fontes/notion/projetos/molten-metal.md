@@ -1,0 +1,49 @@
+- (page icon=/icons/hammer_yellow.svg) Molten metal
+  - (sub_header) Soundtracks from the Game:
+  - (embed src=https://soundcloud.com/juliana-acunha-232828507/sets/molten-metal?si=5f06cf34327b41e0b69ca85a127b8bb2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing) 
+  - (divider) 
+  - (sub_header) SFXs from the Game
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:b6273b96-7e53-4daa-9476-ea025b802cfd:hover.wav) hover.wav
+    - (column) 
+      - (audio src=attachment:f3443ee5-06e8-4ee7-b2dd-a709fb933aaf:letras_aparecendo.wav) letras_aparecendo.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:9d13f8c7-9cf8-4707-969a-456800797f5c:martelada.wav) martelada.wav
+    - (column) 
+      - (audio src=attachment:d27dbe9d-0086-4e53-a083-03b73d84048b:martelada_1.wav) martelada_1.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:5d9e7dff-a51e-443f-bba1-3e7a6b8613d1:martelada_2.wav) martelada_2.wav
+    - (column) 
+      - (audio src=attachment:24fbdfe7-599c-4bc8-ba78-f18357fa84bf:martelada_perfect.wav) martelada_perfect.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:80b452e5-b3b5-49fd-abb6-c4afecd703f9:papel_livro.wav) papel_livro.wav
+    - (column) 
+      - (audio src=attachment:ec793570-3ff2-422b-a8a4-490270b5affc:3_2_1.wav) 3_2_1.wav
+  - (audio src=attachment:0185bc4d-5e95-4a2e-97c3-cdf18bfea95c:click_botao.wav) click_botao.wav
+  - (divider) 
+  - (sub_header) Original Voice from the Game
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:7f00f8e0-2691-4257-aa34-363b6d09accf:acabou_tempo.wav) acabou_tempo.wav
+      - (audio src=attachment:e0733297-c0cd-4456-8763-0f5913da3b0f:derrota.wav) derrota.wav
+      - (audio src=attachment:9fc7b85c-00cb-443e-a512-d2b89557e955:forjar_e_martelar.wav) forjar e martelar.wav
+      - (audio src=attachment:f58d8645-5369-463f-9050-4c3ece776daa:tempo_quase_acabando.wav) tempo_quase_acabando.wav
+    - (column) 
+      - (audio src=attachment:a7b8b07f-da8d-400b-9a13-d00ad80e7ffc:click_forjar.wav) click_forjar.wav
+      - (audio src=attachment:c2134711-1cb6-4018-b088-90c1bea80025:erro.wav) erro.wav
+      - (audio src=attachment:56c3c376-965c-4ec1-b4c0-9679d65c2ea3:proximo_cliente.wav) proximo_cliente.wav
+      - (audio src=attachment:1f4f31c1-bbbc-49d2-bee5-b868ea8eba58:vitoria_tinindo.wav) vitoria_tinindo.wav
+  - (divider) 
+  - (sub_header) Game Teaser:
+  - (video src=https://www.youtube.com/watch?v=pNarBwwvbPE) 
+  - (quote) The game was developed for the GameJam+ 2026
+  - (callout icon=/icons/light-bulb_gray.svg) 
+    - (text) For this project, I aimed to compose a track that evoked nordic enviroment. 
+  - (divider) 
+  - (sub_header) Role:
+  - (text) My role on this project was to create the soundtrack, create the SFXs, and produce de original voice.
+  - (divider) 

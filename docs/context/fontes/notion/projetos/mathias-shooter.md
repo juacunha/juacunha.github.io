@@ -1,0 +1,34 @@
+- (page icon=/icons/tortoise_green.svg) Mathias Shooter
+  - (sub_sub_header) Role:
+  - (text) My role in this project covered all creative assets: I composed the soundtrack, created all the pixel art, and produced all the animations. Our team was a duo, composed of me and a programmer, and we developed the game in about 2 months.
+  - (divider) 
+  - (sub_header) Game Teaser:
+  - (video src=https://youtu.be/IrkcDvWowxE) 
+  - (divider) 
+  - (sub_header) Audios from the Game:
+  - (quote) The project was developed for the Algorithms and Data Structures course at the Federal University of Rio Grande (FURG), as part of our Computer Engineering degree. The challenge was to create a game using the retro engine Pyxel.
+  - (column_list) 
+    - (column) 
+      - (embed src=https://drive.google.com/file/d/1I73mcFynC0MHoFzTTAEfR4Giq1Ie6jZJ/view?usp=sharing) 
+      - (audio src=attachment:3cb3dc16-9b55-4816-b996-0eba0055298e:pulo.wav) pulo.wav
+      - (audio src=attachment:bf3d19a3-b058-4f50-8153-29ca65c076b6:vida_maxima.wav) vida maxima.wav
+    - (column) 
+      - (callout icon=/icons/light-bulb_gray.svg) 
+        - (text) For this project, I aimed for a cheerful and nostalgic sound to match the pixel art style. I composed the soundtrack in E Major, and the sound effects were produced in 8-bit.
+  - (divider) 
+  - (sub_header) Images from the Game:
+  - (image src=attachment:a481a9c5-af44-4ffc-b280-1626666371ec:image_2.png) image 2.png
+  - (column_list) 
+    - (column) 
+      - (image src=attachment:4886f484-38eb-4802-8a42-eb4ce1bcf133:image.png) image.png
+    - (column) 
+      - (image src=attachment:8e4b3899-3b19-4059-af81-6e82e75789ce:image_5.png) image 5.png
+  - (text) 
+  - (text) 
+  - (text) 
+  - (column_list) 
+    - (column) 
+      - (text) 
+    - (column) 
+      - (text) 
+      - (text) 

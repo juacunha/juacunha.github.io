@@ -1,0 +1,35 @@
+- (page icon=/icons/cat_yellow.svg) Feed The Cats
+  - (sub_sub_header) Role:
+  - (text) My role on this project covered Audio Design, 3D modeling, 2D art, UI design, scriptwriting, and programming. The team consisted of just me, as I developed the game by myself. Although I didn't compose the soundtrack or create the sound effects, I was responsible for their curation, mixing, and implementation.
+  - (sub_header) Game Teaser:
+  - (video src=https://www.youtube.com/watch?v=n8RU80fHyfY) 
+  - (divider) 
+  - (sub_header) Audios from the Game:
+  - (quote) The project's focus was to create an FPS game in a 3D map but with 2D assets. Instead of following the standard shooter game formula, I decided to work with a cuter aesthetic, making a game about feeding kittens with a snack launcher.
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:13f9aec9-fa0d-4593-ac57-2a6133ce8972:tiro_tenis.mp3) tiro tenis.mp3
+      - (audio src=attachment:6b58f91d-5a52-466f-92dd-6626e4100032:sem_municao2.mp3) sem_municao2.mp3
+      - (audio src=attachment:601c811a-ef27-4f12-8591-1a3a89fb7778:pego_whispas.mp3) pego whispas.mp3
+      - (audio src=attachment:f1af13d5-527e-4d9a-aa71-09899eea2d95:miauzinho.mp3) miauzinho.mp3
+      - (audio src=attachment:2664c375-4a63-42f8-af95-4ef8919c6c01:meow.mp3) meow.mp3
+    - (column) 
+      - (callout icon=/icons/light-bulb_gray.svg) 
+        - (text) Given the game's cute aesthetic, I wanted the treat launcher to sound soft and non-aggressive. I chose a tennis ball machine sound to keep it lighter and less harsh than a realistic weapon.
+      - (callout icon=/icons/light-bulb_pink.svg) 
+        - (text) I also didn't want the cat sounds to sound aggressive. I wanted them to be soft, to show they're happy about getting treats.
+  - (divider) 
+  - (sub_header) Images from the Game:
+  - (image src=attachment:a3a127bb-a864-451d-9a36-19dfbbf658d5:print_3.jpg) print 3.jpg
+  - (column_list) 
+    - (column) 
+      - (image src=attachment:1c5c49bb-42e5-45cb-ac93-b645e664add9:print_1.jpg) print 1.jpg
+    - (column) 
+      - (image src=attachment:eb7e28b1-d8cc-440b-ae73-2cb919e2bb34:print_2.jpg) print 2.jpg
+  - (text) 
+  - (column_list) 
+    - (column) 
+      - (text) 
+    - (column) 
+      - (text) 
+      - (text) 

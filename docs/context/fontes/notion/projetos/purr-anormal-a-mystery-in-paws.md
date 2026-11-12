@@ -1,0 +1,42 @@
+- (page icon=/icons/cat_pink.svg) Purr-Anormal: A Mystery in Paws
+  - (sub_header) Audio from the Game:
+  - (embed src=https://soundcloud.com/juliana-acunha-232828507/sets/purr-anormal-a-mystery-in-paws?si=2c2717f18e224b7eb54b8abd79a81af2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing) 
+  - (divider) 
+  - (sub_header) SFXs from the Game:
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:4ba041a8-c7b9-4469-a2c9-d263d5f461ea:pudim_passos_areia.wav) pudim_passos_areia.wav
+    - (column) 
+      - (audio src=attachment:c6c8b0b4-3c85-436d-8cc9-52161ef306f8:pudim_passos_madeira.wav) pudim_passos_madeira.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:24d4cb85-c7d4-4dcd-9c6f-759423536b5e:pessego_confusa.wav) pessego_confusa.wav
+    - (column) 
+      - (audio src=attachment:05795e92-1148-4a37-9212-ff68dea438e6:pessego_feliz.wav) pessego_feliz.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:15b09a55-c1f4-41f7-a846-ced036fbc4d3:pessego_normal.wav) pessego_normal.wav
+    - (column) 
+      - (audio src=attachment:4a8d5e42-50a3-48ed-9388-344d8969ab50:pessego_triste.wav) pessego_triste.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:85431e80-3db7-4416-adff-abdf3076ccef:pera_brava.wav) pera_brava.wav
+    - (column) 
+      - (audio src=attachment:d778b0f9-e77d-4ae1-9f6f-9c9129920e69:pera_coringando.wav) pera_coringando.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:6c862be6-8759-4185-9d65-dde5355091fb:pera_feliz.wav) pera_feliz.wav
+    - (column) 
+      - (audio src=attachment:b84fc1a6-3e5c-4d76-9dda-0823318c5c10:pera_normal.wav) pera_normal.wav
+  - (audio src=attachment:34a8906b-4871-4cd9-8a56-68760a7b4ba5:pera_risada_malefica.wav) pera_risada_malefica.wav
+  - (divider) 
+  - (sub_header) My Process for the SFXs:
+  - (video src=https://drive.google.com/file/d/1MIvtIgc2G1mj1BNTPYj8Jcty4VkxeSGn/view?usp=sharing) [https://drive.google.com/file/d/1MIvtIgc2G1mj1BNTPYj8Jcty4VkxeSGn/view?usp=sharing](https://drive.google.com/file/d/1MIvtIgc2G1mj1BNTPYj8Jcty4VkxeSGn/view?usp=sharing)
+  - (video src=https://drive.google.com/file/d/1xTHMZ3pj36_V5f--8B2cKU9SmeU9-UPf/view?usp=sharing) [https://drive.google.com/file/d/1xTHMZ3pj36_V5f--8B2cKU9SmeU9-UPf/view?usp=sharing](https://drive.google.com/file/d/1xTHMZ3pj36_V5f--8B2cKU9SmeU9-UPf/view?usp=sharing)
+  - (quote) After a severe financial crisis, a little cat named Pudim and her family hastily move into a mysterious mansion. The only problem? The place is already occupied by ghosts! Explore the residence, solve puzzles, and uncover secrets from the past to appease the spirits and find a hidden treasure capable of changing your family's life forever.
+  - (callout icon=/icons/light-bulb_gray.svg) 
+    - (text) My goal with this project was to create a spooky soundtrack and haunting sound effects to match the theme while keeping it cute.
+  - (divider) 
+  - (sub_header) Role:
+  - (text) My role on this project was to create the soundtrack, create the SFXs, and produce the original voice.
+  - (divider) 

@@ -1,0 +1,14 @@
+- (page icon=/icons/robot_lightgray.svg) ServOS
+  - (sub_sub_header) Role:
+  - (text) My role on this project was to create the soundtrack and the UI concepts. The team also consisted of one programmer and two artists. The inspiration for the game came from personal experiences with capitalism.
+  - (divider) 
+  - (sub_header) Game Teaser:
+  - (video src=https://youtu.be/7IGP5ZjzBkA) 
+  - (text) 
+  - (divider) 
+  - (sub_header) Audios from the Game:
+  - (quote) The game was developed for the Integrated Project V course in the Game Design program at the Federal University of Pelotas (UFPEL). The assignment was to participate in mini game jams, with each game being developed in one month.
+  - (embed src=https://drive.google.com/file/d/1d-LcCO6RYlqvk6aN4mlxTgxwdlEtOskJ/view?usp=sharing) 
+  - (callout icon=/icons/light-bulb_gray.svg) 
+    - (text) For this project, I aimed to compose a track that evoked the monotonous, repetitive nature of factory work. My goal was a heavy, industrial sound, carefully designed to avoid listener fatigue during gameplay.
+  - (divider) 

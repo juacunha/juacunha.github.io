@@ -1,0 +1,20 @@
+- (page icon=/icons/user_blue.svg) Eco
+  - (sub_sub_header) Role:
+  - (text) In this project, I wore multiple hats, serving as Sound Designer, Scriptwriter, and UI Designer. My primary focus was audio curation and crafting UI assets (such as icons and buttons), though I also contributed animations. I collaborated with a programmer and an artist to bring the game to life.
+  - (divider) 
+  - (sub_header) Game Teaser:
+  - (video src=https://youtu.be/WoSfrz-lvjg) 
+  - (quote) For this teaser, I handled audio mixing and sound effects curation.
+  - (divider) 
+  - (sub_header) Audios from the Game:
+  - (callout icon=/icons/light-bulb_gray.svg) 
+    - (text) For this project, I curated a specific soundtrack, looking for evocative, piano-driven tracks with a melancholic tone.
+  - (column_list) 
+    - (column) 
+      - (embed src=https://drive.google.com/file/d/1Pz1ZUVl0FkPITq848FWuBVMQMsu2uenL/view?usp=sharing) pulo.wav
+    - (column) 
+      - (embed src=https://drive.google.com/file/d/1NCdqDrCm7JioLqOM9v56gYUlwC_nbool/view?usp=sharing) 
+  - (callout icon=/icons/light-bulb_pink.svg) 
+    - (text) For the sound effects, I aimed for soothing sounds to create a reflective atmosphere.
+  - (audio src=attachment:f237bd67-fa73-4631-87fa-2612a8ac5cce:clique.wav) clique.wav
+  - (audio src=attachment:e63f130d-6b09-4d74-9dee-a09f6e163dbc:Porta_Abrindp.mp3) Porta Abrindp.mp3

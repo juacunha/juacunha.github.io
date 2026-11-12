@@ -1,0 +1,35 @@
+- (page icon=/icons/butterfly_yellow.svg) Seasoned Wings: Magical Recipes
+  - (sub_sub_header) Role:
+  - (text) My role on this project was the soundtrack production, SFX curation, 3D modeling of the tavern and some objects, documentation, and some animations (such as for objects and particles). The team consisted of myself, an artist, and a programmer.
+  - (divider) 
+  - (sub_header) Game Teaser:
+  - (video src=https://www.youtube.com/watch?v=GQc1UGaeSFs) 
+  - (quote) For this teaser, I handled audio mixing, sound effects curation, voice recording, and composition.
+  - (sub_header) Development Process:
+  - (column_list) 
+    - (column) 
+      - (image src=attachment:95f5855a-a8c5-48cb-9226-f6f6ee15f70b:e4d35207-bfdd-4b53-92de-7479993d4089.png) flauta.jpg
+      - (image src=attachment:11e5c744-fad8-48da-9de7-a62da5d460d0:b6e311c3-502c-43c7-ad0e-390e1e9dd72c.png) midi.jpg
+      - (text) 
+    - (column) 
+      - (image src=attachment:d80214f8-60e8-4cf4-994b-2184fb812c4d:0cd00dc8-706d-40d6-ac70-d1bd61d398e2.png) flauta w.jpg
+      - (callout icon=/icons/light-bulb_gray.svg) 
+        - (text) The project's focus was to make a fun medieval cooking game where the player must gather resources, prepare recipes, and serve customers before they leave the tavern.
+      - (text) 
+      - (quote) The game was developed for the Integrated Project III course as part of the Game Design program at the Federal University of Pelotas (UFPel). The assignment was to create a 3D game that included a tutorial and focused on level design.
+
+  - (divider) 
+  - (sub_header) Audios from the Game:
+  - (callout icon=/icons/light-bulb_gray.svg) 
+    - (text) For this project, I recorded both voice and music. My goal was to create a magical and fantasy atmosphere to blend with the game's narrative. I chose effects that evoked magic and layered them with wind sounds.
+  - (column_list) 
+    - (column) 
+      - (embed src=https://drive.google.com/file/d/1iOBXHc-5V50mWXzqLq3hxC35s6ohvoDj/view?usp=sharing) pulo.wav
+      - (embed src=https://drive.google.com/file/d/15WH434NxT3rSzx8mKLhd9dCtN1eQPZSf/view?usp=drive_link) 
+      - (audio src=attachment:5a065687-4f8a-44c0-a262-0a7ed0da3ae5:comida_pronta.mp3) comida pronta.mp3
+      - (text) 
+    - (column) 
+      - (callout icon=/icons/light-bulb_pink.svg) 
+        - (text) For the soundtrack, I worked in C Major, pairing a ukulele with a flute to evoke a medieval feel. I also wanted a sound for 'order ready,' so I opted for something similar to a bell.
+      - (text) 
+  - (text) 

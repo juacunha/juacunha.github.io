@@ -1,0 +1,36 @@
+- (page icon=/icons/book_green.svg) Hands Off My Grimoire!
+  - (sub_header) Soundtracks from the Game: 
+  - (embed src=https://soundcloud.com/juliana-acunha-232828507/sets/hands-off-my-grimoire?si=4b1734faedea4b84a389bc0d8a014535&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing) 
+  - (divider) 
+  - (sub_header) SFXs from the Game:
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:c5648943-037a-4074-b267-17a8833e2bb6:comeco_wave_1.wav) comeco_wave_1.wav
+    - (column) 
+      - (audio src=attachment:42a17a58-0619-40de-95af-1108b6fc0e44:comeco_wave_2.wav) comeco_wave_2.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:b62e4b8d-fc27-4bce-b8bc-caa0a039cfce:comeco_wave_3.wav) comeco_wave_3.wav
+    - (column) 
+      - (audio src=attachment:0030788e-8b02-4b64-bdd2-4fbde15b886d:fim_wave.wav) fim_wave.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:505a66b4-e0d3-45be-b74f-2a7a9eb4da07:hover_torre.wav) hover_torre.wav
+    - (column) 
+      - (audio src=attachment:8db303e5-2cd4-418e-a178-5680e34c2d58:posicionar_torre.wav) posicionar_torre.wav
+  - (column_list) 
+    - (column) 
+      - (audio src=attachment:ccba6a21-7f3f-40fc-b501-3b51ce93c53c:selecao_torre.wav) selecao_torre.wav
+    - (column) 
+      - (audio src=attachment:1ba945d2-5982-49f8-9dae-a83edd0b614b:livro_dano.wav) livro_dano.wav
+  - (divider) 
+  - (sub_header) My Process for the Footsteps:
+  - (video src=https://drive.google.com/file/d/12VDdkMdNbPraITxMy4Du0BHluRmy-hJ7/view?usp=sharing) [https://drive.google.com/file/d/12VDdkMdNbPraITxMy4Du0BHluRmy-hJ7/view?usp=sharing](https://drive.google.com/file/d/12VDdkMdNbPraITxMy4Du0BHluRmy-hJ7/view?usp=sharing)
+  - (video src=https://drive.google.com/file/d/141fzoDPQPEiYncGbjAQJD5cm-AIvdnS6/view?usp=sharing) [https://drive.google.com/file/d/141fzoDPQPEiYncGbjAQJD5cm-AIvdnS6/view?usp=sharing](https://drive.google.com/file/d/141fzoDPQPEiYncGbjAQJD5cm-AIvdnS6/view?usp=sharing)
+  - (quote) In Hands Off My Grimoire, the player controls a small goblin tasked with protecting its master's grimoire from invaders.   
+  - (callout icon=/icons/light-bulb_gray.svg) 
+    - (text) My goal for this project was to compose a medieval soundtrack and design impactful, immersive sound effects.   
+  - (divider) 
+  - (sub_header) Role:
+  - (text) My role on this project was to create the soundtrack and the SFXs.
+  - (divider) 

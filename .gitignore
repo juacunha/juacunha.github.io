@@ -1,0 +1,24 @@
+# capturas e mídia original (ver docs/context/midia.md)
+.scratch/
+
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+.DS_Store
+.idea/
+
+# evidências de verificação
+.playwright-mcp/
+test-results/
+playwright-report/
