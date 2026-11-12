@@ -2,7 +2,7 @@
 
 Sound designer para jogos. Este site substitui o [portfólio no Notion](https://melodious-pamphlet-85e.notion.site/Portfolio-Juliana-Acunha-4107d106c759809484cbd871fb73f8cb) e será hospedado no GitHub Pages.
 
-Status (12/nov/2026): **fase de análise concluída**. Próximo passo: responder as [perguntas abertas](context/perguntas-abertas.md) e escrever as specs.
+Status (12/nov/2026): **análise e specs concluídas** (specs em rascunho). Próximo passo: levar as [perguntas abertas](context/perguntas-abertas.md) para a Juliana e começar a fundação (Fase 1 de [tasks.md](specs/tasks.md)), que não depende das respostas.
 
 ## 1. Contexto (dados reais da Juliana)
 
@@ -19,7 +19,8 @@ Status (12/nov/2026): **fase de análise concluída**. Próximo passo: responder
 
 | Documento | Assunto |
 | --- | --- |
-| [design/identidade-visual.md](design/identidade-visual.md) | Paleta medida, fontes (Anton + JetBrains Mono), elementos gráficos, contraste |
+| [design/identidade-visual.md](design/identidade-visual.md) | Análise: paleta medida, fontes (Anton + JetBrains Mono), elementos gráficos, contraste |
+| [design/DESIGN.md](design/DESIGN.md) | Design system: tokens de cor (com contrastes verificados), tipografia, componentes, proibições |
 
 ## 3. Decisões
 
@@ -27,9 +28,13 @@ Status (12/nov/2026): **fase de análise concluída**. Próximo passo: responder
 | --- | --- |
 | [decisions/ADR-001-stack-e-hospedagem.md](decisions/ADR-001-stack-e-hospedagem.md) | Astro + conteúdo tipado + pipeline de áudio + GitHub Pages (proposto) |
 
-## 4. Especificação (a fazer)
+## 4. Especificação (Spec-Driven Development)
 
-Seguirá o mesmo formato do site do Pedro (`C:\Curriculo-Pedro\docs\specs\`): `requirements.md` → `design.md` → `tasks.md`, mais `design/DESIGN.md` com os tokens.
+| Documento | Fase |
+| --- | --- |
+| [specs/requirements.md](specs/requirements.md) | O que construir: requisitos R-xx e N-xx, públicos, estados |
+| [specs/design.md](specs/design.md) | Como construir: arquitetura, rotas, modelo de conteúdo, pipeline de áudio, testes |
+| [specs/tasks.md](specs/tasks.md) | Passos ordenados com verificação |
 
 ## Pesquisa reaproveitada
 

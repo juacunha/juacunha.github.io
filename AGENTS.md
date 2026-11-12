@@ -4,9 +4,9 @@ Site de portfólio da **Juliana Acunha**, sound designer para jogos. Idioma de t
 
 ## Antes de qualquer mudança
 
-1. Leia [`docs/README.md`](docs/README.md).
+1. Leia [`docs/README.md`](docs/README.md), [`docs/specs/requirements.md`](docs/specs/requirements.md), [`docs/specs/design.md`](docs/specs/design.md) e a tarefa correspondente em [`docs/specs/tasks.md`](docs/specs/tasks.md).
 2. Fatos sobre a Juliana: só use o que está em [`docs/context/`](docs/context/). **Nunca invente** experiências, prêmios, datas, papéis ou créditos. Itens marcados com **(confirmar)** ou listados em [`docs/context/perguntas-abertas.md`](docs/context/perguntas-abertas.md) não entram no site até serem confirmados.
-3. Visual: siga [`docs/design/identidade-visual.md`](docs/design/identidade-visual.md) (índigo + rosa-choque, Anton + JetBrains Mono).
+3. Visual: siga [`docs/design/DESIGN.md`](docs/design/DESIGN.md) (tokens) e [`docs/design/identidade-visual.md`](docs/design/identidade-visual.md) (origem da identidade).
 4. Stack e hospedagem: [`docs/decisions/ADR-001-stack-e-hospedagem.md`](docs/decisions/ADR-001-stack-e-hospedagem.md).
 
 ## Referência
