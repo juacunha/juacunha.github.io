@@ -16,7 +16,7 @@ Substitui o portfólio no Notion, resolvendo os problemas P1–P14 de [notion-at
 | Idiomas | **PT-BR padrão em `/`, EN em `/en/`** | Decidido (pergunta 10) |
 | Identidade | Identidade A do [identidade-visual.md](../design/identidade-visual.md) (índigo + rosa-choque, Anton + JetBrains Mono). Gatos e avatar entram na v1, em pontos de personalidade (contato, 404) | Decidido (pergunta 13) |
 | Ordem da home | Hero com selos de prêmio → Reel → Destaques → Sound board (SFX) → Projetos → Processo (foley) → Sobre (experiência, formação, ferramentas, skills, idiomas, conquistas, Casulo Indie) → Contato | Implementado |
-| Hospedagem | GitHub Pages na conta **dela** (usuário em aberto). O site deve funcionar tanto na raiz (`usuario.github.io`) quanto em subcaminho (`/repo/`) | Decidido / URL em aberto |
+| Hospedagem | GitHub Pages na conta **dela** (`juacunha`). O site funciona tanto na raiz (`juacunha.github.io`) quanto em subcaminho (`/repo/`) | Decidido / nome do repositório em aberto |
 | Currículo | v1 serve o PDF do Canva dela como está; versão ATS gerada dos dados fica para v2 | Implementado |
 
 ## Públicos

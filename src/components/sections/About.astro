@@ -61,7 +61,10 @@ const certificates = education.filter((e) => e.data.kind === 'certificate');
           <article class="rounded-md border border-border bg-card p-5">
             <p class="font-mono text-xs text-text-muted">
               {d.data.startDate && `${t.about.since} ${d.data.startDate.slice(0, 4)}`}
-              {d.data.inProgress && ` · ${t.about.inProgress}`}
+              {d.data.inProgress &&
+                (d.data.endDate
+                  ? ` · ${t.about.expectedEnd} ${formatYearMonth(d.data.endDate, locale)}`
+                  : ` · ${t.about.inProgress}`)}
             </p>
             <h4 class="mt-1 text-lg font-bold">{localize(d.data.title, locale)}</h4>
             <p class="font-semibold text-accent-text">{d.data.institution}</p>

@@ -7,8 +7,8 @@ Fase 3 do Spec-Driven Development. Cada tarefa termina com a verificação indic
 - [x] T-00a Captura completa do Notion (página, abas, subpáginas, blocos recolhidos, botões), itch.io, SoundCloud, YouTube, Drive e PDFs. *Verif.: [`docs/context/fontes/`](../context/fontes/).*
 - [x] T-00b Documentação de contexto: perfil, projetos, mídia, identidade visual, diagnóstico do Notion, perguntas abertas.
 - [x] T-01 `requirements.md`, `design.md`, `DESIGN.md`, ADR-001 (proposto).
-- [x] T-02 Respostas da Juliana às 19 [perguntas abertas](../context/perguntas-abertas.md) (12/nov/2026). Restam as divergências D1–D8 e o usuário do GitHub.
-- [~] T-03 Conta do GitHub Pages: será a **dela**; falta o usuário. O workflow já calcula `SITE`/`BASE` a partir do repositório.
+- [x] T-02 Respostas da Juliana às 19 [perguntas abertas](../context/perguntas-abertas.md) (12/nov/2026). Conclusão da UFPel: dez/2026. Restam as divergências D2–D8.
+- [~] T-03 Conta do GitHub Pages: `juacunha`. Falta o nome do repositório e o acesso para o push. O workflow já calcula `SITE`/`BASE` a partir do repositório.
 
 ## Fase 1 — Fundação
 

@@ -24,13 +24,13 @@ Responda direto neste arquivo ou no chat. Nada aqui entra no site antes de ser c
 | 16 | Vídeos de foley | Hospedados no próprio site |
 | 17 | Áudios | Usar os do Drive na v1; ela pode mandar originais depois |
 | 18 | Cover "Traitor" | Entra |
-| 19 | Hospedagem | GitHub **dela** (usuário ainda não informado) |
+| 19 | Hospedagem | GitHub **dela**: usuário `juacunha` |
+| D1 | Conclusão da UFPel | Dezembro de 2026 (o PDF do CV, com 12/2027, está desatualizado) |
 
 ## Divergências ainda abertas
 
 | # | Tema | Fonte A | Fonte B | Como a v1 trata |
 | --- | --- | --- | --- | --- |
-| D1 | Conclusão da UFPel | Notion: dez/2026 | PDF: 12/2027 | Mostra só "desde 2023 · em andamento" |
 | D2 | Nome das edições da GameJam Plus | PDF: "GameJam+ 2026/2027" | Notion e itch: "2025/2026", "2026/2027", "26/27" | Usa "GameJam Plus 2025/26" e "2026/27" |
 | D3 | Engine do Midnight Meow | Notion: Godot | Site do Pedro: Unity (Netcode + Relay) | Unity (o Pedro programou) |
 | D4 | Equipe do Midnight Meow | Notion: 6 pessoas | One Page: 7 nomes | Usa os 7 nomes da One Page; papéis só os conhecidos |
@@ -40,7 +40,6 @@ Responda direto neste arquivo ou no chat. Nada aqui entra no site antes de ser c
 
 ## Ainda sem resposta
 
-- Usuário do GitHub dela (para a URL final e o deploy).
-- Data de conclusão da UFPel (D1).
+- Nome do repositório (`juacunha.github.io` para a raiz, ou outro nome para `juacunha.github.io/<repo>/`) e como dar acesso para o push.
 - Arquivos originais do Canva e do avatar ilustrado (a v1 usa versões extraídas).
 - Áudios originais em melhor qualidade (a v1 usa os do Drive e do Notion).

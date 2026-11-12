@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-const site = process.env.SITE ?? 'https://juliana-acunha.github.io';
+const site = process.env.SITE ?? 'https://juacunha.github.io';
 const base = process.env.BASE ?? '/';
 
 export default defineConfig({

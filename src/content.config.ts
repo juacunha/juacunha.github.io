@@ -65,6 +65,8 @@ const education = defineCollection({
     detail: localized.optional(),
     startDate: yearMonth.optional(),
     inProgress: z.boolean().default(false),
+    /** Com inProgress, é a previsão de conclusão. */
+    endDate: yearMonth.optional(),
   }),
 });
 

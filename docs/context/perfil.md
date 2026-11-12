@@ -54,7 +54,7 @@ O jogo **4Seasons** (visual novel, Unity, abr/2026) está publicado na página d
 
 | Curso | Instituição | Período | Observação |
 | --- | --- | --- | --- |
-| Bacharelado em Design de Jogos | Universidade Federal de Pelotas (**UFPel**), Centro de Artes, Pelotas, RS | jun/2023 – em andamento | Conclusão diverge: Notion dez/2026, PDF 12/2027 (**confirmar**); o site não mostra a data de conclusão |
+| Bacharelado em Design de Jogos | Universidade Federal de Pelotas (**UFPel**), Centro de Artes, Pelotas, RS | jun/2023 – em andamento | Conclusão prevista para **dez/2026** (confirmado em 12/nov/2026; o PDF do CV diz 12/2027 e está desatualizado) |
 
 Descrição usada por ela: "The Bachelor's Degree in Game Design at UFPel, offered by the Arts Center, aims to train professionals for the complete development of games, covering not only programming but also scriptwriting, narrative, rules, aesthetics, animation, and soundtracks."
 
