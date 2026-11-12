@@ -1,5 +1,6 @@
 # capturas e mídia original (ver docs/context/midia.md)
 .scratch/
+media-src/
 
 # build output
 dist/

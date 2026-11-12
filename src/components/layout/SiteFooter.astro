@@ -1,0 +1,36 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n/ui';
+import { getProfile } from '../../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const profile = await getProfile();
+---
+
+<footer class="border-t border-border/60">
+  <div class="stripes h-3 text-indigo/60" aria-hidden="true"></div>
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-text-muted md:flex-row md:items-center md:justify-between">
+    <p>
+      © {new Date().getFullYear()} {profile.name} · {t.footer.built}
+    </p>
+    <ul class="flex flex-wrap gap-x-5 gap-y-2 font-mono">
+      {profile.profiles.map((p) => (
+        <li>
+          <a href={p.url} rel="me noopener" target="_blank" class="hover:text-accent-text">
+            {p.network}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="#conteudo" class="hover:text-accent-text">
+          {t.footer.top} ↑
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

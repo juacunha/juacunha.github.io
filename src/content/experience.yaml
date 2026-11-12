@@ -1,0 +1,20 @@
+- id: uplink
+  order: 1
+  organization: UPLINK – Casulo Indie
+  position: { pt: Sound Designer, en: Sound Designer }
+  location: { pt: 'Porto Alegre, RS', en: 'Porto Alegre, RS, Brazil' }
+  startDate: 2026-09
+  summary:
+    pt: Sound design em diferentes projetos do estúdio.
+    en: Sound design across the studio's projects.
+
+- id: bee-legacy
+  order: 2
+  organization: Bee Legacy Publishing
+  position: { pt: Game Producer Trainee, en: Game Producer Trainee }
+  location: { pt: 'Rio de Janeiro, RJ (remoto)', en: 'Rio de Janeiro, Brazil (remote)' }
+  startDate: 2025-10
+  endDate: 2026-04
+  summary:
+    pt: Apoio ao processo de produção, acompanhamento de tasks, organização de documentos e QA.
+    en: Supported the production process, task tracking, document organization and QA.

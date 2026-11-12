@@ -1,0 +1,63 @@
+/* Fonte única dos tokens visuais. Espelha docs/design/DESIGN.md. */
+
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+
+  --color-bg: #140a40;
+  --color-surface: #1d0f5a;
+  --color-card: #24145f;
+  --color-card-hover: #29176a;
+  --color-border: #3a2a85;
+  --color-text: #ffffff;
+  --color-text-muted: #b8aee0;
+  --color-text-faint: #6e62a8;
+  --color-accent: #f80070;
+  --color-accent-text: #ff4d9a;
+  --color-accent-hover: #ff2e86;
+  --color-on-accent: #140a40;
+  --color-indigo: #482aa1;
+  --color-purple: #971a92;
+  --color-magenta: #9c096d;
+  --color-magenta-bright: #da0677;
+
+  --font-display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'Cascadia Code', monospace;
+  --font-sans: 'Source Sans 3 Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --text-3xl: clamp(1.75rem, 3vw, 2.5rem);
+  --text-display: clamp(3rem, 9vw, 6.5rem);
+  --text-display--line-height: 0.95;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --shadow-glow: 0 0 0 1px var(--color-accent), 0 0 28px -8px var(--color-accent);
+
+  --animate-fade-up: fade-up 600ms var(--ease-out-soft) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+:root {
+  --gradient-brand: linear-gradient(
+    120deg,
+    var(--color-accent) 0%,
+    var(--color-indigo) 38%,
+    var(--color-surface) 55%,
+    var(--color-purple) 80%,
+    var(--color-magenta-bright) 100%
+  );
+}

@@ -1,0 +1,50 @@
+---
+import { localize, type Locale } from '../../i18n';
+import { useTranslations } from '../../i18n/ui';
+import { boardSounds, type Project } from '../../lib/content';
+import { sfxCategories } from '../../lib/taxonomy';
+import FilterBar from '../islands/FilterBar.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import SoundCard from '../ui/SoundCard.astro';
+
+interface Props {
+  projects: Project[];
+  locale: Locale;
+}
+
+const { projects, locale } = Astro.props;
+const t = useTranslations(locale);
+const sounds = boardSounds(projects);
+const present = sfxCategories.filter((c) => sounds.some((s) => s.category === c));
+---
+
+<section
+  id="sounds"
+  class="scroll-mt-20 border-y border-border/60 bg-surface/40"
+  aria-labelledby="sounds-title"
+  data-filter-scope
+>
+  <div class="mx-auto max-w-6xl px-5 py-20">
+    <SectionHeading id="sounds-title" eyebrow={t.board.eyebrow} title={t.board.title} intro={t.board.intro} />
+    <FilterBar
+      label={t.board.filterLabel}
+      allLabel={`${t.board.all} (${sounds.length})`}
+      options={present.map((c) => ({
+        value: c,
+        label: `${t.board.categories[c]} (${sounds.filter((s) => s.category === c).length})`,
+      }))}
+    />
+    <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {sounds.map((s) => (
+        <li data-tags={s.category}>
+          <SoundCard
+            audio={s.audio}
+            label={localize(s.label, locale)}
+            meta={`${s.project.data.title} · ${t.board.categories[s.category]}`}
+            locale={locale}
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

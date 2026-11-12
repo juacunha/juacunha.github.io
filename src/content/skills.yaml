@@ -1,0 +1,45 @@
+- id: sound-design
+  order: 1
+  kind: hard
+  title: { pt: Sound design e áudio, en: Sound Design & Audio }
+  text: { pt: 'Edição, mixagem e síntese sonora.', en: 'Editing, mixing, and sound synthesis.' }
+
+- id: implementation
+  order: 2
+  kind: hard
+  title: { pt: Implementação de áudio, en: Audio Implementation }
+  text:
+    pt: Implementação com FMOD para criar experiências de áudio e paisagens sonoras imersivas.
+    en: FMOD implementation for creating immersive audio experiences and soundscapes.
+
+- id: management
+  order: 3
+  kind: hard
+  title: { pt: Gestão de projetos e fluxo de trabalho, en: Project Management & Workflow }
+  text:
+    pt: Jira, Trello, Miro, metodologias ágeis (Scrum/Kanban), Google Workspace/Office 365.
+    en: 'Jira, Trello, Miro, Agile methodologies (Scrum/Kanban), Google Workspace/Office 365.'
+
+- id: communication
+  order: 4
+  kind: soft
+  title: { pt: Comunicação colaborativa, en: Collaborative Communication }
+  text:
+    pt: Facilidade para alinhar a visão criativa com direção e desenvolvimento.
+    en: Strong ability to align creative vision with directors and developers.
+
+- id: organization
+  order: 5
+  kind: soft
+  title: { pt: Organização e pipeline, en: Organization & Pipeline }
+  text:
+    pt: Gestão eficiente de assets e cumprimento rigoroso de prazos.
+    en: Efficient asset management and strict adherence to deadlines.
+
+- id: adaptability
+  order: 6
+  kind: soft
+  title: { pt: Adaptabilidade e aprendizado rápido, en: Adaptability & Fast Learning }
+  text:
+    pt: Aprende rápido novos softwares, plugins e fluxos de produção.
+    en: 'Quick to master new software, plugins, and production workflows.'

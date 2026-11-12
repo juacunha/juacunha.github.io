@@ -1,0 +1,47 @@
+title: ServOS
+order: 5
+hook:
+  pt: Uma trilha industrial e repetitiva, pensada para não cansar o jogador.
+  en: A heavy, industrial track designed to avoid listener fatigue.
+synopsis:
+  pt: >-
+    Qual é o verdadeiro valor de um trabalhador? ServOS explora essa pergunta, tratando da importância e da ausência dele.
+    Você é um técnico contratado para consertar robôs de fábrica e garantir que batam a cota de produção.
+  en: >-
+    What is the true value of a worker? ServOS is a game that explores this question, delving into both their importance
+    and their absence. In this game, you're a technician hired to fix factory robots and ensure they meet their
+    production quota.
+engine: Godot
+studio: ufpel
+context:
+  pt: UFPel · Projeto Integrado V (mini game jams de um mês)
+  en: UFPel · Integrated Project V (one-month mini game jams)
+status: released
+deliverables: [soundtrack, ui]
+role:
+  pt: Criar a trilha sonora e os conceitos de UI.
+  en: Create the soundtrack and the UI concepts.
+soundNotes:
+  pt:
+    - >-
+      Compus uma faixa que evocasse a natureza monótona e repetitiva do trabalho na fábrica. Queria um som pesado e
+      industrial, cuidadosamente pensado para não cansar quem ouve durante o jogo.
+  en:
+    - >-
+      I composed a track that evoked the monotonous, repetitive nature of factory work. My goal was a heavy, industrial
+      sound, carefully designed to avoid listener fatigue during gameplay.
+team:
+  - { name: phscardona }
+  - { name: Juliana Acunha }
+  - { name: 0utro }
+  - { name: Ito }
+links:
+  itch: https://phscardona.itch.io/servos
+cover: projects/servos/cover.png
+coverAlt:
+  pt: Logo do servOS em verde num monitor antigo, cercado por outros monitores e painéis de controle
+  en: servOS logo in green on an old monitor, surrounded by other monitors and control panels
+tracks:
+  - { audio: servos/main-soundtrack, title: { pt: Tema principal, en: Main theme } }
+videos:
+  - { kind: teaser, youtube: 7IGP5ZjzBkA, title: { pt: Teaser, en: Teaser } }

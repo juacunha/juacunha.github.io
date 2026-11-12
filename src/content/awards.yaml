@@ -1,0 +1,44 @@
+- id: best-audio-gjp-2627
+  order: 1
+  title: { pt: Melhor Áudio, en: Best Audio }
+  edition: GameJam Plus 2026/27
+  stage: { pt: Etapa regional, en: Regional stage }
+  project: molten-metal
+  image: awards/melhor-audio.jpg
+  imageAlt:
+    pt: Premiados reunidos no palco da etapa regional da GameJam Plus 2026/27
+    en: Award winners on stage at the GameJam Plus 2026/27 regional stage
+  highlight: true
+
+- id: second-place-gjp-2627
+  order: 2
+  title: { pt: 2º lugar geral, en: 2nd place overall }
+  edition: GameJam Plus 2026/27
+  stage: { pt: Etapa regional, en: Regional stage }
+  project: molten-metal
+  image: awards/segundo-lugar.jpg
+  imageAlt:
+    pt: Premiação de 2º lugar no palco da etapa regional da GameJam Plus 2026/27
+    en: 2nd place ceremony on stage at the GameJam Plus 2026/27 regional stage
+
+- id: best-pitch-gjp-2627
+  order: 3
+  title: { pt: Melhor Pitch, en: Best Pitch }
+  edition: GameJam Plus 2026/27
+  stage: { pt: Etapa regional, en: Regional stage }
+  project: molten-metal
+  image: awards/melhor-pitch-2627.jpg
+  imageAlt:
+    pt: Premiação de Melhor Pitch no palco da etapa regional da GameJam Plus 2026/27
+    en: Best Pitch ceremony on stage at the GameJam Plus 2026/27 regional stage
+
+- id: best-pitch-gjp-2526
+  order: 4
+  title: { pt: Melhor Pitch, en: Best Pitch }
+  edition: GameJam Plus 2025/26
+  stage: { pt: Etapa regional, en: Regional stage }
+  project: midnight-meow
+  image: awards/melhor-pitch-2526.jpg
+  imageAlt:
+    pt: Premiação de Melhor Pitch na etapa regional da GameJam Plus 2025/26
+    en: Best Pitch ceremony at the GameJam Plus 2025/26 regional stage

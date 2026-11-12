@@ -1,0 +1,39 @@
+---
+import { videoInfo } from '../../lib/media';
+
+interface Props {
+  video: string;
+  title: string;
+  caption?: string;
+}
+
+const { video, title, caption } = Astro.props;
+const info = videoInfo(video);
+const portrait = info.height > info.width;
+---
+
+<figure class="flex flex-col gap-2">
+  <div
+    class:list={[
+      'overflow-hidden rounded-md border border-border bg-surface',
+      portrait ? 'aspect-[9/16]' : 'aspect-video',
+    ]}
+  >
+    <video
+      controls
+      preload="none"
+      playsinline
+      poster={info.poster}
+      width={info.width}
+      height={info.height}
+      class="h-full w-full object-cover"
+      aria-label={title}
+    >
+      <source src={info.src} type="video/mp4" />
+    </video>
+  </div>
+  <figcaption class="font-semibold">
+    {title}
+    {caption && <span class="block font-mono text-xs font-normal text-text-muted">{caption}</span>}
+  </figcaption>
+</figure>

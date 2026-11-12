@@ -1,0 +1,45 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n/ui';
+import type { Project } from '../../lib/content';
+import FilterBar from '../islands/FilterBar.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import ProjectCard from './ProjectCard.astro';
+
+interface Props {
+  projects: Project[];
+  locale: Locale;
+}
+
+const { projects, locale } = Astro.props;
+const t = useTranslations(locale);
+const filters = (['soundtrack', 'sfx', 'voice', 'curation', 'implementation', 'game-design'] as const).filter(
+  (d) => projects.some((p) => p.data.deliverables.includes(d)),
+);
+---
+
+<section
+  id="projects"
+  class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20"
+  aria-labelledby="projects-title"
+  data-filter-scope
+>
+  <SectionHeading
+    id="projects-title"
+    eyebrow={t.projects.eyebrow}
+    title={t.projects.title}
+    intro={t.projects.intro}
+  />
+  <FilterBar
+    label={t.projects.filterLabel}
+    allLabel={`${t.projects.all} (${projects.length})`}
+    options={filters.map((d) => ({ value: d, label: t.deliverables[d] }))}
+  />
+  <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {projects.map((project) => (
+      <li data-tags={project.data.deliverables.join(' ')} class="flex">
+        <ProjectCard project={project} locale={locale} />
+      </li>
+    ))}
+  </ul>
+</section>

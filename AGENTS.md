@@ -13,6 +13,13 @@ Site de portfólio da **Juliana Acunha**, sound designer para jogos. Idioma de t
 
 O site do Pedro Caurio (`C:\Curriculo-Pedro`) usa a mesma abordagem (Astro, conteúdo tipado, Playwright + axe, deploy no GitHub Pages). Consulte o `AGENTS.md`, `.cursor/rules/`, `.cursor/skills/` e o workflow de deploy de lá antes de criar equivalentes aqui.
 
+## Comandos
+
+- `npm run dev`: servidor local. `npm run verify`: check + build + testes (o mesmo que o CI).
+- `npm run media`: regenera áudio, vídeo, imagens e `src/data/media-manifest.json` a partir de `scripts/media/sources.mjs`.
+- `npm run screens -- <caminho>`: capturas em 390 e 1280 px (com `astro preview` na porta 4322).
+- Antes de publicar mudança de link ou mídia, rode build e testes também com `BASE=/teste/`.
+
 ## Regras
 
 - Créditos corretos em projetos de equipe; o papel dela vem do texto dela (ver `docs/context/projetos.md`).

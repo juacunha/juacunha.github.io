@@ -1,0 +1,29 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro?: string;
+  id?: string;
+  level?: 'h2' | 'h3';
+}
+
+const { eyebrow, title, intro, id, level = 'h2' } = Astro.props;
+const Tag = level;
+---
+
+<div class="mb-8 max-w-3xl">
+  <p class="eyebrow">// {eyebrow}</p>
+  <Tag id={id} class="heading-display mt-2 text-4xl md:text-5xl">
+    {title}
+  </Tag>
+  <svg class="brush-draw mt-2 h-3 w-40 text-accent" viewBox="0 0 160 12" fill="none" aria-hidden="true">
+    <path
+      d="M2 8c30-5 70-6 100-3s40 2 56-2"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      style="--len: 170"
+    ></path>
+  </svg>
+  {intro && <p class="mt-4 text-lg text-text-muted">{intro}</p>}
+</div>

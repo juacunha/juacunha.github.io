@@ -1,0 +1,19 @@
+- id: audio
+  order: 1
+  group: { pt: Áudio, en: Audio }
+  items: [Reaper, FMOD, Ableton, Audition, GarageBand, Bosca Ceoil]
+
+- id: engines
+  order: 2
+  group: { pt: Engines e versionamento, en: Engines & version control }
+  items: [Unity, Godot, Pyxel, GitHub]
+
+- id: production
+  order: 3
+  group: { pt: Produção e documentação, en: Production & documentation }
+  items: [Jira, Trello, Miro, Notion, Google Workspace]
+
+- id: art
+  order: 4
+  group: { pt: 'Design, arte e 3D', en: 'Design, art & 3D' }
+  items: [Photoshop, Figma, Illustrator, Procreate, Aseprite, Blender]

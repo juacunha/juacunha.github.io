@@ -1,0 +1,111 @@
+---
+// Player único da página: todos os [data-sound] compartilham um <audio>, então só um som toca por vez.
+// Sem JS, cada card mostra um <audio controls> dentro de <noscript>.
+---
+
+<script>
+  const audio = new Audio();
+  audio.preload = 'none';
+  let current: HTMLElement | null = null;
+
+  const decimal = document.documentElement.lang === 'en' ? '.' : ',';
+  const fmt = (s: number, short: boolean) => {
+    if (short)
+      return `${Math.max(0, s || 0)
+        .toFixed(1)
+        .replace('.', decimal)} s`;
+    const v = Math.max(0, Math.round(s || 0));
+    return `${Math.floor(v / 60)}:${String(v % 60).padStart(2, '0')}`;
+  };
+
+  function render(el: HTMLElement, playing: boolean) {
+    const btn = el.querySelector<HTMLButtonElement>('[data-sound-toggle]');
+    el.classList.toggle('is-playing', playing);
+    if (btn) {
+      btn.setAttribute('aria-pressed', String(playing));
+      btn.setAttribute('aria-label', (playing ? btn.dataset.labelPause : btn.dataset.labelPlay) ?? '');
+    }
+  }
+
+  function progress(el: HTMLElement, time: number) {
+    const duration = audio.duration || Number(el.dataset.duration) || 0;
+    const pct = duration ? Math.min(100, (time / duration) * 100) : 0;
+    el.style.setProperty('--progress', `${pct}%`);
+    const label = el.querySelector('[data-sound-time]');
+    const short = duration < 10;
+    if (label)
+      label.textContent = time > 0 ? `${fmt(time, short)} / ${fmt(duration, short)}` : fmt(duration, short);
+  }
+
+  function stop() {
+    if (!current) return;
+    audio.pause();
+    render(current, false);
+  }
+
+  async function play(el: HTMLElement, seekRatio?: number) {
+    if (current !== el) {
+      if (current) {
+        render(current, false);
+        progress(current, 0);
+      }
+      current = el;
+      audio.src = el.dataset.src ?? '';
+    }
+    if (seekRatio !== undefined) {
+      const duration = audio.duration || Number(el.dataset.duration) || 0;
+      audio.currentTime = seekRatio * duration;
+    }
+    document.querySelectorAll('video').forEach((v) => v.pause());
+    render(el, true);
+    try {
+      await audio.play();
+    } catch {
+      render(el, false);
+    }
+  }
+
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    const toggle = target.closest<HTMLElement>('[data-sound-toggle]');
+    const wave = target.closest<HTMLElement>('[data-sound-wave]');
+    const el = (toggle ?? wave)?.closest<HTMLElement>('[data-sound]');
+    if (!el) return;
+    if (wave) {
+      const rect = wave.getBoundingClientRect();
+      play(el, Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width)));
+      return;
+    }
+    if (current === el && !audio.paused) stop();
+    else play(el);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    const toggle = (event.target as HTMLElement).closest?.('[data-sound-toggle]');
+    if (!toggle || !current || toggle.closest('[data-sound]') !== current) return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      audio.currentTime = Math.max(0, audio.currentTime + (event.key === 'ArrowRight' ? 5 : -5));
+    }
+  });
+
+  audio.addEventListener('timeupdate', () => current && progress(current, audio.currentTime));
+  audio.addEventListener('ended', () => {
+    if (!current) return;
+    render(current, false);
+    progress(current, 0);
+  });
+
+  audio.addEventListener('error', () => {
+    if (!current || !audio.getAttribute('src')) return;
+    render(current, false);
+    current.style.setProperty('--progress', '0%');
+    const label = current.querySelector<HTMLElement>('[data-sound-time]');
+    if (label) label.textContent = label.dataset.labelError ?? '';
+    current = null;
+  });
+
+  // Vídeos locais e embeds pausam o áudio, e vice-versa.
+  document.addEventListener('play', (event) => event.target instanceof HTMLVideoElement && stop(), true);
+  document.addEventListener('ja:media-start', stop);
+</script>

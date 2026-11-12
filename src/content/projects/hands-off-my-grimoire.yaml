@@ -1,0 +1,72 @@
+title: Hands Off My Grimoire!
+order: 4
+hook:
+  pt: Proteja o grimório do seu mestre de invasores malignos.
+  en: Protect your master's grimoire from evil invaders.
+synopsis:
+  pt: Em Hands Off My Grimoire, o jogador controla um pequeno goblin encarregado de proteger o grimório do seu mestre contra invasores.
+  en: In Hands Off My Grimoire, the player controls a small goblin tasked with protecting its master's grimoire from invaders.
+genre: { pt: Tower defense, en: Tower defense }
+engine: Unity
+studio: casulo-indie
+context: { pt: Casulo Indie, en: Casulo Indie }
+status: in-development
+deliverables: [soundtrack, sfx]
+role:
+  pt: Criar a trilha sonora e os SFX.
+  en: Create the soundtrack and the SFX.
+soundNotes:
+  pt:
+    - Meu objetivo neste projeto foi compor uma trilha medieval e criar efeitos sonoros impactantes e imersivos.
+  en:
+    - My goal for this project was to compose a medieval soundtrack and design impactful, immersive sound effects.
+links:
+  soundcloud: https://soundcloud.com/juliana-acunha-232828507/sets/hands-off-my-grimoire
+cover: projects/hands-off-my-grimoire/cover.png
+coverAlt:
+  pt: Logo de Hands Off My Grimoire!, com um chapéu de goblin sobre a palavra Off
+  en: Hands Off My Grimoire! logo, with a goblin hat over the word Off
+sfx:
+  - {
+      audio: hands-off-my-grimoire/comeco-wave-1,
+      category: gameplay,
+      label: { pt: Início da onda 1, en: Wave 1 start },
+    }
+  - {
+      audio: hands-off-my-grimoire/comeco-wave-2,
+      category: gameplay,
+      label: { pt: Início da onda 2, en: Wave 2 start },
+    }
+  - {
+      audio: hands-off-my-grimoire/comeco-wave-3,
+      category: gameplay,
+      label: { pt: Início da onda 3, en: Wave 3 start },
+    }
+  - { audio: hands-off-my-grimoire/fim-wave, category: gameplay, label: { pt: Fim da onda, en: Wave end } }
+  - {
+      audio: hands-off-my-grimoire/livro-dano,
+      category: gameplay,
+      label: { pt: Dano no grimório, en: Grimoire damage },
+    }
+  - { audio: hands-off-my-grimoire/hover-torre, category: ui, label: { pt: Hover na torre, en: Tower hover } }
+  - {
+      audio: hands-off-my-grimoire/selecao-torre,
+      category: ui,
+      label: { pt: Seleção de torre, en: Tower select },
+    }
+  - {
+      audio: hands-off-my-grimoire/posicionar-torre,
+      category: ui,
+      label: { pt: Posicionar torre, en: Tower placement },
+    }
+videos:
+  - {
+      kind: process,
+      local: hands-off-my-grimoire/passos-goblin,
+      title: { pt: Processo dos passos do goblin, en: Goblin footsteps process },
+    }
+  - {
+      kind: process,
+      local: hands-off-my-grimoire/passos-grama,
+      title: { pt: Gravando passos na grama, en: Recording footsteps on grass },
+    }

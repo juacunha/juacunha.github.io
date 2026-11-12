@@ -1,0 +1,47 @@
+- id: juliana
+  name: Juliana Acunha
+  label:
+    pt: Game Sound Designer
+    en: Game Sound Designer
+  tagline:
+    pt: Trilha sonora · SFX · Voz original · Implementação de áudio
+    en: Soundtrack · SFX · Original voice · Audio implementation
+  intro:
+    pt: Sou sound designer e busco levar sensações memoráveis e imersão profunda para os jogos!
+    en: I'm a Sound Designer seeking to bring memorable sensations and deep immersion to games!
+  summary:
+    pt: >-
+      Como sound designer, meu objetivo é ampliar a imersão do jogador com áudio de alta qualidade. Além de compor
+      trilhas e criar SFX, gosto da lógica da implementação de áudio, garantindo que cada som se encaixe nos sistemas do
+      jogo. Estou sempre aprendendo e buscando novos desafios para ampliar minhas habilidades técnicas e artísticas.
+    en: >-
+      As a Sound Designer, my goal is to drive player immersion through high-quality audio. Beyond composing soundtracks
+      and designing SFX, I thrive on the logic of audio implementation, ensuring every sound fits perfectly within the
+      game's systems. I am a dedicated learner, always seeking new challenges to expand my technical and artistic
+      skills.
+  location:
+    pt: Rio Grande, RS, Brasil
+    en: Rio Grande, RS, Brazil
+  email: juhaacunha@gmail.com
+  phone:
+    display: +55 53 99107-8829
+    href: '+5553991078829'
+  reel: JByBcjKhWck
+  cv: /cv/juliana-acunha.pdf
+  opportunities:
+    pt: [Estágio, Júnior em estúdio, Freelance de trilha e SFX, Vagas remotas e internacionais]
+    en: [Internships, Junior studio roles, Freelance soundtrack & SFX, Remote and international roles]
+  profiles:
+    - { network: SoundCloud, label: juliana-acunha, url: 'https://soundcloud.com/juliana-acunha-232828507' }
+    - { network: itch.io, label: ju-acunha, url: 'https://ju-acunha.itch.io/' }
+    - { network: YouTube, label: '@JubssAcunha', url: 'https://www.youtube.com/@JubssAcunha' }
+    - {
+        network: LinkedIn,
+        label: Juliana Acunha,
+        url: 'https://www.linkedin.com/in/juliana-acunha-01a39a293/',
+      }
+  languages:
+    - name: { pt: Português, en: Portuguese }
+      level: { pt: Nativo, en: Native }
+    - name: { pt: Inglês, en: English }
+      level: { pt: Avançado (EF SET C1), en: Advanced (EF SET C1) }

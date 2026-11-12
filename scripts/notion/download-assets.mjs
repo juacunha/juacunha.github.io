@@ -17,7 +17,10 @@ async function collect(path) {
     const cover = b.format?.page_cover;
     if (cover?.startsWith('attachment:')) files.push({ id, url: cover, kind: 'cover' });
     for (const [k, v] of Object.entries(b.properties ?? {})) {
-      for (const seg of v) for (const fmt of seg[1] ?? []) if (fmt[0] === 'a' && String(fmt[1]).startsWith('attachment:')) files.push({ id, url: fmt[1], kind: `prop-${k}` });
+      for (const seg of v)
+        for (const fmt of seg[1] ?? [])
+          if (fmt[0] === 'a' && String(fmt[1]).startsWith('attachment:'))
+            files.push({ id, url: fmt[1], kind: `prop-${k}` });
     }
   }
 }
@@ -25,7 +28,8 @@ async function collect(path) {
 const root = new URL('../../.scratch/notion/', import.meta.url);
 await collect(new URL('root.json', root));
 for (const dir of ['pages', 'news', 'covers']) {
-  for (const f of await readdir(new URL(`${dir}/`, root))) if (f.endsWith('.json')) await collect(new URL(`${dir}/${f}`, root));
+  for (const f of await readdir(new URL(`${dir}/`, root)))
+    if (f.endsWith('.json')) await collect(new URL(`${dir}/${f}`, root));
 }
 
 const seen = new Set();
@@ -35,7 +39,9 @@ console.log('files', unique.length);
 const r = await fetch(`${BASE}/getSignedFileUrls`, {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
-  body: JSON.stringify({ urls: unique.map((f) => ({ url: f.url, permissionRecord: { table: 'block', id: f.id, spaceId: SPACE } })) }),
+  body: JSON.stringify({
+    urls: unique.map((f) => ({ url: f.url, permissionRecord: { table: 'block', id: f.id, spaceId: SPACE } })),
+  }),
 });
 const { signedUrls } = await r.json();
 

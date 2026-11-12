@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { homePath, otherLocale, type Locale } from '../i18n';
+import { useTranslations } from '../i18n/ui';
+import { getProfile, getProjects } from '../lib/content';
+import { personJsonLd } from '../lib/jsonld';
+import About from './sections/About.astro';
+import Contact from './sections/Contact.astro';
+import Featured from './sections/Featured.astro';
+import Hero from './sections/Hero.astro';
+import Process from './sections/Process.astro';
+import ProjectGrid from './sections/ProjectGrid.astro';
+import Reel from './sections/Reel.astro';
+import SoundBoard from './sections/SoundBoard.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const profile = await getProfile();
+const projects = await getProjects();
+const other = otherLocale(locale);
+---
+
+<BaseLayout
+  title={t.meta.title}
+  description={t.meta.description}
+  locale={locale}
+  path={homePath[locale]}
+  alternate={{ locale: other, path: homePath[other] }}
+  jsonLd={personJsonLd(profile, locale, Astro.site)}
+>
+  <Hero locale={locale} />
+  <Reel locale={locale} />
+  <Featured projects={projects} locale={locale} />
+  <SoundBoard projects={projects} locale={locale} />
+  <ProjectGrid projects={projects} locale={locale} />
+  <Process locale={locale} />
+  <About locale={locale} />
+  <Contact locale={locale} />
+</BaseLayout>

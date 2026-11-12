@@ -1,0 +1,45 @@
+---
+import { getEntry } from 'astro:content';
+import { localize, type Locale } from '../../i18n';
+import { useTranslations } from '../../i18n/ui';
+import { getSorted } from '../../lib/content';
+import LocalVideo from '../ui/LocalVideo.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const videos = await getSorted('process');
+const projects = await Promise.all(
+  videos.map((v) => (v.data.project ? getEntry(v.data.project) : undefined)),
+);
+---
+
+<section
+  id="process"
+  class="scroll-mt-20 border-y border-border/60 bg-surface/40"
+  aria-labelledby="process-title"
+>
+  <div class="mx-auto max-w-6xl px-5 py-20">
+    <SectionHeading
+      id="process-title"
+      eyebrow={t.process.eyebrow}
+      title={t.process.title}
+      intro={t.process.intro}
+    />
+    <ul class="grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-4">
+      {videos.map((v, i) => (
+        <li>
+          <LocalVideo
+            video={v.data.video}
+            title={localize(v.data.title, locale)}
+            caption={projects[i]?.data.title ?? 'Foley'}
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

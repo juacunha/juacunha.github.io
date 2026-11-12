@@ -1,0 +1,29 @@
+---
+// Elementos gráficos da identidade A: pincelada, bloco de retícula e listras.
+interface Props {
+  kind: 'scribble' | 'halftone' | 'stripes';
+  class?: string;
+}
+
+const { kind, class: className } = Astro.props;
+---
+
+{kind === 'scribble' && (
+  <svg
+    class:list={['brush-draw text-accent', className]}
+    viewBox="0 0 220 200"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M30 60c50-30 120-48 160-40-60 20-140 60-170 92 70-40 150-70 180-60-50 24-120 62-150 96 40-22 90-40 120-36"
+      stroke="currentColor"
+      stroke-width="14"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      style="--len: 900"
+    />
+  </svg>
+)}
+{kind === 'halftone' && <div class:list={['halftone', className]} aria-hidden="true" />}
+{kind === 'stripes' && <div class:list={['stripes', className]} aria-hidden="true" />}

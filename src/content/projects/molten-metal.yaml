@@ -1,0 +1,92 @@
+title: Molten Metal
+order: 1
+featured: true
+hook:
+  pt: Sinta o ritmo dos tambores de guerra e o choque do aço. Acerte as marcações no tempo perfeito.
+  en: Feel the rhythm of the war drums and the clashing sound of steel. Hit the marks in perfect timing.
+synopsis:
+  pt: >-
+    No interior de uma montanha, onde ainda ecoam os sussurros dos antigos, o aço molda o destino dos guerreiros que se
+    reúnem ali. Você é um artesão ancestral lendário, com a forja construída sob uma montanha colossal.
+  en: >-
+    Deep within a mountain, where the whispers of the ancients still echo, steel shapes the fate of the warriors who
+    gather there. You are a legendary ancestral artisan, your forge built beneath a colossal mountain.
+genre: { pt: Ritmo · Clicker · Roguelite, en: Rhythm · Clicker · Roguelite }
+engine: Godot
+studio: jam
+context: { pt: GameJam Plus 2026/27 · etapa regional, en: GameJam Plus 2026/27 · regional stage }
+year: 2026
+status: released
+deliverables: [soundtrack, sfx, voice, implementation]
+role:
+  pt: Criar a trilha sonora, os SFX e a voz original, além da implementação do áudio.
+  en: Create the soundtrack, the SFX and the original voice, plus audio implementation.
+soundNotes:
+  pt:
+    - Neste projeto, busquei compor uma trilha que evocasse um ambiente nórdico.
+  en:
+    - For this project, I aimed to compose a track that evoked a Nordic environment.
+team:
+  - { name: mad }
+  - { name: Monorelh4 }
+  - { name: Pedro Caurio, role: { pt: Programação, en: Programming } }
+  - { name: 0utro }
+  - { name: Ito }
+  - { name: Juliana Acunha }
+noGenerativeAi: true
+links:
+  itch: https://madsilvax.itch.io/moltenmetal
+  soundcloud: https://soundcloud.com/juliana-acunha-232828507/sets/molten-metal
+cover: projects/molten-metal/cover.png
+coverAlt:
+  pt: Logo do Molten Metal com um martelo no lugar da letra T, sobre uma forja dentro da montanha
+  en: Molten Metal logo with a hammer as the letter T, over a forge inside the mountain
+sfx:
+  - {
+      audio: molten-metal/martelada-perfect,
+      category: gameplay,
+      label: { pt: Martelada perfeita, en: Perfect hammer hit },
+    }
+  - { audio: molten-metal/martelada, category: gameplay, label: { pt: Martelada, en: Hammer hit } }
+  - { audio: molten-metal/martelada-1, category: gameplay, label: { pt: Martelada 2, en: Hammer hit 2 } }
+  - { audio: molten-metal/martelada-2, category: gameplay, label: { pt: Martelada 3, en: Hammer hit 3 } }
+  - {
+      audio: molten-metal/contagem,
+      category: gameplay,
+      label: { pt: 'Contagem 3, 2, 1', en: '3, 2, 1 countdown' },
+    }
+  - { audio: molten-metal/papel-livro, category: foley, label: { pt: Papel do livro, en: Book paper } }
+  - {
+      audio: molten-metal/letras-aparecendo,
+      category: ui,
+      label: { pt: Letras aparecendo, en: Letters appearing },
+    }
+  - { audio: molten-metal/hover, category: ui, label: { pt: Hover, en: Hover } }
+  - { audio: molten-metal/click-botao, category: ui, label: { pt: Clique de botão, en: Button click } }
+  - { audio: molten-metal/vitoria-tinindo, category: voice, label: { pt: Fala de vitória, en: Victory line } }
+  - { audio: molten-metal/derrota, category: voice, label: { pt: Fala de derrota, en: Defeat line } }
+  - {
+      audio: molten-metal/forjar-e-martelar,
+      category: voice,
+      label: { pt: Forjar e martelar, en: Forge and hammer },
+    }
+  - { audio: molten-metal/click-forjar, category: voice, label: { pt: Forjar, en: Forge } }
+  - { audio: molten-metal/erro, category: voice, label: { pt: Erro, en: Miss } }
+  - {
+      audio: molten-metal/tempo-quase-acabando,
+      category: voice,
+      label: { pt: Tempo quase acabando, en: Time almost up },
+    }
+  - { audio: molten-metal/acabou-tempo, category: voice, label: { pt: Tempo esgotado, en: "Time's up" } }
+  - {
+      audio: molten-metal/proximo-cliente,
+      category: voice,
+      label: { pt: Próximo cliente, en: Next customer },
+    }
+videos:
+  - {
+      kind: pitch,
+      youtube: CnpQeGkTy4o,
+      title: { pt: Pitch na GameJam Plus 2026/27, en: GameJam Plus 2026/27 pitch },
+    }
+  - { kind: teaser, youtube: pNarBwwvbPE, title: { pt: Teaser, en: Teaser } }

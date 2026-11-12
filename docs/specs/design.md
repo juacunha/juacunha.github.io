@@ -1,223 +1,161 @@
 # Design técnico — Site Portfólio da Juliana Acunha
 
-Fase 2 do Spec-Driven Development. Stack em [ADR-001](../decisions/ADR-001-stack-e-hospedagem.md); visual em [DESIGN.md](../design/DESIGN.md); requisitos em [requirements.md](requirements.md).
+Fase 2 do Spec-Driven Development. Stack em [ADR-001](../decisions/ADR-001-stack-e-hospedagem.md); visual em [DESIGN.md](../design/DESIGN.md); requisitos em [requirements.md](requirements.md). Este documento descreve a v1 como implementada.
 
 ## Arquitetura
 
 ```mermaid
 flowchart LR
   subgraph origem [Origem - fora do git]
-    notion[Notion / Drive / SoundCloud]
-    mediasrc[media-src/slug/*.wav, *.mp3]
+    notion[Notion / Drive / itch.io]
+    src[media-src/, .scratch/assets/, .scratch/drive/]
   end
-  notion -->|scripts/notion| mediasrc
-  mediasrc -->|scripts/audio + ffmpeg-static| audio[public/audio/slug/*.ogg, *.mp3]
-  mediasrc -->|scripts/audio| manifest[src/data/audio-manifest.json<br/>duração + picos]
+  notion -->|scripts/notion, scripts/media/download-drive| src
+  src -->|scripts/media/build-media + ffmpeg-static| media[public/media/audio, public/media/video]
+  src -->|build-media| imgs[src/assets/ imagens]
+  src -->|build-media| manifest[src/data/media-manifest.json<br/>duração, picos, pôster]
   subgraph content [src/content - fonte única]
     profile[profile.yaml]
     projects[projects/slug.yaml]
     outros[experience, education, awards, tools, skills, process]
   end
-  content --> zod[content.config.ts<br/>Zod + checagem de referências]
+  content --> zod[content.config.ts<br/>Zod + checagem no manifesto]
   manifest --> zod
   zod --> pages[Páginas Astro]
   zod --> jsonld[JSON-LD]
   zod --> llms[/llms.txt/]
   pages --> dist[dist/]
-  audio --> dist
-  dist --> pages_gh[GitHub Pages]
+  media --> dist
+  dist --> gh[GitHub Pages]
 ```
 
-## Estrutura de pastas planejada
+A mídia processada (`public/media/`, `src/assets/`, manifesto) é versionada; o CI não roda `npm run media`. Os originais ficam fora do git.
+
+## Estrutura de pastas
 
 ```
 /
 ├─ AGENTS.md
 ├─ astro.config.mjs           # site + base vindos de env (raiz ou subcaminho)
-├─ package.json
-├─ docs/
-├─ media-src/                 # originais de áudio por projeto (gitignored)
-├─ public/
-│  ├─ audio/<slug>/<id>.ogg|.mp3   # gerados e versionados
-│  ├─ cv/juliana-acunha.pdf
-│  ├─ docs/<slug>-one-page.pdf
-│  ├─ robots.txt, favicon.svg, og.png
-├─ scripts/
-│  ├─ notion/                 # captura do Notion (já existe)
-│  ├─ audio/build-audio.mjs   # converte + gera manifest
-│  └─ check-tokens.mjs        # barra cores literais fora de tokens.css
-├─ tests/e2e/                 # Playwright + axe (R-xx nos nomes)
+├─ .github/workflows/deploy.yml
 ├─ .cursor/rules/, .cursor/skills/
+├─ docs/
+├─ media-src/                 # originais adicionados à mão (gitignored)
+├─ public/
+│  ├─ media/audio/<projeto>/<id>.mp3
+│  ├─ media/video/<grupo>/<id>.mp4 + .jpg (pôster)
+│  ├─ cv/juliana-acunha.pdf
+│  ├─ docs/<projeto>-*.pdf
+│  ├─ og.jpg, favicon.svg
+├─ scripts/
+│  ├─ notion/                 # captura do Notion
+│  ├─ media/sources.mjs       # curadoria: chave → arquivo de origem
+│  ├─ media/build-media.mjs   # converte, gera picos/pôsteres, copia imagens, escreve o manifesto
+│  ├─ media/download-drive.mjs
+│  ├─ screens.mjs             # capturas 390/1280 px em .scratch/shots/
+│  └─ check-tokens.mjs        # barra cores literais fora de tokens.css
+├─ tests/e2e/                 # Playwright + axe
 └─ src/
    ├─ content.config.ts
-   ├─ content/
-   │  ├─ profile.yaml
-   │  ├─ experience.yaml
-   │  ├─ education.yaml       # cursos + certificados
-   │  ├─ awards.yaml
-   │  ├─ tools.yaml
-   │  ├─ skills.yaml
-   │  ├─ process.yaml         # vídeos de foley
+   ├─ content/                # profile, experience, education, awards, tools, skills, process (.yaml)
    │  └─ projects/<slug>.yaml
-   ├─ data/audio-manifest.json
-   ├─ assets/projects/<slug>/ # capa, screenshots, processo (astro:assets)
-   ├─ assets/brand/           # foto, avatar, SVGs de pincel/retícula
-   ├─ i18n/                   # ui.ts (strings de interface), index.ts (localize, url)
+   ├─ data/media-manifest.json
+   ├─ assets/brand/           # foto, avatar, gatos
+   ├─ assets/projects/<slug>/ # capa e galeria
+   ├─ assets/awards/, assets/youtube/ (thumbnails baixadas no build de mídia)
+   ├─ i18n/index.ts           # locales, localize, url, projectPath
+   ├─ i18n/ui.ts              # rótulos de interface pt/en
+   ├─ lib/                    # content, images, media, jsonld, taxonomy
    ├─ styles/tokens.css, global.css
-   ├─ components/ui/, sections/, layout/, islands/
+   ├─ components/
+   │  ├─ layout/              # SiteHeader, SiteFooter
+   │  ├─ sections/            # Hero, Reel, Featured, SoundBoard, ProjectGrid, ProjectCard, Process, About, Contact
+   │  ├─ ui/                  # SoundCard, YouTubeFacade, SoundCloudFacade, LocalVideo, SectionHeading, Decor
+   │  ├─ islands/             # AudioEngine, FilterBar
+   │  ├─ HomePage.astro, ProjectPage.astro
    ├─ layouts/BaseLayout.astro
-   ├─ lib/jsonld.ts, lib/audio.ts
    └─ pages/
-      ├─ index.astro                 # EN
-      ├─ projects/[slug].astro       # EN
-      ├─ pt/index.astro              # PT-BR
-      ├─ pt/projetos/[slug].astro    # PT-BR
-      ├─ cv/ (PDF em public/)
-      ├─ llms.txt.ts
-      ├─ 404.astro
-      └─ dev/tokens.astro, dev/conteudo.astro   # noindex
+      ├─ index.astro, projetos/[slug].astro          # PT-BR
+      ├─ en/index.astro, en/projects/[slug].astro    # EN
+      ├─ 404.astro, robots.txt.ts, llms.txt.ts
 ```
 
 ## Rotas
 
 | Rota | Conteúdo | Requisitos |
 | --- | --- | --- |
-| `/` | Home EN: hero com reel, destaques, sound board, projetos, processo, conquistas, experiência e formação, ferramentas e skills, contato | R-01..R-09 |
-| `/projects/[slug]` | Estudo de caso EN | R-10, R-11, R-21 |
-| `/pt/`, `/pt/projetos/[slug]` | Espelho PT-BR | R-14 |
+| `/` | Home PT-BR: hero, reel, destaques, sound board, projetos, processo, sobre, contato | R-01..R-09 |
+| `/projetos/[slug]/` | Estudo de caso PT-BR | R-10, R-11 |
+| `/en/`, `/en/projects/[slug]/` | Espelho EN | R-14 |
 | `/cv/juliana-acunha.pdf` | CV do Canva | R-15 |
-| `/llms.txt` | Resumo para IA | R-22 |
-| `/404` | Página de erro | R-16 |
-| `/dev/tokens`, `/dev/conteudo` | Verificação interna (noindex, fora do sitemap) | — |
+| `/llms.txt`, `/robots.txt`, `/sitemap-index.xml` | Máquina | R-22, R-23 |
+| `/404.html` | Página de erro (noindex) | R-16 |
 
-Âncoras da home: `#work` (sound board), `#projects`, `#process`, `#awards`, `#experience`, `#tools`, `#contact`.
+Âncoras da home: `#reel`, `#sounds`, `#projects`, `#process`, `#about`, `#awards`, `#contact`.
 
 ## Modelo de conteúdo
 
-Campos marcados com \* são localizados: `{ en: string, pt: string }`. Datas em `AAAA-MM`. `draft: true` não publica.
-
-### `profile.yaml`
-
-```yaml
-name: Juliana Acunha
-label*: Sound Designer
-tagline*: Soundtrack Composer · SFX Artist
-summary*: ...
-location*: Rio Grande, RS, Brazil         # (confirmar)
-email: juhaacunha@gmail.com
-phone: { value: '+55 53 99107-8829', public: false }
-reel: { youtube: JByBcjKhWck }
-cv: /cv/juliana-acunha.pdf
-profiles:
-  - { network: SoundCloud, url: https://soundcloud.com/juliana-acunha-232828507 }
-  - { network: itch.io, url: https://ju-acunha.itch.io/ }
-  - { network: YouTube, url: https://www.youtube.com/@JubssAcunha }
-  - { network: LinkedIn, url: https://www.linkedin.com/in/juliana-acunha-01a39a293/ }
-languages: [{ name*, level*, note }]
-```
-
-### `projects/<slug>.yaml`
-
-```yaml
-id: molten-metal
-title: Molten Metal
-altTitle*: ~                    # ex.: Asas Temperadas: Receitas Mágicas
-hook*: ...                      # uma linha (card)
-synopsis*: ...
-genre*: Rhythm · Clicker · Roguelite
-engine: Godot                   # Godot | Unity | Pyxel
-platforms: [Windows]
-context:
-  kind: jam                     # jam | university | studio | solo | personal
-  name*: GameJam Plus 2026/27
-  detail*: ~                    # ex.: "UFPel — Projeto Integrado V"
-year: 2026
-status: released                # released | in-development | prototype | on-hold
-deliverables: [soundtrack, sfx, voice, implementation]
-  # enum: soundtrack, sfx, voice, curation, mixing, implementation,
-  #       game-design, writing, ui, art, animation, 3d, programming, documentation
-role*: ...                      # texto dela
-soundNotes*: [ ... ]            # "intenção sonora" (callouts do Notion)
-team: [{ name, role*? }]        # créditos (confirmar permissão)
-awards: [best-audio-gjp-2627]   # ids de awards.yaml
-noGenerativeAi: true
-links: { itch: https://madsilvax.itch.io/moltenmetal }
-soundcloud: https://soundcloud.com/juliana-acunha-232828507/sets/molten-metal
-tracks:   [{ audio: molten-metal/menu, title*: Menu Theme }]
-sfx:      [{ audio: molten-metal/martelada-perfect, label*: Perfect hammer hit, category: foley }]
-voice:    [{ audio: molten-metal/vitoria-tinindo, label*: Victory line }]
-stems:    [{ audio: midnight-meow/01-batida, label*: Beat, order: 1 }]   # só Midnight Meow
-videos:   [{ kind: teaser, youtube: pNarBwwvbPE, title*: Teaser }]
-          # kind: reel | teaser | pitch | process; youtube | drive (id)
-images:   [{ src: ./molten-metal/cover.png, alt*: ..., role: cover }]
-docs:     [{ title*: One Page, file: /docs/eco-one-page.pdf }]
-featured: true
-order: 1
-draft: false
-```
-
-Categorias de SFX: `foley`, `ui`, `voice`, `chiptune`, `gameplay`, `ambience`.
-
-### Demais coleções
+Fonte de verdade: [`src/content.config.ts`](../../src/content.config.ts). Textos localizados são `{ pt, en }` (objeto estrito: chave extra quebra o build); listas localizadas exigem o mesmo número de itens nos dois idiomas. Datas em `AAAA-MM`.
 
 | Coleção | Campos principais |
 | --- | --- |
-| `experience` | organization, position\*, location\*, startDate, endDate?, summary\*?, highlights\*[] (vazio até confirmação), url? |
-| `education` | institution, shortName, area\*, studyType\*, startDate, endDate (confirmar D1), status; `certificates[]`: name\*, hours?, score? |
-| `awards` | id, title\*, edition, stage\* ("Regional stage"), project (ref), image, text\*?, date? |
-| `tools` | group\* (Audio, Engines, Production, Art & 3D), items[] { name, icon } |
-| `skills` | group\* (Hard, Soft), items[] { title\*, text\* } |
-| `process` | videos[] { drive \| youtube, title\*, caption\*, project? } |
+| `profile` | name, label\*, tagline\*, intro\*, summary\*, location\*, email, phone {display, href}, reel (YouTube), cv, opportunities\*[], profiles[], languages[] |
+| `experience` | order, organization, position\*, location\*, startDate, endDate?, summary\*? |
+| `education` | order, kind (degree \| certificate), institution?, title\*, detail\*?, startDate?, inProgress |
+| `awards` | order, title\*, edition, stage\*, project (ref), image, imageAlt\*, highlight |
+| `tools` | order, group\*, items[] |
+| `skills` | order, kind (hard \| soft), title\*, text\* |
+| `process` | order, video (chave do manifesto), title\*, project (ref)? |
+| `projects` | ver abaixo |
 
-### Checagens no build (`content.config.ts`)
+`projects/<slug>.yaml`: title, altTitle\*?, hook\*, synopsis\*, genre\*?, engine (Unity \| Godot \| Pyxel), context\*, studio?, year?, status (released \| in-development \| prototype \| on-hold), deliverables[] (enum em `lib/taxonomy.ts`), role\*, soundNotes\*[]?, team[] {name, role\*?}, noGenerativeAi, links {itch?, soundcloud?, playable}, cover, coverAlt\*, tracks[] {audio, title\*, curated}, sfx[] {audio, label\*, category, curated}, stems[] {audio, label\*}, videos[] {kind, title\*, youtube? \| local?}, gallery[] {image, alt\*}, docs[] {title\*, file}, featured, order, draft.
 
-- Toda referência `audio: <slug>/<id>` existe em `audio-manifest.json`.
-- Todo `awards[]` de projeto existe em `awards.yaml`; todo `award.project` existe.
-- Todo campo localizado tem `en` e `pt` não vazios (exceto em `draft`).
-- `phone.public` só pode ser `true` com flag explícita (evita exposição acidental).
+Categorias de SFX: `foley`, `ui`, `voice`, `chiptune`, `gameplay`. `curated: true` marca som de terceiros selecionado/mixado por ela: aparece com o selo "curadoria" e fica fora do sound board.
 
-## Pipeline de áudio (`scripts/audio/build-audio.mjs`)
+### Checagens no build
 
-1. Lê `media-src/<slug>/*.{wav,mp3}`; o id é o nome do arquivo normalizado (`martelada_perfect.wav` → `martelada-perfect`).
-2. Com `ffmpeg-static`: normaliza loudness (EBU R128, −16 LUFS para trilhas, −18 para SFX, sem alterar arquivos que já estejam dentro de ±1 LU — **(confirmar)** com ela se pode normalizar), gera `.ogg` (Opus 96 kbps) e `.mp3` (128 kbps).
-3. Extrai ~120 picos (RMS por janela) e a duração → `src/data/audio-manifest.json`.
-4. Idempotente: só reprocessa arquivos novos ou alterados (hash).
+- Toda chave `audio`/`video`/`local` existe em `media-manifest.json`.
+- Referências `project` de prêmios e processo existem.
+- Imagens resolvem em `src/assets/` (falha no build se faltar).
 
-Os originais vêm de `.scratch/assets/` (anexos do Notion) e do Google Drive (a baixar).
+## Pipeline de mídia (`npm run media`)
+
+1. `scripts/media/sources.mjs` mapeia cada chave para o final do nome do arquivo de origem, procurado em `media-src/`, `.scratch/assets/` e `.scratch/drive/` (o casamento precisa ser único).
+2. Áudio: MP3 160 kbps; 64 picos a partir de PCM 8 kHz; duração.
+3. Vídeo: H.264 CRF 30, lado maior ≤ 1280 px, AAC 128 kbps, `faststart`; `cropdetect` remove tarjas pretas; pôster JPG.
+4. Imagens e PDFs são copiados; `og.jpg` (1200×630) sai do banner; thumbnails do YouTube são baixadas para `src/assets/youtube/`.
+5. Idempotente por data de modificação (`--force` refaz tudo). Sem normalização de loudness na v1.
 
 ## Interatividade
 
-| Ilha | Carregamento | Função |
-| --- | --- | --- |
-| `AudioPlayer` | `client:visible` | Um `<audio>` compartilhado por página; cards só trocam `src` e estado. Teclado: Espaço/Enter play-pause, setas ±5 s. Evento `ja:play` garante um som por vez |
-| Fachadas (YouTube/SoundCloud/Drive) | Script inline mínimo | Troca o botão pelo iframe no clique |
-| Filtros (sound board, projetos) | `client:visible` | Filtra por `data-*`; sem JS, todos aparecem |
+| Peça | Função |
+| --- | --- |
+| `AudioEngine` | Um `<audio>` compartilhado; cards `[data-sound]` só trocam `src`. Clique na onda faz seek; ←/→ ±5 s; `aria-pressed` e rótulo alternam; erro de carregamento volta o card ao estado inicial. Vídeos e fachadas pausam o áudio (`ja:media-start`) |
+| Fachadas YouTube/SoundCloud | Script inline mínimo troca o botão pelo iframe no clique |
+| `FilterBar` | Filtra `[data-tags]` dentro de `[data-filter-scope]`; oculto sem JS (todos aparecem) |
 
-Todo o resto é HTML/CSS estático.
+Sem JS: cada card tem `<noscript><audio controls>`; vídeos usam `<video controls>`.
 
 ## Base path e i18n
 
-- `astro.config.mjs` lê `SITE` e `BASE` do ambiente (`https://usuario.github.io` e `/` ou `/repo/`). Links internos sempre via helper `url()` que prefixa `import.meta.env.BASE_URL`. Testes rodam com `BASE=/teste/` para garantir que nada quebra em subcaminho.
-- i18n do Astro: `locales: ['en', 'pt']`, `defaultLocale: 'en'`, `prefixDefaultLocale: false`; slugs de página traduzidos (`projects` / `projetos`), slugs de projeto iguais nos dois idiomas.
+- `astro.config.mjs` lê `SITE` e `BASE` do ambiente. Links internos sempre via `url()`, que prefixa `import.meta.env.BASE_URL`. No CI, `<dono>.github.io` publica na raiz e qualquer outro repositório em `/<repo>/`.
+- i18n do Astro: `locales: ['pt-br', 'en']`, `defaultLocale: 'pt-br'`, `prefixDefaultLocale: false`; slugs de página traduzidos (`projetos` / `projects`), slugs de projeto iguais nos dois idiomas.
 
 ## Verificação (CI)
-
-Igual ao site do Pedro:
 
 ```
 npm run check     # astro check + eslint + prettier --check + check:tokens
 npm run build
-npm test          # Playwright + axe contra o build (390 px e 1280 px), também com BASE=/teste/
+npm test          # Playwright + axe contra o build (390 px e 1280 px)
 npm run verify    # tudo acima
 ```
 
-Testes específicos deste site:
+O CI repete build e testes com `BASE=/teste/`. Testes específicos deste site:
 
-- Nenhum `<iframe>` no HTML inicial de nenhuma página (R-13, N-01).
-- Clicar em play num SFX toca; clicar em outro pausa o primeiro (R-03, R-12).
-- Sem JS: `<audio controls>` presente e com `src` válido (N-08).
-- Telefone ausente do HTML enquanto `phone.public: false` (N-09).
-- Todos os arquivos referenciados em `public/audio` existem e têm ≤ 2 MB (N-02).
-- Termos de template proibidos ausentes (ex.: "Scikit-learn", "85% de acurácia").
+- Nenhum `<iframe>` no HTML inicial (R-13); fachada do YouTube cria o iframe só no clique.
+- Tocar um som e depois outro: só um toca (R-03, R-12). Filtro do sound board.
+- Sem JS: `<audio controls>` presente com `src` válido (N-08).
+- Toda mídia do manifesto existe e respeita os limites de tamanho (N-02).
+- Termos de template do Notion ausentes; contato com e-mail, telefone e cidade; sons de curadoria fora do sound board; stems do Midnight Meow; créditos de equipe.
 
-GitHub Actions: `verify` em todo push/PR; `build` + `deploy` para Pages só em `main` e só se `verify` passar. O workflow fica pronto mas desligado até a decisão da conta (pergunta 19).
+GitHub Actions: `verify` em todo push/PR; `build` + `deploy` para Pages só em `main` e só se `verify` passar.

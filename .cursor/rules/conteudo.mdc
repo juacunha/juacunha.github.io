@@ -1,0 +1,27 @@
+---
+description: Regras para editar o conteúdo do site (fatos sobre a Juliana, créditos, curadoria, bilíngue)
+globs: src/content/**
+alwaysApply: false
+---
+
+# Conteúdo (`src/content/`)
+
+- Fonte de fatos: `docs/context/` e o que foi confirmado pela Juliana. **Nunca invente** datas, papéis, prêmios, créditos ou ferramentas.
+- Item marcado **(confirmar)** ou listado em `docs/context/perguntas-abertas.md` não é publicado. Projeto incompleto: `draft: true`.
+- Todo texto visível tem `pt` e `en` com o mesmo significado. Listas `pt`/`en` têm o mesmo tamanho (o schema barra).
+- YAML: valor com vírgula dentro de `{ }` ou `[ ]` precisa de aspas, senão vira dois itens. Prefira listas em bloco para textos longos.
+- Schemas em `src/content.config.ts`. Ao adicionar campo, atualize o schema e `docs/specs/design.md`.
+- Áudio e vídeo são referenciados por chave do manifesto (`src/data/media-manifest.json`), gerado por `npm run media` a partir de `scripts/media/sources.mjs`.
+
+## Créditos
+
+- O papel da Juliana em cada projeto vem do texto dela (`docs/context/projetos.md`). Projetos de equipe listam o time inteiro em `team`.
+- Sons de terceiros que ela selecionou/implementou: `curated: true`. Eles aparecem com o selo "curadoria" e ficam fora do sound board.
+- Restos de template do Notion (ex.: campo "p\Ud") não são conteúdo. Há teste automático.
+
+```yaml
+# ❌ som de biblioteca apresentado como autoral
+sfx: [{ audio: projeto/porta, label: { pt: Porta, en: Door }, category: foley }]
+# ✅
+sfx: [{ audio: projeto/porta, label: { pt: Porta, en: Door }, category: foley, curated: true }]
+```

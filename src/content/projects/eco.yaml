@@ -1,0 +1,58 @@
+title: Eco
+order: 9
+hook:
+  pt: Curadoria de trilha ao piano e efeitos suaves para uma jornada de reflexão.
+  en: A curated piano soundtrack and soothing effects for a reflective journey.
+synopsis:
+  pt: >-
+    Eco explora os sacrifícios feitos ao longo de uma vida. O jogo retrata o eco de uma vida, que revive suas escolhas e
+    sacrifícios numa jornada de reflexão.
+  en: >-
+    Echo is a profound game that explores the sacrifices made throughout a lifetime. The game portrays an echo of a life,
+    which relives its choices and sacrifices in a reflective journey.
+genre: { pt: Narrativo, en: Narrative }
+engine: Godot
+studio: ufpel
+context: { pt: UFPel · Design de Jogos, en: UFPel · Game Design }
+status: released
+deliverables: [curation, mixing, writing, ui, animation]
+role:
+  pt: >-
+    Sound designer, roteirista e UI designer. Meu foco principal foi a curadoria de áudio e a criação de assets de UI
+    (ícones e botões), e também contribuí com animações. No teaser, cuidei da mixagem e da curadoria de efeitos.
+  en: >-
+    Sound Designer, Scriptwriter, and UI Designer. My primary focus was audio curation and crafting UI assets (such as
+    icons and buttons), though I also contributed animations. For the teaser, I handled audio mixing and sound effects
+    curation.
+soundNotes:
+  pt:
+    - Fiz a curadoria de uma trilha específica, buscando faixas evocativas, guiadas pelo piano e de tom melancólico.
+    - Nos efeitos sonoros, busquei sons tranquilizantes para criar uma atmosfera de reflexão.
+  en:
+    - I curated a specific soundtrack, looking for evocative, piano-driven tracks with a melancholic tone.
+    - For the sound effects, I aimed for soothing sounds to create a reflective atmosphere.
+team:
+  - { name: Juliana Acunha }
+  - { name: Pedro Caurio, role: { pt: Programação, en: Programming } }
+  - { name: Luiz Henrique, role: { pt: Arte, en: Art } }
+links:
+  itch: https://ju-acunha.itch.io/eco
+cover: projects/eco/cover.jpg
+coverAlt:
+  pt: Tela inicial do Eco com uma silhueta escura sob o logo em forma de olho
+  en: Eco title screen with a dark silhouette under the eye-shaped logo
+tracks:
+  - { audio: eco/menu, curated: true, title: { pt: Música do menu, en: Menu music } }
+  - { audio: eco/gameplay, curated: true, title: { pt: Música do jogo, en: Gameplay music } }
+sfx:
+  - { audio: eco/clique, category: ui, curated: true, label: { pt: Clique, en: Click } }
+  - {
+      audio: eco/porta-abrindo,
+      category: foley,
+      curated: true,
+      label: { pt: Porta abrindo, en: Door opening },
+    }
+videos:
+  - { kind: teaser, youtube: WoSfrz-lvjg, title: { pt: Teaser, en: Teaser } }
+docs:
+  - { title: { pt: One Page do jogo (PDF), en: Game one-pager (PDF) }, file: /docs/eco-one-page.pdf }

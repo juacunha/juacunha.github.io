@@ -1,0 +1,33 @@
+- id: ufpel
+  order: 1
+  kind: degree
+  institution: Universidade Federal de Pelotas (UFPel)
+  title: { pt: Bacharelado em Design de Jogos, en: Bachelor's Degree in Game Design }
+  detail:
+    pt: >-
+      Curso do Centro de Artes voltado ao desenvolvimento completo de jogos: programação, roteiro, narrativa, regras,
+      estética, animação e trilha sonora.
+    en: >-
+      Offered by the Arts Center, it trains professionals for the complete development of games: programming,
+      scriptwriting, narrative, rules, aesthetics, animation, and soundtracks.
+  startDate: 2023-06
+  inProgress: true
+
+- id: ef-set
+  order: 2
+  kind: certificate
+  institution: EF SET
+  title: { pt: EF SET English Certificate, en: EF SET English Certificate }
+  detail: { pt: 64/100 · C1 Avançado, en: 64/100 · C1 Advanced }
+
+- id: drawing
+  order: 3
+  kind: certificate
+  title: { pt: Strengthening Drawing Fundamentals, en: Strengthening Drawing Fundamentals }
+  detail: { pt: 60 horas, en: 60 hours }
+
+- id: motion
+  order: 4
+  kind: certificate
+  title: { pt: Motion Design in Fable, en: Motion Design in Fable }
+  detail: { pt: 12 horas, en: 12 hours }

@@ -1,0 +1,57 @@
+title: Mathias Shooter
+order: 7
+hook:
+  pt: Trilha alegre e nostálgica em Mi maior e SFX em 8 bits para um plataforma em pixel art.
+  en: A cheerful, nostalgic E Major soundtrack and 8-bit SFX for a pixel art platformer.
+synopsis:
+  pt: >-
+    Mathias Shooter é um jogo sobre um dinossauro que, com a namorada Mathilda, enfrenta inimigos. Neste plataforma,
+    Mathias supera obstáculos para derrotar monstros assustadores!
+  en: >-
+    Mathias Shooter is a game about a dinosaur, along with his girlfriend Mathilda, facing off against enemies. This
+    platformer game follows Mathias as he overcomes obstacles to defeat scary monsters!
+genre: { pt: Plataforma, en: Platformer }
+engine: Pyxel
+studio: furg
+context:
+  pt: FURG · Algoritmos e Estruturas de Dados (Engenharia de Computação)
+  en: FURG · Algorithms and Data Structures (Computer Engineering)
+status: released
+deliverables: [soundtrack, sfx, art, animation]
+role:
+  pt: Todos os assets criativos. Compus a trilha, criei toda a pixel art e produzi todas as animações.
+  en: All creative assets. I composed the soundtrack, created all the pixel art, and produced all the animations.
+soundNotes:
+  pt:
+    - >-
+      Busquei um som alegre e nostálgico que combinasse com a pixel art. Compus a trilha em Mi maior, e os efeitos
+      sonoros foram produzidos em 8 bits.
+  en:
+    - >-
+      I wanted a cheerful and nostalgic sound to match the pixel art style. I composed the soundtrack in E Major, and the
+      sound effects were produced in 8-bit.
+team:
+  - { name: Juliana Acunha }
+  - { name: Pedro Caurio, role: { pt: Programação, en: Programming } }
+links:
+  itch: https://ju-acunha.itch.io/mathias-shooter
+  playable: true
+cover: projects/mathias-shooter/cover.png
+coverAlt:
+  pt: Logo do Mathias Shooter em pixel art com o dinossauro verde Mathias
+  en: Mathias Shooter pixel art logo with Mathias, the green dinosaur
+tracks:
+  - { audio: mathias-shooter/soundtrack, title: { pt: Trilha principal, en: Main soundtrack } }
+sfx:
+  - { audio: mathias-shooter/pulo, category: chiptune, label: { pt: Pulo, en: Jump } }
+  - { audio: mathias-shooter/vida-maxima, category: chiptune, label: { pt: Vida máxima, en: Max health } }
+gallery:
+  - image: projects/mathias-shooter/shot-1.png
+    alt:
+      { pt: Mathias numa caverna diante de um monstro marrom, en: Mathias in a cave facing a brown monster }
+  - image: projects/mathias-shooter/shot-2.png
+    alt: { pt: Mathias atravessando plataformas numa caverna, en: Mathias crossing platforms in a cave }
+  - image: projects/mathias-shooter/shot-3.png
+    alt: { pt: Mathias e Mathilda juntos na caverna, en: Mathias and Mathilda together in the cave }
+videos:
+  - { kind: teaser, youtube: IrkcDvWowxE, title: { pt: Teaser, en: Teaser } }

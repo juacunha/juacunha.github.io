@@ -1,0 +1,91 @@
+title: Midnight Meow
+order: 2
+featured: true
+hook:
+  pt: Uma trilha adaptativa em que as ondas de inimigos nascem conforme a tensão da música sobe.
+  en: An adaptive soundtrack where enemy waves spawn as the music's tension rises.
+synopsis:
+  pt: >-
+    Já se perguntou o que seu gato faz à noite? Em Midnight Meow, você joga como um gatinho que sai para defender a
+    casa de ratos malvados.
+  en: >-
+    Have you ever wondered what your cat gets up to at night? In Midnight Meow, you play as a kitten venturing out to
+    defend your home from evil rats.
+genre: { pt: Tower defense · Shooter · Pinball, en: Tower defense · Shooter · Pinball }
+engine: Unity
+studio: jam
+context: { pt: GameJam Plus 2025/26 · etapa regional, en: GameJam Plus 2025/26 · regional stage }
+year: 2025
+status: released
+deliverables: [soundtrack]
+role:
+  pt: >-
+    Produção da trilha sonora. Também produzi os temas de Menu, Créditos e Game Over. No tema de Game Over, quis evitar
+    um tom punitivo, para que o jogador não se sentisse desencorajado.
+  en: >-
+    Soundtrack production. I also produced the Menu, Credits, and Game Over themes. For the Game Over track, I aimed to
+    avoid a punishing tone, ensuring the player wouldn't feel discouraged.
+soundNotes:
+  pt:
+    - >-
+      No jogo, as ondas de inimigos são guiadas pelo áudio: elas aparecem conforme a tensão da música aumenta. Para isso,
+      dividi a trilha em vários níveis de tensão distintos.
+    - >-
+      Quis que a trilha fizesse jus à Nyxie, nossa protagonista de cara emburrada. E, como os inimigos são ratos,
+      incorporei à faixa sons que lembram ratos.
+  en:
+    - >-
+      In the game, enemy waves are audio-driven. They spawn as the music's tension increases. To achieve this, I divided
+      the soundtrack into several distinct tension levels.
+    - >-
+      I wanted the soundtrack to do justice to Nyxie, our grumpy-looking protagonist. Additionally, since the enemies are
+      rats, I incorporated sounds reminiscent of them into the track.
+team:
+  - { name: Debs Carvalho }
+  - { name: Juliana Acunha }
+  - { name: Lucas Gonçalves }
+  - { name: Luiz Henrique }
+  - { name: Matheus Silva }
+  - { name: Pedro Caurio }
+  - { name: Vitor Emanoel }
+links:
+  itch: https://midnight-meow.itch.io/midnight-meow
+  soundcloud: https://soundcloud.com/juliana-acunha-232828507/sets/midnight-meow
+cover: projects/midnight-meow/cover.png
+coverAlt:
+  pt: Logo do Midnight Meow com a silhueta de um gato, diante de uma casa cercada por arbustos à noite
+  en: Midnight Meow logo with a cat silhouette, in front of a house surrounded by bushes at night
+tracks:
+  - { audio: midnight-meow/main-nixie, title: { pt: Tema principal (Nyxie), en: Main theme (Nyxie) } }
+  - { audio: midnight-meow/menu, title: { pt: Tema do menu, en: Menu theme } }
+  - { audio: midnight-meow/credits, title: { pt: Tema dos créditos, en: Credits theme } }
+  - { audio: midnight-meow/game-over, title: { pt: Tema de game over, en: Game over theme } }
+stems:
+  - { audio: midnight-meow/stem-01-batida, label: { pt: 1 · Batida, en: 1 · Beat } }
+  - { audio: midnight-meow/stem-02-transicao, label: { pt: 2 · Transição, en: 2 · Transition } }
+  - {
+      audio: midnight-meow/stem-04-transicao-metade,
+      label: { pt: 4 · Transição (metade), en: 4 · Half transition },
+    }
+  - { audio: midnight-meow/stem-05-tensao-media, label: { pt: 5 · Tensão média, en: 5 · Medium tension } }
+  - {
+      audio: midnight-meow/stem-06-transicao-130,
+      label: { pt: 6 · Transição 130 bpm, en: 6 · Transition 130 bpm },
+    }
+  - {
+      audio: midnight-meow/stem-08-transicao-130,
+      label: { pt: 8 · Transição 130 bpm, en: 8 · Transition 130 bpm },
+    }
+  - { audio: midnight-meow/stem-10-batida, label: { pt: 10 · Batida, en: 10 · Beat } }
+videos:
+  - { kind: teaser, youtube: -G5KOAxw3FQ, title: { pt: Teaser, en: Teaser } }
+  - {
+      kind: pitch,
+      youtube: xuEVauS7qNk,
+      title: { pt: Pitch na GameJam Plus 2025/26, en: GameJam Plus 2025/26 pitch },
+    }
+docs:
+  - {
+      title: { pt: One Page do jogo (PDF), en: Game one-pager (PDF) },
+      file: /docs/midnight-meow-one-page.pdf,
+    }

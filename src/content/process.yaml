@@ -1,0 +1,43 @@
+- id: incenso
+  order: 1
+  video: foley/incenso
+  title: { pt: Quebrando incenso, en: Breaking incense }
+
+- id: desodorante
+  order: 2
+  video: foley/desodorante
+  title: { pt: Desodorante, en: Deodorant spray }
+
+- id: papel
+  order: 3
+  video: foley/papel
+  title: { pt: Rasgando papel, en: Tearing paper }
+
+- id: guarda-chuva
+  order: 4
+  video: foley/guarda-chuva
+  title: { pt: Guarda-chuva, en: Umbrella }
+
+- id: passos-pudim
+  order: 5
+  video: purr-anormal/passos-pudim
+  title: { pt: Passos da Pudim, en: Pudim's footsteps }
+  project: purr-anormal
+
+- id: miados
+  order: 6
+  video: purr-anormal/miados
+  title: { pt: Miados, en: Meows }
+  project: purr-anormal
+
+- id: passos-goblin
+  order: 7
+  video: hands-off-my-grimoire/passos-goblin
+  title: { pt: Passos do goblin, en: Goblin footsteps }
+  project: hands-off-my-grimoire
+
+- id: passos-grama
+  order: 8
+  video: hands-off-my-grimoire/passos-grama
+  title: { pt: Passos na grama, en: Footsteps on grass }
+  project: hands-off-my-grimoire

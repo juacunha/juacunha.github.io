@@ -1,0 +1,16 @@
+---
+description: Convenções para testes Playwright + axe
+globs: tests/**
+alwaysApply: false
+---
+
+# Testes (`tests/`)
+
+- Importe `test` e `expect` de `tests/fixtures.ts`, que fornece `consoleErrors`, `expectNoA11yViolations` e `expectNoHorizontalOverflow`.
+- Rodam contra o build de produção (`astro preview` na porta 4322) em dois projetos: `mobile-390` e `desktop-1280`.
+- Navegue com caminhos relativos (`page.goto('projetos/molten-metal/')`) para que a suíte também passe com `BASE=/teste/`.
+- Toda página nova entra em `PAGES` de `tests/e2e/smoke.spec.ts` (status 200, `lang`, um `h1`, axe, console limpo, sem overflow).
+- Nome do teste cita o requisito quando houver: `test('só um som toca por vez (R-03, R-12)', ...)`.
+- Localizadores por papel e nome acessível; `data-*` só quando não houver alternativa semântica.
+- Proibido `waitForTimeout`. Use asserções web-first.
+- Fluxo: `npm run build && npm test`. Antes de publicar, repita com `BASE=/teste/`.

@@ -19,7 +19,13 @@ async function loadPage(pageId) {
   const extra = {};
   let cursor = { stack: [] };
   for (let chunk = 0; chunk < 20; chunk++) {
-    const j = await post('loadPageChunk', { pageId, limit: 500, cursor, chunkNumber: chunk, verticalColumns: false });
+    const j = await post('loadPageChunk', {
+      pageId,
+      limit: 500,
+      cursor,
+      chunkNumber: chunk,
+      verticalColumns: false,
+    });
     Object.assign(blocks, j.recordMap.block ?? {});
     for (const k of ['collection', 'collection_view', 'custom_emoji']) {
       extra[k] = { ...(extra[k] ?? {}), ...(j.recordMap[k] ?? {}) };
@@ -65,7 +71,12 @@ async function queryCollection(collectionId, viewId) {
   const j = await post('queryCollection', {
     collection: { id: collectionId },
     collectionView: { id: viewId },
-    loader: { type: 'reducer', reducers: { results: { type: 'results', limit: 200 } }, searchQuery: '', userTimeZone: 'America/Sao_Paulo' },
+    loader: {
+      type: 'reducer',
+      reducers: { results: { type: 'results', limit: 200 } },
+      searchQuery: '',
+      userTimeZone: 'America/Sao_Paulo',
+    },
   });
   return j;
 }
@@ -104,7 +115,9 @@ for (const c of collections) {
     collectionDump[`${coll?.name ? text(coll.name) : c.collectionId} / ${view?.name ?? c.viewId}`] = {
       ...c,
       viewType: view?.type,
-      schema: Object.fromEntries(Object.entries(schema).map(([k, s]) => [s.name, { type: s.type, options: s.options?.map((o) => o.value) }])),
+      schema: Object.fromEntries(
+        Object.values(schema).map((s) => [s.name, { type: s.type, options: s.options?.map((o) => o.value) }]),
+      ),
       rows,
     };
   } catch (e) {
@@ -117,7 +130,10 @@ await mkdir(new URL('pages/', OUT), { recursive: true });
 for (const pid of pageIds) {
   const page = await loadPage(pid);
   const title = text(val(page.blocks[pid])?.properties?.title) || pid;
-  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const slug = title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
   await writeFile(new URL(`pages/${slug}.md`, OUT), render(page.blocks, pid).join('\n'));
   await writeFile(new URL(`pages/${slug}.json`, OUT), JSON.stringify(page, null, 1));
   console.log('page', slug);

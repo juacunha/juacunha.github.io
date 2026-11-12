@@ -1,0 +1,67 @@
+---
+// Filtro progressivo: sem JS a barra fica oculta e todos os itens aparecem.
+// Itens alvo: elementos com [data-tags] dentro do mesmo [data-filter-scope].
+interface Props {
+  label: string;
+  allLabel: string;
+  options: { value: string; label: string }[];
+}
+
+const { label, allLabel, options } = Astro.props;
+---
+
+<div class="filter-bar mb-6 flex flex-wrap gap-2" role="group" aria-label={label} hidden>
+  <button type="button" data-filter="" aria-pressed="true" class="filter-chip">
+    {allLabel}
+  </button>
+  {options.map((o) => (
+    <button type="button" data-filter={o.value} aria-pressed="false" class="filter-chip">
+      {o.label}
+    </button>
+  ))}
+</div>
+
+<style>
+  .filter-chip {
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease;
+  }
+
+  .filter-chip:hover {
+    border-color: var(--color-accent);
+  }
+
+  .filter-chip[aria-pressed='true'] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-filter-scope]').forEach((scope) => {
+    const bar = scope.querySelector<HTMLElement>('.filter-bar');
+    if (!bar) return;
+    bar.hidden = false;
+    const items = scope.querySelectorAll<HTMLElement>('[data-tags]');
+    bar.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-filter]');
+      if (!button) return;
+      const value = button.dataset.filter ?? '';
+      bar
+        .querySelectorAll('[data-filter]')
+        .forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      items.forEach((item) => {
+        item.hidden = value !== '' && !(item.dataset.tags ?? '').split(' ').includes(value);
+      });
+    });
+  });
+</script>

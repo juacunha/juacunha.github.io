@@ -1,0 +1,93 @@
+title: 'Seasoned Wings: Magical Recipes'
+altTitle: { pt: 'Asas Temperadas: Receitas Mágicas', en: 'Asas Temperadas: Receitas Mágicas' }
+order: 6
+hook:
+  pt: Ukulele e flauta em Dó maior para uma taverna medieval e mágica.
+  en: Ukulele and flute in C Major for a magical medieval tavern.
+synopsis:
+  pt: >-
+    Seasoned Wings é um jogo de culinária num mundo de fantasia. Remi foi transportado magicamente para outro mundo por
+    uma fada excêntrica e precisa coletar recursos, preparar receitas e servir os clientes antes que saiam da taverna.
+  en: >-
+    Seasoned Wings is a cooking game set in a fantasy world. The protagonist, Remi, was magically transported to another
+    world by a quirky fairy, and must gather resources, prepare recipes, and serve customers before they leave the
+    tavern.
+genre: { pt: Culinária 3D, en: 3D cooking }
+engine: Godot
+studio: ufpel
+context:
+  pt: UFPel · Projeto Integrado III (jogo 3D com tutorial e foco em level design)
+  en: UFPel · Integrated Project III (3D game with a tutorial, focused on level design)
+year: 2025
+status: released
+deliverables: [soundtrack, voice, curation, mixing, 3d, animation, documentation]
+role:
+  pt: >-
+    Produção da trilha sonora, curadoria de SFX, modelagem 3D da taverna e de alguns objetos, documentação e algumas
+    animações (objetos e partículas). No teaser, cuidei da mixagem, da curadoria de efeitos, da gravação de voz e da
+    composição.
+  en: >-
+    Soundtrack production, SFX curation, 3D modeling of the tavern and some objects, documentation, and some animations
+    (such as for objects and particles). For the teaser, I handled audio mixing, sound effects curation, voice recording,
+    and composition.
+soundNotes:
+  pt:
+    - >-
+      Gravei voz e música. Meu objetivo era criar uma atmosfera mágica e de fantasia que se misturasse à narrativa.
+      Escolhi efeitos que evocassem magia e os sobrepus a sons de vento.
+    - >-
+      Na trilha, trabalhei em Dó maior, combinando ukulele e flauta para evocar um clima medieval. Também quis um som de
+      "pedido pronto", e optei por algo parecido com um sino.
+  en:
+    - >-
+      I recorded both voice and music. My goal was to create a magical and fantasy atmosphere to blend with the game's
+      narrative. I chose effects that evoked magic and layered them with wind sounds.
+    - >-
+      For the soundtrack, I worked in C Major, pairing a ukulele with a flute to evoke a medieval feel. I also wanted a
+      sound for "order ready," so I opted for something similar to a bell.
+team:
+  - { name: Juliana Acunha }
+  - { name: Luiz Henrique, role: { pt: Arte, en: Art } }
+  - { name: Pedro Caurio, role: { pt: Programação, en: Programming } }
+links:
+  itch: https://ju-acunha.itch.io/asas-temperadas-receitas-mgicas
+cover: projects/seasoned-wings/cover.png
+coverAlt:
+  pt: 'Logo de Asas Temperadas: Receitas Mágicas sobre um caldeirão borbulhante numa cozinha de taverna'
+  en: 'Asas Temperadas: Receitas Mágicas logo over a bubbling cauldron in a tavern kitchen'
+tracks:
+  - {
+      audio: seasoned-wings/tema-medieval,
+      title: { pt: Tema principal (ukulele e flauta), en: Main theme (ukulele and flute) },
+    }
+  - {
+      audio: seasoned-wings/narrativa-sonora,
+      title: { pt: Narrativa sonora (voz e música), en: Sound narrative (voice and music) },
+    }
+sfx:
+  - {
+      audio: seasoned-wings/comida-pronta,
+      category: gameplay,
+      curated: true,
+      label: { pt: Pedido pronto, en: Order ready },
+    }
+gallery:
+  - image: projects/seasoned-wings/flauta.png
+    alt:
+      pt: Juliana toca flauta diante do microfone enquanto um colega toca ukulele
+      en: Juliana plays the flute in front of a microphone while a teammate plays the ukulele
+  - image: projects/seasoned-wings/midi.png
+    alt:
+      pt: Juliana compõe a trilha num teclado MIDI ligado a um software de produção musical
+      en: Juliana composes the soundtrack on a MIDI keyboard connected to music production software
+  - image: projects/seasoned-wings/flauta-gravacao.png
+    alt:
+      pt: Sessão de gravação com flauta e ukulele, vista de cima
+      en: Recording session with flute and ukulele, seen from above
+videos:
+  - { kind: teaser, youtube: GQc1UGaeSFs, title: { pt: Teaser, en: Teaser } }
+docs:
+  - {
+      title: { pt: One Page do jogo (PDF), en: Game one-pager (PDF) },
+      file: /docs/seasoned-wings-one-page.pdf,
+    }

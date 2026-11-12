@@ -63,7 +63,7 @@ Baixados para `.scratch/assets/` (45,5 MB, fora do git; manifesto em `.scratch/a
 
 | Tipo | Qtd. | Detalhe |
 | --- | --- | --- |
-| SFX/voz WAV | 39 | Purr-Anormal (13), Hands Off (8), Molten Metal (9 SFX + 8 vozes), Mathias Shooter (2) — maiores têm 3 MB |
+| SFX/voz WAV | 38 | Purr-Anormal (11), Hands Off (8), Molten Metal (9 SFX + 8 vozes), Mathias Shooter (2) — maiores têm 3 MB |
 | MP3 | 7 | Feed The Cats (5), Eco (1), Seasoned Wings (1) |
 | Capas de projeto | 9 | Uma por projeto (PNG/JPEG, 1024 px de largura) |
 | Capas de conquistas | 5 | Fotos/artes dos prêmios e da Casulo Indie |

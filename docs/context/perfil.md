@@ -5,7 +5,8 @@
 
 ## Posicionamento
 
-- **Papel principal:** Sound Designer para jogos — trilha sonora, SFX, voz original e implementação de áudio.
+- **Título confirmado (12/nov/2026):** **Game Sound Designer** — trilha sonora, SFX, voz original e implementação de áudio.
+- **Oportunidades que busca:** estágio, júnior em estúdio, freelance de trilha/SFX e vagas internacionais/remotas.
 - **Frase do Notion e do SoundCloud:** "Welcome to my portfolio! I'm a Sound Designer seeking to bring memorable sensations and deep immersion to games!"
 - **Banner do Notion:** "Soundtrack Composer • SFX Artist" / "JULIANA ACUNHA" / "Game Audio & Sound Design".
 - **Resumo do currículo (SUMARY):** "As a Sound Designer, my goal is to drive player immersion through high-quality audio. Beyond composing soundtracks and designing SFX, I thrive on the logic of audio implementation, ensuring every sound fits perfectly within the game's systems. I am a dedicated learner, always seeking new challenges to expand my technical and artistic skills."
@@ -16,9 +17,9 @@
 
 | Item | Valor |
 | --- | --- |
-| Cidade | Rio Grande, RS, Brasil (currículo e SoundCloud) |
+| Cidade | Rio Grande, RS, Brasil (confirmado) |
 | E-mail | juhaacunha@gmail.com |
-| Telefone | +55 53 99107-8829 (está público no Notion e no PDF; **confirmar** se vai para o site) |
+| Telefone | +55 53 99107-8829 (confirmado: pode aparecer no site) |
 
 ## Links
 
@@ -35,21 +36,25 @@
 | Período | Cargo | Organização | Local |
 | --- | --- | --- | --- |
 | set/2026 – atual | **Sound Designer** | UPLINK – Casulo Indie | Porto Alegre, RS |
-| out/2025 – abr/2026 | **Game Producer Trainee** | Bee Legacy Publishing | Rio de Janeiro, RJ |
+| out/2025 – abr/2026 | **Game Producer Trainee** | Bee Legacy Publishing | Rio de Janeiro, RJ (remoto) |
 
-Não há descrição de atividades nesses cargos. **(confirmar)** o que ela fez em cada um, se é remoto, e se "UPLINK" é o nome de um jogo/projeto dentro da Casulo Indie.
+Confirmado em 12/nov/2026:
+
+- **UPLINK** é uma empresa; lá ela desenvolve diferentes projetos como sound designer. O CV escreve "UPLINK – Casulo Indie".
+- **Bee Legacy Publishing:** remoto; auxiliava no processo de produção, tasks, organização de documentos e QA.
+- **Casulo Indie:** Purr-Anormal, Hands Off My Grimoire e 4Seasons são projetos da Casulo Indie.
 
 ### Casulo Indie
 
 Conquista registrada no Notion (aba "Newsletter"): "following the game jam, I was selected alongside other talented women for mentorship and incubation at Casulo Indie." Mentores citados: Giovanna Kalkamann e Max Araujo. Imagem de capa de 18/dez/2025.
 
-O jogo **4Seasons** (visual novel, Unity, abr/2026) está publicado na página da Casulo Indie no itch.io com a Juliana entre os autores. Papel dela no 4Seasons: **(confirmar)**.
+O jogo **4Seasons** (visual novel, Unity, abr/2026) está publicado na página da Casulo Indie no itch.io com a Juliana entre os autores. Papel dela: **Sound Designer e Game Designer** (confirmado).
 
 ## Formação
 
 | Curso | Instituição | Período | Observação |
 | --- | --- | --- | --- |
-| Bacharelado em Design de Jogos | Universidade Federal de Pelotas (**UFPel**), Centro de Artes, Pelotas, RS | jun/2023 – **dez/2026 ou dez/2027 (confirmar)** | Em andamento. O Notion diz dez/2026; o PDF diz 12/2027 |
+| Bacharelado em Design de Jogos | Universidade Federal de Pelotas (**UFPel**), Centro de Artes, Pelotas, RS | jun/2023 – em andamento | Conclusão diverge: Notion dez/2026, PDF 12/2027 (**confirmar**); o site não mostra a data de conclusão |
 
 Descrição usada por ela: "The Bachelor's Degree in Game Design at UFPel, offered by the Arts Center, aims to train professionals for the complete development of games, covering not only programming but also scriptwriting, narrative, rules, aesthetics, animation, and soundtracks."
 

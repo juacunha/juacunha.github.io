@@ -55,10 +55,18 @@ const ROOT = '4107d106-c759-8094-84cb-d871fb73f8cb';
 await writeFile(new URL('../../.scratch/notion/root-full.md', import.meta.url), render(ROOT).join('\n'));
 await writeFile(
   new URL('../../.scratch/notion/automations.json', import.meta.url),
-  JSON.stringify({ automations: Object.values(autoRecs).map(val), actions: Object.values(actionRecs).map(val) }, null, 1),
+  JSON.stringify(
+    { automations: Object.values(autoRecs).map(val), actions: Object.values(actionRecs).map(val) },
+    null,
+    1,
+  ),
 );
 
-const extra = ['4147d106-c759-80f6-ac1b-cb03ac9950e1', '4147d106-c759-80fe-b6db-d001d6c2dc1a', '4147d106-c759-808f-960f-f04a44c39c08'];
+const extra = [
+  '4147d106-c759-80f6-ac1b-cb03ac9950e1',
+  '4147d106-c759-80fe-b6db-d001d6c2dc1a',
+  '4147d106-c759-808f-960f-f04a44c39c08',
+];
 const pages = await sync('block', extra);
 const out = {};
 for (const id of extra) {
@@ -71,5 +79,8 @@ for (const id of extra) {
     collection: text(coll?.name),
   };
 }
-await writeFile(new URL('../../.scratch/notion/extra-projects.json', import.meta.url), JSON.stringify(out, null, 1));
+await writeFile(
+  new URL('../../.scratch/notion/extra-projects.json', import.meta.url),
+  JSON.stringify(out, null, 1),
+);
 console.log('ok', Object.keys(blocks).length);

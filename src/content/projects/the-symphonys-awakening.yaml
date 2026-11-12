@@ -1,0 +1,26 @@
+title: "The Symphony's Awakening"
+order: 12
+hook:
+  pt: Três canções (raiva, tristeza e felicidade) num ciclo de vantagens.
+  en: Three songs (anger, sadness, and happiness) in a cycle of advantages.
+synopsis:
+  pt: >-
+    Alex, um musicista fracassado, é transportado magicamente para outro mundo, onde não há música. Para voltar para casa,
+    ele precisará derrotar a Rainha do Silêncio e seu exército de insetos transformados.
+  en: >-
+    Alex, a failed musician, is magically transported to another world where there is no music. To get back home, he
+    will need to defeat the Queen of Silence and her army of transformed insects.
+genre: { pt: Roguelike 2D, en: 2D roguelike }
+engine: Godot
+context: { pt: Protótipo, en: Prototype }
+status: prototype
+deliverables: [game-design, art]
+role:
+  pt: Game designer e artista.
+  en: Game designer and artist.
+links:
+  itch: https://ju-acunha.itch.io/the-symphonys-awakening
+cover: projects/the-symphonys-awakening/cover.png
+coverAlt:
+  pt: Ilustração de um personagem tocando um baixo elétrico vermelho num campo
+  en: Illustration of a character playing a red electric bass in a field

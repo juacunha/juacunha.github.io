@@ -1,0 +1,308 @@
+import type { Locale } from './index';
+
+const pt = {
+  meta: {
+    title: 'Juliana Acunha — Game Sound Designer',
+    description:
+      'Portfólio de Juliana Acunha, game sound designer: trilhas, SFX, voz original e implementação de áudio. Melhor Áudio na GameJam Plus 2026/27.',
+  },
+  skipLink: 'Pular para o conteúdo',
+  nav: {
+    label: 'Navegação principal',
+    sounds: 'Sons',
+    projects: 'Projetos',
+    process: 'Processo',
+    about: 'Sobre',
+    contact: 'Contato',
+    home: 'Início',
+  },
+  lang: { switchTo: 'EN', switchLabel: 'Read this page in English' },
+  hero: {
+    eyebrow: 'Game Audio & Sound Design',
+    reel: 'Assistir ao reel',
+    listen: 'Ouvir os sons',
+    contact: 'Fale comigo',
+    cv: 'Currículo (PDF)',
+    photoAlt: 'Foto de Juliana Acunha',
+  },
+  awards: { eyebrow: 'conquistas', title: 'Prêmios', regional: 'etapa regional' },
+  featured: { eyebrow: 'destaques', title: 'Trabalhos em destaque', cta: 'Ver estudo de caso' },
+  board: {
+    eyebrow: 'sound board',
+    title: 'Ouça os sons',
+    intro: 'SFX, vozes e foley criados por ela, direto dos jogos. Um som toca por vez.',
+    all: 'Todos',
+    filterLabel: 'Filtrar sons por categoria',
+    categories: { foley: 'Foley', ui: 'Interface', voice: 'Voz', chiptune: '8-bit', gameplay: 'Gameplay' },
+  },
+  player: {
+    play: 'Tocar',
+    pause: 'Pausar',
+    of: 'de',
+    curated: 'curadoria',
+    curatedNote: 'Selecionado e mixado por ela; criação de terceiros.',
+    error: 'não carregou',
+  },
+  projects: {
+    eyebrow: 'projetos',
+    title: 'Todos os projetos',
+    intro: 'Jogos em que ela trabalhou, com o papel dela em cada um.',
+    filterLabel: 'Filtrar projetos por entrega',
+    all: 'Todos',
+    open: 'Abrir projeto',
+  },
+  process: {
+    eyebrow: 'bastidores',
+    title: 'Criando sons',
+    intro: 'Vídeos de gravação de foley: objetos do dia a dia viram passos, miados e efeitos.',
+  },
+  about: {
+    eyebrow: 'sobre',
+    title: 'Trajetória',
+    experience: 'Experiência',
+    education: 'Formação e certificados',
+    present: 'atual',
+    inProgress: 'em andamento',
+    since: 'desde',
+    languages: 'Idiomas',
+    tools: 'Ferramentas',
+    skills: 'Competências',
+    hard: 'Técnicas',
+    soft: 'Comportamentais',
+    casulo:
+      'Depois da game jam, foi selecionada com outras mulheres para mentoria e incubação na Casulo Indie.',
+  },
+  covers: { eyebrow: 'extra', title: 'Covers', traitor: 'Traitor – Olivia Rodrigo (cover)' },
+  contact: {
+    eyebrow: 'contato',
+    title: 'Vamos criar o som do seu jogo?',
+    text: 'Aberta a oportunidades',
+    email: 'E-mail',
+    phone: 'Telefone',
+    location: 'Local',
+    cv: 'Baixar currículo (PDF)',
+  },
+  project: {
+    back: 'Voltar aos projetos',
+    role: 'Papel',
+    context: 'Contexto',
+    engine: 'Engine',
+    genre: 'Gênero',
+    year: 'Ano',
+    status: 'Status',
+    team: 'Equipe',
+    deliverables: 'Entregas',
+    soundNotes: 'Intenção sonora',
+    tracks: 'Trilha',
+    sfx: 'Efeitos e vozes',
+    stems: 'Trilha adaptativa: camadas de tensão',
+    stemsIntro:
+      'A trilha foi dividida em níveis de tensão; as ondas de inimigos aparecem conforme a música sobe. Ouça cada camada:',
+    videos: 'Vídeos',
+    gallery: 'Processo',
+    docs: 'Documentos',
+    soundcloud: 'Ouvir a playlist no SoundCloud',
+    itch: 'Ver no itch.io',
+    playable: 'jogável no navegador',
+    noAi: 'sem IA generativa',
+    awards: 'Prêmios',
+    next: 'Próximo projeto',
+  },
+  status: {
+    released: 'publicado',
+    'in-development': 'em desenvolvimento',
+    prototype: 'protótipo',
+    'on-hold': 'pausado',
+  },
+  deliverables: {
+    soundtrack: 'Trilha',
+    sfx: 'SFX',
+    voice: 'Voz',
+    curation: 'Curadoria de áudio',
+    mixing: 'Mixagem',
+    implementation: 'Implementação',
+    'game-design': 'Game design',
+    writing: 'Roteiro',
+    ui: 'UI',
+    art: 'Arte',
+    animation: 'Animação',
+    '3d': '3D',
+    programming: 'Programação',
+    documentation: 'Documentação',
+  },
+  facade: {
+    youtube: (title: string) => `Reproduzir vídeo: ${title}`,
+    soundcloud: 'Carregar player do SoundCloud',
+    thirdParty: 'Carrega conteúdo do',
+  },
+  footer: { built: 'Site feito com Astro.', top: 'Voltar ao topo' },
+  notFound: {
+    title: 'Página não encontrada',
+    text: 'Esse som não existe (ainda). Que tal voltar e ouvir os outros?',
+    cta: 'Voltar ao início',
+  },
+  months: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
+};
+
+type Ui = typeof pt;
+
+const en: Ui = {
+  meta: {
+    title: 'Juliana Acunha — Game Sound Designer',
+    description:
+      'Portfolio of Juliana Acunha, game sound designer: soundtracks, SFX, original voice and audio implementation. Best Audio at GameJam Plus 2026/27.',
+  },
+  skipLink: 'Skip to content',
+  nav: {
+    label: 'Main navigation',
+    sounds: 'Sounds',
+    projects: 'Projects',
+    process: 'Process',
+    about: 'About',
+    contact: 'Contact',
+    home: 'Home',
+  },
+  lang: { switchTo: 'PT', switchLabel: 'Ler esta página em português' },
+  hero: {
+    eyebrow: 'Game Audio & Sound Design',
+    reel: 'Watch the reel',
+    listen: 'Listen to the sounds',
+    contact: 'Get in touch',
+    cv: 'Resume (PDF)',
+    photoAlt: 'Photo of Juliana Acunha',
+  },
+  awards: { eyebrow: 'achievements', title: 'Awards', regional: 'regional stage' },
+  featured: { eyebrow: 'highlights', title: 'Featured work', cta: 'Read the case study' },
+  board: {
+    eyebrow: 'sound board',
+    title: 'Listen to the sounds',
+    intro: 'SFX, voices and foley she created, straight from the games. One sound plays at a time.',
+    all: 'All',
+    filterLabel: 'Filter sounds by category',
+    categories: { foley: 'Foley', ui: 'UI', voice: 'Voice', chiptune: '8-bit', gameplay: 'Gameplay' },
+  },
+  player: {
+    play: 'Play',
+    pause: 'Pause',
+    of: 'of',
+    curated: 'curated',
+    curatedNote: 'Selected and mixed by her; created by third parties.',
+    error: 'failed to load',
+  },
+  projects: {
+    eyebrow: 'projects',
+    title: 'All projects',
+    intro: 'Games she worked on, with her role in each one.',
+    filterLabel: 'Filter projects by deliverable',
+    all: 'All',
+    open: 'Open project',
+  },
+  process: {
+    eyebrow: 'behind the scenes',
+    title: 'Making sounds',
+    intro: 'Foley recording videos: everyday objects turned into footsteps, meows and effects.',
+  },
+  about: {
+    eyebrow: 'about',
+    title: 'Journey',
+    experience: 'Experience',
+    education: 'Education & certificates',
+    present: 'present',
+    inProgress: 'in progress',
+    since: 'since',
+    languages: 'Languages',
+    tools: 'Tools',
+    skills: 'Skills',
+    hard: 'Hard skills',
+    soft: 'Soft skills',
+    casulo:
+      'After the game jam, she was selected alongside other women for mentorship and incubation at Casulo Indie.',
+  },
+  covers: { eyebrow: 'extra', title: 'Covers', traitor: 'Traitor – Olivia Rodrigo (cover)' },
+  contact: {
+    eyebrow: 'contact',
+    title: "Let's create your game's sound?",
+    text: 'Open to opportunities',
+    email: 'Email',
+    phone: 'Phone',
+    location: 'Location',
+    cv: 'Download resume (PDF)',
+  },
+  project: {
+    back: 'Back to projects',
+    role: 'Role',
+    context: 'Context',
+    engine: 'Engine',
+    genre: 'Genre',
+    year: 'Year',
+    status: 'Status',
+    team: 'Team',
+    deliverables: 'Deliverables',
+    soundNotes: 'Sound intent',
+    tracks: 'Soundtrack',
+    sfx: 'Effects & voices',
+    stems: 'Adaptive soundtrack: tension layers',
+    stemsIntro:
+      'The soundtrack was split into tension levels; enemy waves spawn as the music rises. Listen to each layer:',
+    videos: 'Videos',
+    gallery: 'Process',
+    docs: 'Documents',
+    soundcloud: 'Listen to the playlist on SoundCloud',
+    itch: 'View on itch.io',
+    playable: 'playable in browser',
+    noAi: 'no generative AI',
+    awards: 'Awards',
+    next: 'Next project',
+  },
+  status: {
+    released: 'released',
+    'in-development': 'in development',
+    prototype: 'prototype',
+    'on-hold': 'on hold',
+  },
+  deliverables: {
+    soundtrack: 'Soundtrack',
+    sfx: 'SFX',
+    voice: 'Voice',
+    curation: 'Audio curation',
+    mixing: 'Mixing',
+    implementation: 'Implementation',
+    'game-design': 'Game design',
+    writing: 'Writing',
+    ui: 'UI',
+    art: 'Art',
+    animation: 'Animation',
+    '3d': '3D',
+    programming: 'Programming',
+    documentation: 'Documentation',
+  },
+  facade: {
+    youtube: (title: string) => `Play video: ${title}`,
+    soundcloud: 'Load the SoundCloud player',
+    thirdParty: 'Loads content from',
+  },
+  footer: { built: 'Built with Astro.', top: 'Back to top' },
+  notFound: {
+    title: 'Page not found',
+    text: "This sound doesn't exist (yet). How about going back to hear the others?",
+    cta: 'Back to home',
+  },
+  months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
+
+const ui: Record<Locale, Ui> = { 'pt-br': pt, en };
+
+export function useTranslations(locale: Locale): Ui {
+  return ui[locale];
+}
+
+export function formatYearMonth(value: string, locale: Locale): string {
+  const [year, month] = value.split('-');
+  return `${ui[locale].months[Number(month) - 1]} ${year}`;
+}
+
+export function formatDuration(seconds: number, locale: Locale): string {
+  if (seconds < 10) return `${seconds.toFixed(1).replace('.', locale === 'en' ? '.' : ',')} s`;
+  const s = Math.round(seconds);
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+}

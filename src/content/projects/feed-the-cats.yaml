@@ -1,0 +1,86 @@
+title: Feed The Cats
+altTitle: { pt: Alimente os Gatos, en: Alimente os Gatos }
+order: 10
+hook:
+  pt: Um FPS fofo em que o lançador de petiscos soa como uma máquina de bolas de tênis.
+  en: A cute FPS where the treat launcher sounds like a tennis ball machine.
+synopsis:
+  pt: >-
+    Feed the Cats é um FPS sobre alimentar gatinhos. Um alimentador profissional de gatos precisa alimentá-los numa
+    fábrica de petiscos, num mapa 3D com assets 2D.
+  en: >-
+    Feed the Cats is an FPS game about feeding kittens. A professional cat feeder needs to feed them in a snack factory,
+    in a 3D map with 2D assets.
+genre: { pt: FPS, en: FPS }
+engine: Godot
+studio: solo
+context: { pt: UFPel · projeto solo, en: UFPel · solo project }
+status: released
+deliverables: [curation, mixing, implementation, 3d, art, ui, writing, programming, documentation]
+role:
+  pt: >-
+    Projeto solo: design de áudio, modelagem 3D, arte 2D, UI, roteiro e programação. Não compus a trilha nem criei os
+    efeitos sonoros, mas fui responsável pela curadoria, mixagem e implementação.
+  en: >-
+    Solo project: audio design, 3D modeling, 2D art, UI design, scriptwriting, and programming. Although I didn't compose
+    the soundtrack or create the sound effects, I was responsible for their curation, mixing, and implementation.
+soundNotes:
+  pt:
+    - >-
+      Queria que o lançador de petiscos soasse suave e nada agressivo. Escolhi o som de uma máquina de bolas de tênis
+      para deixá-lo mais leve que uma arma realista.
+    - Também não queria miados agressivos. Queria que fossem suaves, mostrando que os gatos estão felizes com os petiscos.
+  en:
+    - >-
+      I wanted the treat launcher to sound soft and non-aggressive. I chose a tennis ball machine sound to keep it lighter
+      and less harsh than a realistic weapon.
+    - "I also didn't want the cat sounds to sound aggressive. I wanted them to be soft, to show they're happy about getting treats."
+links:
+  itch: https://ju-acunha.itch.io/alimente-os-gatos
+cover: projects/feed-the-cats/cover.jpg
+coverAlt:
+  pt: Tela inicial de Alimente os Gatos em tons pastel, com botões em forma de orelhas de gato
+  en: Alimente os Gatos title screen in pastel tones, with cat-ear shaped buttons
+sfx:
+  - {
+      audio: feed-the-cats/tiro-tenis,
+      category: gameplay,
+      curated: true,
+      label: { pt: Lançador de petiscos, en: Treat launcher },
+    }
+  - {
+      audio: feed-the-cats/sem-municao,
+      category: gameplay,
+      curated: true,
+      label: { pt: Sem munição, en: Out of ammo },
+    }
+  - {
+      audio: feed-the-cats/pego-whispas,
+      category: gameplay,
+      curated: true,
+      label: { pt: Pegar sachê, en: Pick up treat pouch },
+    }
+  - {
+      audio: feed-the-cats/miauzinho,
+      category: foley,
+      curated: true,
+      label: { pt: Miadinho, en: Little meow },
+    }
+  - { audio: feed-the-cats/meow, category: foley, curated: true, label: { pt: Miado, en: Meow } }
+gallery:
+  - image: projects/feed-the-cats/shot-1.jpg
+    alt:
+      {
+        pt: Diálogo com a personagem Keli num corredor 3D,
+        en: Dialogue with the character Keli in a 3D corridor,
+      }
+  - image: projects/feed-the-cats/shot-2.jpg
+    alt:
+      {
+        pt: Visão em primeira pessoa com o lançador de petiscos e uma chave no chão,
+        en: First-person view with the treat launcher and a key on the floor,
+      }
+videos:
+  - { kind: teaser, youtube: n8RU80fHyfY, title: { pt: Teaser, en: Teaser } }
+docs:
+  - { title: { pt: GDD do jogo (PDF), en: Game design document (PDF) }, file: /docs/feed-the-cats-gdd.pdf }

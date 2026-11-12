@@ -1,0 +1,33 @@
+title: 4Seasons
+order: 8
+hook:
+  pt: Resolva dilemas amorosos e ajude Sabrina a ter um último ano escolar inesquecível.
+  en: Resolve relationship dilemmas and help Sabrina have an unforgettable senior year.
+synopsis:
+  pt: Visual novel de cerca de 30 minutos, com legendas em inglês e português.
+  en: A visual novel of about 30 minutes, with English and Portuguese subtitles.
+genre: { pt: Visual novel, en: Visual novel }
+engine: Unity
+studio: casulo-indie
+context: { pt: Casulo Indie, en: Casulo Indie }
+year: 2026
+status: on-hold
+deliverables: [sfx, game-design]
+role:
+  pt: Sound designer e game designer.
+  en: Sound designer and game designer.
+team:
+  - { name: Casulo Indie }
+  - { name: Debs Carvalho }
+  - { name: Juliana Acunha }
+  - { name: Lavínia Nunes }
+  - { name: Aiza }
+  - { name: emersonlimana }
+  - { name: Giovanna Kalkmann }
+noGenerativeAi: true
+links:
+  itch: https://casuloindie.itch.io/4seasosn
+cover: projects/4seasons/cover.png
+coverAlt:
+  pt: Logo do 4Seasons com rostinhos coloridos de personagens sobre papel amassado
+  en: 4Seasons logo with colorful character faces over crumpled paper

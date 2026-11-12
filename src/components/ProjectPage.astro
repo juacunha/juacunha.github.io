@@ -1,0 +1,351 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { homePath, localize, otherLocale, projectPath, url, type Locale } from '../i18n';
+import { useTranslations } from '../i18n/ui';
+import { getProjects, type Project } from '../lib/content';
+import { asset } from '../lib/images';
+import LocalVideo from './ui/LocalVideo.astro';
+import SoundCard from './ui/SoundCard.astro';
+import SoundCloudFacade from './ui/SoundCloudFacade.astro';
+import YouTubeFacade from './ui/YouTubeFacade.astro';
+
+interface Props {
+  project: Project;
+  locale: Locale;
+}
+
+const { project, locale } = Astro.props;
+const { data } = project;
+const t = useTranslations(locale);
+const other = otherLocale(locale);
+const projects = await getProjects();
+const next = projects[(projects.findIndex((p) => p.id === project.id) + 1) % projects.length];
+const awards = (await getCollection('awards'))
+  .filter((a) => a.data.project?.id === project.id)
+  .sort((a, b) => a.data.order - b.data.order);
+const backHref = `${url(homePath[locale])}#projects`;
+const meta = [
+  { label: t.project.context, value: localize(data.context, locale) },
+  { label: t.project.engine, value: data.engine },
+  ...(data.year ? [{ label: t.project.year, value: String(data.year) }] : []),
+  { label: t.project.status, value: t.status[data.status] },
+  ...(data.genre ? [{ label: t.project.genre, value: localize(data.genre, locale) }] : []),
+];
+const youtubeVideos = data.videos.filter((v) => v.youtube);
+const localVideos = data.videos.filter((v) => v.local);
+---
+
+<BaseLayout
+  title={`${data.title} — Juliana Acunha`}
+  description={localize(data.hook, locale)}
+  locale={locale}
+  path={projectPath(project.id, locale)}
+  alternate={{ locale: other, path: projectPath(project.id, other) }}
+>
+  <article class="mx-auto max-w-6xl px-5 pt-8 pb-20">
+    <a href={backHref} class="font-mono text-sm text-text-muted hover:text-accent-text">
+      ← {t.project.back}
+    </a>
+
+    <header class="mt-6 grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
+      <div class="selection-box p-1.5 md:order-2">
+        <span class="handle -top-1 -left-1"></span>
+        <span class="handle -top-1 -right-1"></span>
+        <span class="handle -bottom-1 -left-1"></span>
+        <span class="handle -right-1 -bottom-1"></span>
+        <Image
+          src={asset(data.cover)}
+          alt={localize(data.coverAlt, locale)}
+          widths={[480, 720, 1024]}
+          sizes="(min-width: 768px) 520px, 100vw"
+          loading="eager"
+          class="aspect-video w-full object-cover"
+        />
+      </div>
+      <div>
+        <p class="eyebrow">// {t.projects.eyebrow}</p>
+        <h1 class="heading-display mt-2 text-5xl md:text-6xl">{data.title}</h1>
+        {data.altTitle && (
+          <p class="mt-2 font-mono text-sm text-text-muted">{localize(data.altTitle, locale)}</p>
+        )}
+        {awards.length > 0 && (
+          <ul class="mt-4 flex flex-wrap gap-2" aria-label={t.project.awards}>
+            {awards.map((a) => (
+              <li
+                class:list={[
+                  'rounded-sm px-2.5 py-1 font-mono text-xs',
+                  a.data.highlight
+                    ? 'bg-accent text-on-accent font-bold'
+                    : 'border border-accent text-accent-text',
+                ]}
+              >
+                {localize(a.data.title, locale)} · {a.data.edition}
+              </li>
+            ))}
+          </ul>
+        )}
+        <p class="mt-5 text-xl">{localize(data.hook, locale)}</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          {data.links.itch && (
+            <a
+              href={data.links.itch}
+              rel="noopener"
+              target="_blank"
+              class="rounded-md bg-accent px-4 py-2.5 font-semibold text-on-accent no-underline hover:bg-accent-hover"
+            >
+              {t.project.itch} ↗
+              {data.links.playable && <span class="font-normal"> · {t.project.playable}</span>}
+            </a>
+          )}
+          {data.noGenerativeAi && (
+            <span class="rounded-md border border-border px-3 py-2.5 font-mono text-xs">
+              {t.project.noAi}
+            </span>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <dl class="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:auto-cols-fr md:grid-flow-col md:grid-cols-none">
+      {meta.map((m) => (
+        <div class="bg-card p-4 last:odd:col-span-2 md:last:odd:col-span-1">
+          <dt class="font-mono text-[0.7rem] text-text-muted uppercase">{m.label}</dt>
+          <dd class="mt-1 font-semibold">{m.value}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+      <div class="flex flex-col gap-12">
+        <section aria-labelledby="synopsis-title">
+          <h2 id="synopsis-title" class="sr-only">
+            {data.title}
+          </h2>
+          <p class="text-lg leading-relaxed text-text-muted">{localize(data.synopsis, locale)}</p>
+        </section>
+
+        <section aria-labelledby="role-title" class="rounded-lg border border-border bg-card p-6">
+          <h2 id="role-title" class="eyebrow">
+            {t.project.role}
+          </h2>
+          <p class="mt-3 text-lg">{localize(data.role, locale)}</p>
+          <ul class="mt-4 flex flex-wrap gap-1.5" aria-label={t.project.deliverables}>
+            {data.deliverables.map((d) => (
+              <li class="rounded-sm bg-surface px-2 py-0.5 font-mono text-xs">{t.deliverables[d]}</li>
+            ))}
+          </ul>
+        </section>
+
+        {data.soundNotes && (
+          <section aria-labelledby="notes-title">
+            <h2 id="notes-title" class="heading-display text-3xl">
+              {t.project.soundNotes}
+            </h2>
+            <div class="mt-4 flex flex-col gap-4">
+              {localize(data.soundNotes, locale).map((note) => (
+                <blockquote class="border-l-4 border-accent bg-surface/60 py-3 pr-4 pl-5 text-lg italic">
+                  {note}
+                </blockquote>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.stems.length > 0 && (
+          <section aria-labelledby="stems-title">
+            <h2 id="stems-title" class="heading-display text-3xl">
+              {t.project.stems}
+            </h2>
+            <p class="mt-2 text-text-muted">{t.project.stemsIntro}</p>
+            <ol class="relative mt-5 flex flex-col gap-3 pl-8">
+              <span class="dashed-line absolute top-2 bottom-2 left-[5px] w-[2px]" aria-hidden="true" />
+              {data.stems.map((stem) => (
+                <li class="relative">
+                  <span
+                    class="absolute top-1/2 -left-8 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-accent bg-bg"
+                    aria-hidden="true"
+                  />
+                  <SoundCard audio={stem.audio} label={localize(stem.label, locale)} locale={locale} />
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {youtubeVideos.length > 0 && (
+          <section aria-labelledby="videos-title">
+            <h2 id="videos-title" class="heading-display text-3xl">
+              {t.project.videos}
+            </h2>
+            <div class="mt-4 grid gap-5 sm:grid-cols-2">
+              {youtubeVideos.map((v) => (
+                <div>
+                  <YouTubeFacade
+                    id={v.youtube!}
+                    title={`${data.title} — ${localize(v.title, locale)}`}
+                    locale={locale}
+                  />
+                  <p class="mt-2 font-semibold">{localize(v.title, locale)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {localVideos.length > 0 && (
+          <section aria-labelledby="process-title">
+            <h2 id="process-title" class="heading-display text-3xl">
+              {t.process.title}
+            </h2>
+            <div class="mt-4 grid gap-5 sm:grid-cols-2">
+              {localVideos.map((v) => (
+                <LocalVideo video={v.local!} title={localize(v.title, locale)} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.gallery.length > 0 && (
+          <section aria-labelledby="gallery-title">
+            <h2 id="gallery-title" class="heading-display text-3xl">
+              {t.project.gallery}
+            </h2>
+            <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+              {data.gallery.map((g) => (
+                <li class="overflow-hidden rounded-md border border-border">
+                  <Image
+                    src={asset(g.image)}
+                    alt={localize(g.alt, locale)}
+                    widths={[400, 720]}
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    class="h-full w-full object-cover"
+                  />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
+
+      <aside class="flex flex-col gap-10">
+        {data.tracks.length > 0 && (
+          <section aria-labelledby="tracks-title">
+            <h2 id="tracks-title" class="eyebrow mb-4">
+              {t.project.tracks}
+            </h2>
+            <ul class="flex flex-col gap-3">
+              {data.tracks.map((track) => (
+                <li>
+                  <SoundCard
+                    audio={track.audio}
+                    label={localize(track.title, locale)}
+                    curated={track.curated}
+                    locale={locale}
+                    size="lg"
+                  />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {data.links.soundcloud && (
+          <section aria-label="SoundCloud">
+            <SoundCloudFacade url={data.links.soundcloud} locale={locale} />
+          </section>
+        )}
+
+        {data.sfx.length > 0 && (
+          <section aria-labelledby="sfx-title">
+            <h2 id="sfx-title" class="eyebrow mb-4">
+              {t.project.sfx}
+            </h2>
+            <ul class="flex flex-col gap-2">
+              {data.sfx.map((s) => (
+                <li>
+                  <SoundCard
+                    audio={s.audio}
+                    label={localize(s.label, locale)}
+                    curated={s.curated}
+                    meta={t.board.categories[s.category]}
+                    locale={locale}
+                  />
+                </li>
+              ))}
+            </ul>
+            {data.sfx.some((s) => s.curated) && (
+              <p class="mt-3 font-mono text-xs text-text-muted">
+                * {t.player.curated}: {t.player.curatedNote}
+              </p>
+            )}
+          </section>
+        )}
+
+        {data.team.length > 0 && (
+          <section aria-labelledby="team-title">
+            <h2 id="team-title" class="eyebrow mb-4">
+              {t.project.team}
+            </h2>
+            <ul class="flex flex-wrap gap-2">
+              {data.team.map((m) => (
+                <li
+                  class:list={[
+                    'rounded-sm border px-3 py-1.5 text-sm',
+                    m.name === 'Juliana Acunha' ? 'border-accent text-accent-text' : 'border-border',
+                  ]}
+                >
+                  {m.name}
+                  {m.role && <span class="text-text-muted"> · {localize(m.role, locale)}</span>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {data.docs.length > 0 && (
+          <section aria-labelledby="docs-title">
+            <h2 id="docs-title" class="eyebrow mb-4">
+              {t.project.docs}
+            </h2>
+            <ul class="flex flex-col gap-2">
+              {data.docs.map((d) => (
+                <li>
+                  <a
+                    href={url(d.file)}
+                    class="font-semibold text-accent-text underline-offset-4 hover:underline"
+                  >
+                    {localize(d.title, locale)} ↓
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </aside>
+    </div>
+
+    {next && next.id !== project.id && (
+      <nav class="mt-20 border-t border-border pt-8" aria-label={t.project.next}>
+        <a
+          href={url(projectPath(next.id, locale))}
+          class="group flex items-center justify-between gap-4 no-underline"
+        >
+          <span>
+            <span class="eyebrow block">{t.project.next}</span>
+            <span class="heading-display mt-1 block text-3xl group-hover:text-accent-text md:text-4xl">
+              {next.data.title}
+            </span>
+          </span>
+          <span
+            class="text-3xl text-accent-text transition-transform group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
+        </a>
+      </nav>
+    )}
+  </article>
+</BaseLayout>

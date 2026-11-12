@@ -9,8 +9,8 @@
 
 | # | Projeto | Engine | Contexto | Papel dela (resumo) | Status | No Notion? |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Purr-Anormal: A Mystery in Paws | Unity | **(confirmar)** — provável Casulo Indie | Trilha, SFX, voz original | Em desenvolvimento | Sim |
-| 2 | Hands Off My Grimoire! | Unity | **(confirmar)** | Trilha, SFX | Em desenvolvimento | Sim |
+| 1 | Purr-Anormal: A Mystery in Paws | Unity | Casulo Indie | Trilha, SFX, voz original | Em desenvolvimento | Sim |
+| 2 | Hands Off My Grimoire! | Unity | Casulo Indie | Trilha, SFX | Em desenvolvimento | Sim |
 | 3 | Molten Metal | Godot | GameJam Plus 2026/2027 — **2º geral, Melhor Áudio, Melhor Pitch** | Trilha, SFX, voz original, implementação | Publicado (jam) | Sim |
 | 4 | ServOS | Godot | UFPel — Projeto Integrado V (mini jams de 1 mês) | Trilha, conceitos de UI | Publicado | Sim |
 | 5 | Seasoned Wings: Magical Recipes (Asas Temperadas: Receitas Mágicas) | Godot (3D) | UFPel — Projeto Integrado III | Trilha, curadoria de SFX, voz, mixagem do teaser, modelagem 3D, documentação, animações | Publicado | Sim |
@@ -18,9 +18,11 @@
 | 7 | Mathias Shooter | Pyxel (Python) | FURG — Algoritmos e Estruturas de Dados (Eng. de Computação) | Todos os assets criativos: trilha, SFX 8-bit, pixel art, animações | Publicado, jogável no navegador | Sim |
 | 8 | Eco | Godot | UFPel — Design de Jogos | Sound design (curadoria), roteiro, UI, animações, mixagem do teaser | Publicado | Sim |
 | 9 | Feed The Cats (Alimente os Gatos) | Godot | UFPel — projeto solo | Tudo: curadoria/mixagem/implementação de áudio, 3D, 2D, UI, roteiro, programação | Publicado | Sim |
-| 10 | 4Seasons | Unity | Casulo Indie | **(confirmar)** | On hold (lançado 10/abr/2026, v1.6.3) | Não |
-| 11 | Pétalas ao Vento | Godot | UFPel — Design de Jogos | **(confirmar)** | Em desenvolvimento | Não |
-| 12 | The Symphony's Awakening | Godot 4.2 | **(confirmar)** — provável UFPel | **(confirmar)** | Protótipo | Não |
+| 10 | 4Seasons | Unity | Casulo Indie | Sound Designer e Game Designer | On hold (lançado 10/abr/2026, v1.6.3) | Não |
+| 11 | Pétalas ao Vento | Godot | UFPel — Design de Jogos | Game Designer e Sound Designer | Em desenvolvimento | Não |
+| 12 | The Symphony's Awakening | Godot 4.2 | Não informado | Game Designer e Artista | Protótipo | Não |
+
+Papéis dos projetos 10–12 e contexto dos projetos 1–2 confirmados em 12/nov/2026. Créditos nominais autorizados. Equipe do ServOS (itch.io): phscardona, Juliana Acunha, 0utro, Ito.
 
 Tags usadas no Notion (propriedade "Plataform", que mistura engine, plataforma e papel): Godot, Unity, Pyxel, PC, SoundTrack, SFX, Original Voice, Audio Curation, In Development, "Ativos de design". No site, separar em **engine**, **plataforma** e **papel/entregas**.
 
@@ -86,7 +88,7 @@ Tags usadas no Notion (propriedade "Plataform", que mistura engine, plataforma e
 - **Papel:** "Soundtrack Production". Além disso: "I produced the Menu, Credits, and Game Over themes. For the Game Over track, I aimed to avoid a punishing tone, ensuring the player wouldn't feel discouraged."
 - **Destaque técnico (trilha adaptativa):** "In the game, enemy waves are audio-driven. They spawn as the music's tension increases. To achieve this, I divided the soundtrack into several distinct tension levels."
 - **Intenção sonora:** "I wanted the soundtrack to do justice to Nyxie, our grumpy-looking protagonist. Additionally, since the enemies are rats, I incorporated sounds reminiscent of them into the track."
-- **Mídia:** teaser YouTube `ugLLJmAIxQo` (Notion) e `-G5KOAxw3FQ` (canal); pitch `xuEVauS7qNk`; 8 stems de tensão + menu/créditos/game over no Drive; playlist SoundCloud `midnight-meow`; One Page em PDF.
+- **Mídia:** teaser YouTube `-G5KOAxw3FQ` (canal dela; o Notion usa `ugLLJmAIxQo`, também dela); pitch `xuEVauS7qNk`; 8 stems de tensão + menu/créditos/game over no Drive; playlist SoundCloud `midnight-meow`; One Page em PDF.
 - **Link:** https://midnight-meow.itch.io/midnight-meow
 
 ## 7. Mathias Shooter
@@ -121,19 +123,20 @@ Tags usadas no Notion (propriedade "Plataform", que mistura engine, plataforma e
 - Visual novel, Unity + Clip Studio Paint, Windows, EN/PT-BR, ~30 min, legendas. Sem IA generativa. Lançado em 10/abr/2026, status "On hold".
 - **Autores:** Casulo Indie, Debs Carvalho, Juliana Acunha, Lavínia Nunes, Aiza, emersonlimana, Giovanna Kalkmann.
 - **Link:** https://casuloindie.itch.io/4seasosn (o slug tem erro de digitação "4seasosn" na origem).
-- **(confirmar)** papel dela e se deve entrar no site.
+- **Papel:** Sound Designer e Game Designer (confirmado).
 
 ## 11. Pétalas ao Vento (só no itch.io)
 
 - **Descrição:** "Controle Rosa, uma senhora que sofreu uma perda, e gostaria de reviver suas memórias preciosas. Acompanhe ela em uma jornada melancólica, ao guardar fotos importantes em seu álbum de fotos." Projeto universitário de Design de Jogos.
 - Godot, 2D pixel art, Windows/Linux. Autores: Juliana Acunha, Debs Carvalho, 0utro. Usa assets de cenário de terceiros (shubibubi, Cozy Interior). Sem IA generativa.
-- O site do Pedro diz que ele programou movimentação e diálogo; o itch não o lista como autor. **(confirmar)** créditos e papel dela.
+- **Papel:** Game Designer e Sound Designer (confirmado). O site do Pedro diz que ele programou movimentação e diálogo; o itch não o lista como autor.
 - **Link:** https://ju-acunha.itch.io/ptalas-ao-vento
 
 ## 12. The Symphony's Awakening (só no itch.io)
 
 - **Descrição:** "Alex, um musicista fracassado, é magicamente transportado para outro mundo, onde não há música. Para voltar para casa ele precisará derrotar [...] a Rainha do Silêncio e seu exército de insetos transformados." Três canções (raiva, tristeza, felicidade) em ciclo de vantagem.
-- Godot 4.2, protótipo, roguelike 2D. Autora única no itch: Juliana Acunha. O site do Pedro diz que ele fez o sistema de combate. **(confirmar)** créditos e papel dela.
+- Godot 4.2, protótipo, roguelike 2D. Autora única no itch: Juliana Acunha. O site do Pedro diz que ele fez o sistema de combate.
+- **Papel:** Game Designer e Artista (confirmado).
 - Um campo antigo do Notion ("ZSey") tem o texto: "The Symphony's Awakening is a game that explores the importance of music. The game follows the protagonist, Alex, who is transported to a silent world and must use their songs to bring music back." — sobra de uma versão anterior do portfólio.
 - **Link:** https://ju-acunha.itch.io/the-symphonys-awakening
 

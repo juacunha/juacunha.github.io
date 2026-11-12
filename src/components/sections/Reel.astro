@@ -1,0 +1,36 @@
+---
+import type { Locale } from '../../i18n';
+import { getProfile } from '../../lib/content';
+import YouTubeFacade from '../ui/YouTubeFacade.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const profile = await getProfile();
+const title =
+  locale === 'en'
+    ? 'Sound Design Portfolio – Juliana Acunha'
+    : 'Meu Portfólio de Sound Design – Juliana Acunha';
+---
+
+<section id="reel" class="mx-auto max-w-5xl scroll-mt-20 px-5 pt-16" aria-labelledby="reel-title">
+  <div class="mb-4 flex items-end justify-between gap-4">
+    <h2 id="reel-title" class="heading-display text-3xl md:text-4xl">
+      Reel
+    </h2>
+    <span class="eq mb-2 text-2xl" aria-hidden="true">
+      <span></span>
+      <span class="h-[80%]!"></span>
+      <span class="h-[55%]!"></span>
+    </span>
+  </div>
+  <div class="selection-box p-1.5">
+    <span class="handle -top-1 -left-1"></span>
+    <span class="handle -top-1 -right-1"></span>
+    <span class="handle -bottom-1 -left-1"></span>
+    <span class="handle -right-1 -bottom-1"></span>
+    <YouTubeFacade id={profile.reel} title={title} locale={locale} />
+  </div>
+</section>

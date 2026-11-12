@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n/ui';
+import { youtubeThumb } from '../../lib/images';
+
+interface Props {
+  id: string;
+  title: string;
+  locale: Locale;
+  eager?: boolean;
+}
+
+const { id, title, locale, eager = false } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div
+  class="yt-facade relative aspect-video overflow-hidden rounded-md border border-border bg-surface"
+  data-yt={id}
+  data-title={title}
+>
+  <button
+    type="button"
+    class="group absolute inset-0 h-full w-full cursor-pointer"
+    aria-label={t.facade.youtube(title)}
+  >
+    <Image
+      src={youtubeThumb(id)}
+      alt=""
+      widths={[480, 960]}
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      loading={eager ? 'eager' : 'lazy'}
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+    />
+    <span class="absolute inset-0 bg-bg/30 transition-colors group-hover:bg-bg/10" aria-hidden="true"></span>
+    <span
+      class="absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-on-accent shadow-glow transition-transform group-hover:scale-110"
+      aria-hidden="true"
+    >
+      <svg viewBox="0 0 20 20" class="ml-1 h-6 w-6">
+        <path d="M6 4l11 6-11 6z" fill="currentColor"></path>
+      </svg>
+    </span>
+    <span class="absolute right-2 bottom-2 rounded-sm bg-bg/80 px-2 py-0.5 font-mono text-[0.7rem] text-text-muted">
+      {t.facade.thirdParty} YouTube
+    </span>
+  </button>
+  <noscript>
+    <a
+      href={`https://www.youtube.com/watch?v=${id}`}
+      class="absolute inset-0 flex items-end p-3 font-mono text-sm underline"
+    >
+      YouTube: {title}
+    </a>
+  </noscript>
+</div>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const facade = (event.target as HTMLElement).closest<HTMLElement>('.yt-facade');
+    const button = facade?.querySelector('button');
+    if (!facade || !button || !button.contains(event.target as Node)) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${facade.dataset.yt}?autoplay=1&rel=0`;
+    iframe.title = facade.dataset.title ?? 'YouTube';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.className = 'absolute inset-0 h-full w-full';
+    button.replaceWith(iframe);
+    iframe.focus();
+    document.dispatchEvent(new CustomEvent('ja:media-start'));
+  });
+</script>

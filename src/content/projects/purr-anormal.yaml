@@ -1,0 +1,90 @@
+title: 'Purr-Anormal: A Mystery in Paws'
+order: 3
+featured: true
+hook:
+  pt: Controle a Pudim enquanto investiga a casa assombrada.
+  en: Control Pudim while investigating the haunted house.
+synopsis:
+  pt: >-
+    Depois de uma grave crise financeira, uma gatinha chamada Pudim e sua família se mudam às pressas para uma mansão
+    misteriosa. O único problema? O lugar já está ocupado por fantasmas! Explore a residência, resolva quebra-cabeças e
+    descubra segredos do passado para acalmar os espíritos e encontrar um tesouro escondido capaz de mudar a vida da
+    família para sempre.
+  en: >-
+    After a severe financial crisis, a little cat named Pudim and her family hastily move into a mysterious mansion. The
+    only problem? The place is already occupied by ghosts! Explore the residence, solve puzzles, and uncover secrets from
+    the past to appease the spirits and find a hidden treasure capable of changing your family's life forever.
+engine: Unity
+studio: casulo-indie
+context: { pt: Casulo Indie, en: Casulo Indie }
+status: in-development
+deliverables: [soundtrack, sfx, voice]
+role:
+  pt: Criar a trilha sonora, criar os SFX e produzir a voz original.
+  en: Create the soundtrack, create the SFX, and produce the original voice.
+soundNotes:
+  pt:
+    - >-
+      Meu objetivo neste projeto foi criar uma trilha assustadora e efeitos sonoros arrepiantes, combinando com o tema
+      sem perder a fofura.
+  en:
+    - >-
+      My goal with this project was to create a spooky soundtrack and haunting sound effects to match the theme while
+      keeping it cute.
+links:
+  soundcloud: https://soundcloud.com/juliana-acunha-232828507/sets/purr-anormal-a-mystery-in-paws
+cover: projects/purr-anormal/cover.jpeg
+coverAlt:
+  pt: A gatinha Pudim descendo uma escada escura, seguida por dois gatos fantasmas brilhantes
+  en: Pudim the cat walking down a dark staircase, followed by two glowing ghost cats
+sfx:
+  - {
+      audio: purr-anormal/pudim-passos-areia,
+      category: foley,
+      label: { pt: Passos da Pudim na areia, en: Pudim's footsteps on sand },
+    }
+  - {
+      audio: purr-anormal/pudim-passos-madeira,
+      category: foley,
+      label: { pt: Passos da Pudim na madeira, en: Pudim's footsteps on wood },
+    }
+  - {
+      audio: purr-anormal/pessego-normal,
+      category: voice,
+      label: { pt: Pêssego · normal, en: Pêssego · neutral },
+    }
+  - {
+      audio: purr-anormal/pessego-feliz,
+      category: voice,
+      label: { pt: Pêssego · feliz, en: Pêssego · happy },
+    }
+  - {
+      audio: purr-anormal/pessego-triste,
+      category: voice,
+      label: { pt: Pêssego · triste, en: Pêssego · sad },
+    }
+  - {
+      audio: purr-anormal/pessego-confusa,
+      category: voice,
+      label: { pt: Pêssego · confusa, en: Pêssego · confused },
+    }
+  - { audio: purr-anormal/pera-normal, category: voice, label: { pt: Pera · normal, en: Pera · neutral } }
+  - { audio: purr-anormal/pera-feliz, category: voice, label: { pt: Pera · feliz, en: Pera · happy } }
+  - { audio: purr-anormal/pera-brava, category: voice, label: { pt: Pera · brava, en: Pera · angry } }
+  - {
+      audio: purr-anormal/pera-coringando,
+      category: voice,
+      label: { pt: Pera · rindo à toa, en: Pera · cackling },
+    }
+  - {
+      audio: purr-anormal/pera-risada-malefica,
+      category: voice,
+      label: { pt: Pera · risada maléfica, en: Pera · evil laugh },
+    }
+videos:
+  - {
+      kind: process,
+      local: purr-anormal/passos-pudim,
+      title: { pt: Gravando os passos da Pudim, en: Recording Pudim's footsteps },
+    }
+  - { kind: process, local: purr-anormal/miados, title: { pt: Gravando os miados, en: Recording the meows } }

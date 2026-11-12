@@ -1,0 +1,26 @@
+---
+description: Convenções para páginas e componentes Astro (tokens, i18n, base path, mídia, acessibilidade)
+globs: src/**/*.astro
+alwaysApply: false
+---
+
+# Componentes e páginas Astro
+
+- Estilo só com utilitários gerados pelos tokens de `src/styles/tokens.css` (`bg-card`, `text-text-muted`, `text-accent-text`, `border-border`, `font-display`...). A paleta padrão do Tailwind está desligada.
+- Proibido cor literal (`#fff`, `rgb()`, `bg-[#...]`). `npm run check:tokens` barra.
+- Texto sobre fundo `accent` usa `text-on-accent`. Texto rosa sobre o fundo escuro usa `text-accent-text` (contraste AA).
+- Nenhum texto de conteúdo no componente: leia de `astro:content` (via `src/lib/content.ts`) e use `localize(campo, locale)`. Rótulos de interface vêm de `src/i18n/ui.ts`, em `pt` e `en`.
+- **Todo link interno passa por `url()`** de `src/i18n`, porque o site pode ser publicado em subdiretório (`BASE`). Rotas de projeto: `projectPath(slug, locale)`.
+- Imagens: `asset(chave)` de `src/lib/images.ts` + `<Image>` do Astro. Áudio e vídeo: `audioInfo`/`videoInfo` de `src/lib/media.ts` (leem o manifesto).
+- Som: use `ui/SoundCard.astro`. Um único `<audio>` compartilhado (`islands/AudioEngine.astro`) garante um som por vez; vídeos disparam `ja:media-start`.
+- YouTube e SoundCloud só por fachada (`YouTubeFacade`, `SoundCloudFacade`): nenhum iframe antes do clique.
+- Reutilize `src/components/ui/` antes de criar componente novo. JS de cliente só em `src/components/islands/`, com fallback sem JS.
+- Acessibilidade: um `h1` por página, headings sem saltos, `alt` em imagens, botões com `aria-label`/`aria-pressed`, foco visível.
+- Movimento curto (150–250ms), neutralizado por `prefers-reduced-motion`.
+
+```astro
+<!-- ❌ -->
+<a href="/projetos/molten-metal/" class="bg-[#f80070] text-white">Ver</a>
+<!-- ✅ -->
+<a href={url(projectPath('molten-metal', locale))} class="bg-accent text-on-accent">{t.projects.view}</a>
+```

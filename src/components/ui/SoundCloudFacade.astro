@@ -1,0 +1,57 @@
+---
+import type { Locale } from '../../i18n';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  url: string;
+  locale: Locale;
+}
+
+const { url, locale } = Astro.props;
+const t = useTranslations(locale);
+const embed = `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=f80070&auto_play=true&visual=false&show_comments=false`;
+---
+
+<div class="sc-facade" data-embed={embed}>
+  <button
+    type="button"
+    class="flex w-full cursor-pointer items-center gap-3 rounded-md border border-dashed border-border bg-surface px-4 py-4 text-left transition-colors hover:border-accent"
+  >
+    <span
+      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-on-accent"
+      aria-hidden="true"
+    >
+      <svg viewBox="0 0 20 20" class="ml-0.5 h-4 w-4">
+        <path d="M6 4l11 6-11 6z" fill="currentColor"></path>
+      </svg>
+    </span>
+    <span>
+      <span class="block font-semibold">{t.facade.soundcloud}</span>
+      <span class="block font-mono text-xs text-text-muted">{t.facade.thirdParty} SoundCloud</span>
+    </span>
+  </button>
+  <a
+    href={url}
+    rel="noopener"
+    target="_blank"
+    class="mt-2 inline-block font-mono text-sm text-accent-text hover:underline"
+  >
+    {t.project.soundcloud} ↗
+  </a>
+</div>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const facade = (event.target as HTMLElement).closest<HTMLElement>('.sc-facade');
+    const button = facade?.querySelector('button');
+    if (!facade || !button || !button.contains(event.target as Node)) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = facade.dataset.embed ?? '';
+    iframe.title = 'SoundCloud';
+    iframe.allow = 'autoplay';
+    iframe.className = 'h-[300px] w-full rounded-md border-0';
+    iframe.loading = 'lazy';
+    button.replaceWith(iframe);
+    document.dispatchEvent(new CustomEvent('ja:media-start'));
+  });
+</script>

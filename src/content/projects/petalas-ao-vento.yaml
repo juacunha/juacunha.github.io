@@ -1,0 +1,32 @@
+title: Pétalas ao Vento
+order: 11
+hook:
+  pt: Ajude Rosa a guardar memórias preciosas no álbum de fotos.
+  en: Help Rosa keep precious memories in her photo album.
+synopsis:
+  pt: >-
+    Controle Rosa, uma senhora que sofreu uma perda e gostaria de reviver suas memórias preciosas. Acompanhe-a numa
+    jornada melancólica, ao guardar fotos importantes em seu álbum.
+  en: >-
+    Play as Rosa, an elderly woman who has suffered a loss and wishes to relive her precious memories. Follow her on a
+    melancholic journey as she keeps important photos in her album.
+genre: { pt: 2D pixel art, en: 2D pixel art }
+engine: Godot
+studio: ufpel
+context: { pt: UFPel · Design de Jogos, en: UFPel · Game Design }
+status: in-development
+deliverables: [game-design, sfx]
+role:
+  pt: Game designer e sound designer.
+  en: Game designer and sound designer.
+team:
+  - { name: Juliana Acunha }
+  - { name: Debs Carvalho }
+  - { name: 0utro }
+noGenerativeAi: true
+links:
+  itch: https://ju-acunha.itch.io/ptalas-ao-vento
+cover: projects/petalas-ao-vento/cover.png
+coverAlt:
+  pt: Álbum de couro em pixel art com o título Pétalas ao Vento e folhas verdes
+  en: Pixel art leather album with the title Pétalas ao Vento and green leaves

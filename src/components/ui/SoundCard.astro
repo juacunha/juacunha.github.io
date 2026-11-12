@@ -1,0 +1,91 @@
+---
+import type { Locale } from '../../i18n';
+import { formatDuration, useTranslations } from '../../i18n/ui';
+import { audioInfo } from '../../lib/media';
+
+interface Props {
+  audio: string;
+  label: string;
+  meta?: string;
+  curated?: boolean;
+  locale: Locale;
+  size?: 'sm' | 'lg';
+  category?: string;
+}
+
+const { audio, label, meta, curated = false, locale, size = 'sm', category } = Astro.props;
+const t = useTranslations(locale);
+const info = audioInfo(audio);
+const step = 4;
+const height = 40;
+const width = info.peaks.length * step;
+const bars = info.peaks.map((p, i) => {
+  const h = Math.max(2, p * height);
+  return { x: i * step, y: (height - h) / 2, h };
+});
+---
+
+<div
+  class:list={[
+    'group flex items-center gap-3 rounded-md border border-border bg-card p-3 transition-colors hover:bg-card-hover',
+    size === 'lg' && 'p-4',
+  ]}
+  data-sound
+  data-src={info.src}
+  data-duration={info.duration}
+  data-category={category}
+>
+  <button
+    type="button"
+    data-sound-toggle
+    aria-pressed="false"
+    aria-label={`${t.player.play}: ${label}`}
+    data-label-play={`${t.player.play}: ${label}`}
+    data-label-pause={`${t.player.pause}: ${label}`}
+    class="relative flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent text-on-accent transition-colors hover:bg-accent-hover"
+  >
+    <svg viewBox="0 0 20 20" class="h-4 w-4 group-[.is-playing]:hidden" aria-hidden="true">
+      <path d="M6 4l11 6-11 6z" fill="currentColor"></path>
+    </svg>
+    <span class="eq hidden group-[.is-playing]:inline-flex" aria-hidden="true">
+      <span class="bg-on-accent!"></span>
+      <span class="bg-on-accent!"></span>
+      <span class="bg-on-accent!"></span>
+    </span>
+  </button>
+  <div class="min-w-0 flex-1">
+    <p class="flex items-baseline gap-2">
+      <span class="truncate font-semibold">{label}</span>
+      {curated && (
+        <span class="shrink-0 font-mono text-[0.7rem] uppercase text-text-muted" title={t.player.curatedNote}>
+          · {t.player.curated}
+        </span>
+      )}
+    </p>
+    <div class="mt-1 flex items-center gap-3">
+      <div class="waveform h-7 flex-1 cursor-pointer" data-sound-wave aria-hidden="true">
+        <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none" class="wave-base">
+          {bars.map((b) => (
+            <rect x={b.x} y={b.y} width="2.5" height={b.h} rx="1" />
+          ))}
+        </svg>
+        <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none" class="wave-played">
+          {bars.map((b) => (
+            <rect x={b.x} y={b.y} width="2.5" height={b.h} rx="1" />
+          ))}
+        </svg>
+      </div>
+      <span
+        class="shrink-0 font-mono text-xs text-text-muted tabular-nums"
+        data-sound-time
+        data-label-error={t.player.error}
+      >
+        {formatDuration(info.duration, locale)}
+      </span>
+    </div>
+    {meta && <p class="mt-1 truncate font-mono text-xs text-text-muted">{meta}</p>}
+    <noscript>
+      <audio controls preload="none" src={info.src} class="mt-2 w-full"></audio>
+    </noscript>
+  </div>
+</div>
