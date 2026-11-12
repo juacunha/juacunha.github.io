@@ -8,7 +8,7 @@ Fase 3 do Spec-Driven Development. Cada tarefa termina com a verificação indic
 - [x] T-00b Documentação de contexto: perfil, projetos, mídia, identidade visual, diagnóstico do Notion, perguntas abertas.
 - [x] T-01 `requirements.md`, `design.md`, `DESIGN.md`, ADR-001 (proposto).
 - [x] T-02 Respostas da Juliana às 19 [perguntas abertas](../context/perguntas-abertas.md) (12/nov/2026). Conclusão da UFPel: dez/2026. Restam as divergências D2–D8.
-- [~] T-03 Conta do GitHub Pages: `juacunha`. Falta o nome do repositório e o acesso para o push. O workflow já calcula `SITE`/`BASE` a partir do repositório.
+- [x] T-03 GitHub Pages na conta `juacunha`, repositório `juacunha.github.io` → <https://juacunha.github.io/>.
 
 ## Fase 1 — Fundação
 
@@ -48,6 +48,6 @@ Fase 3 do Spec-Driven Development. Cada tarefa termina com a verificação indic
 
 ## Fase 5 — Lançamento
 
-- [ ] T-50 Criar o repositório na conta dela, ligar Pages (fonte: GitHub Actions) e fazer o primeiro deploy.
+- [x] T-50 Repositório [juacunha/juacunha.github.io](https://github.com/juacunha/juacunha.github.io) criado, Pages com fonte GitHub Actions, primeiro deploy no ar (12/nov/2026).
 - [ ] T-51 Atualizar links no itch.io, SoundCloud, YouTube, LinkedIn e no CV dela (o CV aponta para o Notion).
 - [ ] T-52 Avisar o Pedro para corrigir o papel dela no Midnight Meow no site dele (D5) e alinhar créditos de Pétalas ao Vento e Symphony's Awakening (D6).

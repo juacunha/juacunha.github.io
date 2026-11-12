@@ -40,6 +40,5 @@ Responda direto neste arquivo ou no chat. Nada aqui entra no site antes de ser c
 
 ## Ainda sem resposta
 
-- Nome do repositório (`juacunha.github.io` para a raiz, ou outro nome para `juacunha.github.io/<repo>/`) e como dar acesso para o push.
 - Arquivos originais do Canva e do avatar ilustrado (a v1 usa versões extraídas).
 - Áudios originais em melhor qualidade (a v1 usa os do Drive e do Notion).
