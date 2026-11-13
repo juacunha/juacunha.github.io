@@ -37,7 +37,7 @@ const filters = (['soundtrack', 'sfx', 'voice', 'curation', 'implementation', 'g
   />
   <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
     {projects.map((project) => (
-      <li data-tags={project.data.deliverables.join(' ')} class="flex">
+      <li data-tags={project.data.deliverables.join(' ')} class="reveal flex">
         <ProjectCard project={project} locale={locale} />
       </li>
     ))}

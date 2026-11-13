@@ -69,7 +69,7 @@ A mídia processada (`public/media/`, `src/assets/`, manifesto) é versionada; o
    ├─ styles/tokens.css, global.css
    ├─ components/
    │  ├─ layout/              # SiteHeader, SiteFooter
-   │  ├─ sections/            # Hero, Reel, Featured, SoundBoard, ProjectGrid, ProjectCard, Process, About, Contact
+   │  ├─ sections/            # Hero, About, Reel, Featured, Awards, SoundBoard, ProjectGrid, ProjectCard, Process, Contact
    │  ├─ ui/                  # SoundCard, YouTubeFacade, SoundCloudFacade, LocalVideo, SectionHeading, Decor
    │  ├─ islands/             # AudioEngine, FilterBar
    │  ├─ HomePage.astro, ProjectPage.astro
@@ -84,14 +84,14 @@ A mídia processada (`public/media/`, `src/assets/`, manifesto) é versionada; o
 
 | Rota | Conteúdo | Requisitos |
 | --- | --- | --- |
-| `/` | Home PT-BR: hero, reel, destaques, sound board, projetos, processo, sobre, contato | R-01..R-09 |
+| `/` | Home PT-BR: hero, sobre, reel, destaques, prêmios, sound board, projetos, processo, contato | R-01..R-09 |
 | `/projetos/[slug]/` | Estudo de caso PT-BR | R-10, R-11 |
 | `/en/`, `/en/projects/[slug]/` | Espelho EN | R-14 |
 | `/cv/juliana-acunha.pdf` | CV do Canva | R-15 |
 | `/llms.txt`, `/robots.txt`, `/sitemap-index.xml` | Máquina | R-22, R-23 |
 | `/404.html` | Página de erro (noindex) | R-16 |
 
-Âncoras da home: `#reel`, `#sounds`, `#projects`, `#process`, `#about`, `#awards`, `#contact`.
+Âncoras da home, na ordem: `#about`, `#reel`, `#awards`, `#sounds`, `#projects`, `#process`, `#contact`. O Sobre vem logo após o hero porque é o que o recrutador procura primeiro; começa por uma ficha rápida (local, formação, idiomas, oportunidades).
 
 ## Modelo de conteúdo
 

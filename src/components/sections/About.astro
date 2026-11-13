@@ -1,9 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import { localize, type Locale } from '../../i18n';
 import { formatYearMonth, useTranslations } from '../../i18n/ui';
 import { getProfile, getSorted } from '../../lib/content';
-import { asset } from '../../lib/images';
 import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Props {
@@ -17,9 +15,16 @@ const experience = await getSorted('experience');
 const education = await getSorted('education');
 const tools = await getSorted('tools');
 const skills = await getSorted('skills');
-const awards = await getSorted('awards');
 const degrees = education.filter((e) => e.data.kind === 'degree');
 const certificates = education.filter((e) => e.data.kind === 'certificate');
+const degree = degrees[0];
+const shortName = (name?: string) => name?.match(/\(([^)]+)\)/)?.[1] ?? name;
+const degreeStatus = (d: (typeof degrees)[number]) =>
+  d.data.inProgress
+    ? d.data.endDate
+      ? `${t.about.expectedEnd} ${formatYearMonth(d.data.endDate, locale)}`
+      : t.about.inProgress
+    : '';
 ---
 
 <section id="about" class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20" aria-labelledby="about-title">
@@ -30,138 +35,142 @@ const certificates = education.filter((e) => e.data.kind === 'certificate');
     intro={localize(profile.summary, locale)}
   />
 
-  <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-    <div class="flex flex-col gap-10">
-      <div>
-        <h3 class="eyebrow mb-5">{t.about.experience}</h3>
-        <ol class="relative flex flex-col gap-8 pl-8">
-          <span class="dashed-line absolute top-1 bottom-1 left-[5px] w-[2px]" aria-hidden="true"></span>
-          {experience.map((job) => (
-            <li class="relative">
-              <span
-                class="absolute top-1.5 -left-8 h-3 w-3 rounded-full border-2 border-accent bg-bg"
-                aria-hidden="true"
-              />
-              <p class="font-mono text-xs text-text-muted">
-                {formatYearMonth(job.data.startDate, locale)} –{' '}
-                {job.data.endDate ? formatYearMonth(job.data.endDate, locale) : t.about.present} ·{' '}
-                {localize(job.data.location, locale)}
-              </p>
-              <h4 class="mt-1 text-xl font-bold">{localize(job.data.position, locale)}</h4>
-              <p class="font-semibold text-accent-text">{job.data.organization}</p>
-              {job.data.summary && <p class="mt-2 text-text-muted">{localize(job.data.summary, locale)}</p>}
-            </li>
-          ))}
-        </ol>
+  <div class="selection-box reveal mb-14 rounded-sm bg-card/60 p-1">
+    <span class="handle -top-1 -left-1"></span>
+    <span class="handle -top-1 -right-1"></span>
+    <span class="handle -bottom-1 -left-1"></span>
+    <span class="handle -right-1 -bottom-1"></span>
+    <h3 class="sr-only">{t.about.facts}</h3>
+    <dl class="grid gap-px bg-border/60 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="bg-bg/90 p-5">
+        <dt class="eyebrow text-xs">{t.about.location}</dt>
+        <dd class="mt-2 text-lg font-semibold">{localize(profile.location, locale)}</dd>
       </div>
+      {degree && (
+        <div class="bg-bg/90 p-5">
+          <dt class="eyebrow text-xs">{t.about.degree}</dt>
+          <dd class="mt-2">
+            <span class="block text-lg leading-snug font-semibold">
+              {localize(degree.data.title, locale)}
+            </span>
+            <span class="text-text-muted">
+              {shortName(degree.data.institution)} · {degreeStatus(degree)}
+            </span>
+          </dd>
+        </div>
+      )}
+      <div class="bg-bg/90 p-5">
+        <dt class="eyebrow text-xs">{t.about.languages}</dt>
+        <dd class="mt-2">
+          <ul class="flex flex-col gap-0.5">
+            {profile.languages.map((l) => (
+              <li>
+                <span class="text-lg font-semibold">{localize(l.name, locale)}</span>
+                <span class="text-text-muted"> · {localize(l.level, locale)}</span>
+              </li>
+            ))}
+          </ul>
+        </dd>
+      </div>
+      <div class="bg-bg/90 p-5">
+        <dt class="eyebrow text-xs">{t.about.openTo}</dt>
+        <dd class="mt-2">
+          <ul class="flex flex-wrap gap-1.5">
+            {localize(profile.opportunities, locale).map((o) => (
+              <li class="rounded-sm border border-accent/70 px-2 py-0.5 text-sm">{o}</li>
+            ))}
+          </ul>
+        </dd>
+      </div>
+    </dl>
+  </div>
 
-      <div>
-        <h3 class="eyebrow mb-5">{t.about.education}</h3>
-        {degrees.map((d) => (
-          <article class="rounded-md border border-border bg-card p-5">
+  <div class="grid gap-12 lg:grid-cols-2">
+    <div class="reveal">
+      <h3 class="eyebrow mb-5">{t.about.experience}</h3>
+      <ol class="relative flex flex-col gap-8 pl-8">
+        <span class="dashed-line absolute top-1 bottom-1 left-[5px] w-[2px]" aria-hidden="true"></span>
+        {experience.map((job) => (
+          <li class="relative">
+            <span
+              class="absolute top-1.5 -left-8 h-3 w-3 rounded-full border-2 border-accent bg-bg"
+              aria-hidden="true"
+            />
             <p class="font-mono text-xs text-text-muted">
-              {d.data.startDate && `${t.about.since} ${d.data.startDate.slice(0, 4)}`}
-              {d.data.inProgress &&
-                (d.data.endDate
-                  ? ` · ${t.about.expectedEnd} ${formatYearMonth(d.data.endDate, locale)}`
-                  : ` · ${t.about.inProgress}`)}
+              {formatYearMonth(job.data.startDate, locale)} –{' '}
+              {job.data.endDate ? formatYearMonth(job.data.endDate, locale) : t.about.present} ·{' '}
+              {localize(job.data.location, locale)}
             </p>
-            <h4 class="mt-1 text-lg font-bold">{localize(d.data.title, locale)}</h4>
-            <p class="font-semibold text-accent-text">{d.data.institution}</p>
-            {d.data.detail && <p class="mt-2 text-text-muted">{localize(d.data.detail, locale)}</p>}
-          </article>
+            <h4 class="mt-1 text-xl font-bold">{localize(job.data.position, locale)}</h4>
+            <p class="font-semibold text-accent-text">{job.data.organization}</p>
+            {job.data.summary && <p class="mt-2 text-text-muted">{localize(job.data.summary, locale)}</p>}
+          </li>
         ))}
-        <ul class="mt-4 grid gap-3 sm:grid-cols-3">
-          {certificates.map((c) => (
-            <li class="rounded-md border border-border p-4">
-              <p class="font-semibold leading-snug">{localize(c.data.title, locale)}</p>
-              {c.data.detail && (
-                <p class="mt-1 font-mono text-xs text-text-muted">{localize(c.data.detail, locale)}</p>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
+      </ol>
     </div>
 
-    <div class="flex flex-col gap-10">
-      <div>
-        <h3 class="eyebrow mb-5">{t.about.tools}</h3>
-        <div class="flex flex-col gap-4">
-          {tools.map((group) => (
-            <div>
-              <p class="mb-2 text-sm font-semibold text-text-muted">{localize(group.data.group, locale)}</p>
-              <ul class="flex flex-wrap gap-1.5">
-                {group.data.items.map((item) => (
-                  <li class="rounded-sm border border-border bg-card px-2.5 py-1 font-mono text-xs">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div class="reveal">
+      <h3 class="eyebrow mb-5">{t.about.education}</h3>
+      {degrees.map((d) => (
+        <article class="rounded-md border border-border bg-card p-5">
+          <p class="font-mono text-xs text-text-muted">
+            {d.data.startDate && `${t.about.since} ${d.data.startDate.slice(0, 4)}`}
+            {degreeStatus(d) && ` · ${degreeStatus(d)}`}
+          </p>
+          <h4 class="mt-1 text-lg font-bold">{localize(d.data.title, locale)}</h4>
+          <p class="font-semibold text-accent-text">{d.data.institution}</p>
+          {d.data.detail && <p class="mt-2 text-text-muted">{localize(d.data.detail, locale)}</p>}
+        </article>
+      ))}
+      <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+        {certificates.map((c) => (
+          <li class="rounded-md border border-border p-4">
+            <p class="leading-snug font-semibold">{localize(c.data.title, locale)}</p>
+            {c.data.detail && (
+              <p class="mt-1 font-mono text-xs text-text-muted">{localize(c.data.detail, locale)}</p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
 
-      <div>
-        <h3 class="eyebrow mb-5">{t.about.skills}</h3>
-        {(['hard', 'soft'] as const).map((kind) => (
-          <div class="mb-5">
-            <p class="mb-2 text-sm font-semibold text-text-muted">
-              {kind === 'hard' ? t.about.hard : t.about.soft}
-            </p>
-            <ul class="flex flex-col gap-2">
-              {skills
-                .filter((s) => s.data.kind === kind)
-                .map((s) => (
-                  <li class="rounded-md border-l-2 border-accent bg-card px-4 py-3">
-                    <p class="font-semibold">{localize(s.data.title, locale)}</p>
-                    <p class="text-sm text-text-muted">{localize(s.data.text, locale)}</p>
-                  </li>
-                ))}
+  <div class="mt-16 flex flex-col gap-12">
+    <div class="reveal">
+      <h3 class="eyebrow mb-5">{t.about.tools}</h3>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {tools.map((group) => (
+          <div>
+            <p class="mb-2 text-sm font-semibold text-text-muted">{localize(group.data.group, locale)}</p>
+            <ul class="flex flex-wrap gap-1.5">
+              {group.data.items.map((item) => (
+                <li class="rounded-sm border border-border bg-card px-2.5 py-1 font-mono text-xs">{item}</li>
+              ))}
             </ul>
           </div>
         ))}
       </div>
-
-      <div>
-        <h3 class="eyebrow mb-3">{t.about.languages}</h3>
-        <ul class="flex flex-wrap gap-3">
-          {profile.languages.map((l) => (
-            <li class="rounded-md border border-border px-4 py-2">
-              <span class="font-semibold">{localize(l.name, locale)}</span>
-              <span class="text-text-muted"> · {localize(l.level, locale)}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
-  </div>
 
-  <div id="awards" class="mt-20 scroll-mt-20">
-    <h3 class="eyebrow mb-5">{t.awards.title}</h3>
-    <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {awards.map((a) => (
-        <li class="overflow-hidden rounded-md border border-border bg-card">
-          <Image
-            src={asset(a.data.image)}
-            alt={localize(a.data.imageAlt, locale)}
-            widths={[320, 520]}
-            sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
-            class="aspect-[4/3] w-full object-cover"
-          />
-          <div class="p-4">
-            <p class="text-lg font-bold">{localize(a.data.title, locale)}</p>
-            <p class="font-mono text-xs text-text-muted">
-              {a.data.edition} · {localize(a.data.stage, locale)}
-            </p>
-          </div>
-        </li>
+    <div class="reveal">
+      <h3 class="eyebrow mb-5">{t.about.skills}</h3>
+      {(['hard', 'soft'] as const).map((kind) => (
+        <div class="mb-6">
+          <p class="mb-2 text-sm font-semibold text-text-muted">
+            {kind === 'hard' ? t.about.hard : t.about.soft}
+          </p>
+          <ul class="grid gap-3 md:grid-cols-3">
+            {skills
+              .filter((s) => s.data.kind === kind)
+              .map((s) => (
+                <li class="rounded-md border-l-2 border-accent bg-card px-4 py-3">
+                  <p class="font-semibold">{localize(s.data.title, locale)}</p>
+                  <p class="text-sm text-text-muted">{localize(s.data.text, locale)}</p>
+                </li>
+              ))}
+          </ul>
+        </div>
       ))}
-      <li class="rounded-md border border-dashed border-accent bg-card p-5 text-lg sm:col-span-2 lg:col-span-4">
-        <strong class="text-accent-text">Casulo Indie · </strong>
-        {t.about.casulo}
-      </li>
-    </ul>
+    </div>
   </div>
 </section>

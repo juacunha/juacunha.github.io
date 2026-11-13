@@ -69,7 +69,7 @@ Self-host via Fontsource (`@fontsource/anton`, `@fontsource-variable/jetbrains-m
 
 Escala fluida: `--text-xs` 0,75rem · `--text-sm` 0,875rem · `--text-base` 1rem · `--text-lg` 1,125rem · `--text-xl` 1,25rem · `--text-2xl` 1,5rem · `--text-3xl` clamp(1,75rem, 3vw, 2,5rem) · `--text-display` clamp(3rem, 9vw, 6.5rem).
 
-Comprimento de linha do corpo: 60–72 caracteres (`max-width: 68ch`).
+Comprimento de linha do corpo: 60–72 caracteres (`max-width: 68ch`). Texto corrido herda 1,0625rem com entrelinha 1,6. Nada abaixo de `text-xs` (12 px).
 
 ## Espaçamento, raio, sombra
 
@@ -88,14 +88,19 @@ Todos como SVG inline decorativo (`aria-hidden="true"`), redesenhados (não reco
 | `Stripes` (listras horizontais finas) | Pares com a retícula, em `indigo` ou `accent` |
 | `SelectionBox` (caixa com alças nos cantos) | Rótulo "Game Audio & Sound Design" no hero, filtros ativos, foco do card tocando |
 | `DashedTimeline` (linha tracejada vertical com nós circulares rosa) | Experiência e formação, como no CV |
+| `brand-rule` (filete de 2 px no gradiente da marca) | Topo e base das faixas de destaque (selos do hero, sound board) |
+| Barra de progresso ("agulha" da timeline) | Base do cabeçalho, cresce com a rolagem da página |
 | `Waveform` | Players: barras verticais com picos reais do arquivo; parte tocada em `accent`, resto em `indigo` |
 
 ## Movimento
 
-- Durações: 150–250 ms (hover), 600 ms (entrada do hero), 400 ms (transição de página).
+- Durações: 150–250 ms (hover), 700 ms (entrada do hero, escalonada de 80 em 80 ms via `--d`), 900 ms (foto do hero).
 - Easing: `cubic-bezier(0.2, 0.8, 0.2, 1)` (`--ease-out-soft`).
-- Assinatura: **equalizador** — 3–5 barrinhas animadas ao lado do título do card que está tocando (substitui o ícone de play). Pinceladas "desenhadas" (`stroke-dashoffset`) ao entrar na tela.
-- Tudo em CSS; o único JS é o do player. Estados animados dentro de `@media (prefers-reduced-motion: no-preference)`; revelação ao rolar só com `@supports (animation-timeline: view())`.
+- Assinatura: **equalizador** no botão do som que está tocando, com um anel pulsando em volta. Pinceladas sob os títulos são "desenhadas" quando o título entra na tela.
+- Ao rolar: `.reveal` (sobe e aparece) em títulos, cards e blocos; barra de progresso no cabeçalho com `animation-timeline: scroll(root)`.
+- Tudo em CSS; o JS é só do player, filtros e "mostrar todos". Estados animados dentro de `@media (prefers-reduced-motion: no-preference)`; animações ligadas à rolagem só dentro de `@supports`.
+- Não use `.reveal` e `.card-lift` no mesmo elemento: a animação fixa `transform` e anula o hover. Ponha `.reveal` no pai.
+- `animation-timeline: scroll()` vai por variável CSS: o minificador funde o valor no shorthand `animation`, que o navegador descarta.
 
 ## Componentes (`src/components/`)
 

@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import { localize, type Locale } from '../../i18n';
+import { useTranslations } from '../../i18n/ui';
+import { getSorted } from '../../lib/content';
+import { asset } from '../../lib/images';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const awards = await getSorted('awards');
+const projects = await Promise.all(
+  awards.map((a) => (a.data.project ? getEntry(a.data.project) : undefined)),
+);
+---
+
+<section id="awards" class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20" aria-labelledby="awards-title">
+  <SectionHeading
+    id="awards-title"
+    eyebrow={t.awards.eyebrow}
+    title={t.awards.title}
+    intro={t.awards.intro}
+  />
+  <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {awards.map((a, i) => (
+      <li class="reveal">
+        <article
+          class:list={[
+            'card-lift h-full overflow-hidden rounded-md border bg-card',
+            a.data.highlight ? 'border-accent' : 'border-border',
+          ]}
+        >
+          <Image
+            src={asset(a.data.image)}
+            alt={localize(a.data.imageAlt, locale)}
+            widths={[320, 520]}
+            sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
+            class="aspect-[4/3] w-full object-cover"
+          />
+          <div class="p-4">
+            <p class="text-lg font-bold">{localize(a.data.title, locale)}</p>
+            {projects[i] && <p class="font-semibold text-accent-text">{projects[i].data.title}</p>}
+            <p class="mt-1 font-mono text-xs text-text-muted">
+              {a.data.edition} · {localize(a.data.stage, locale)}
+            </p>
+          </div>
+        </article>
+      </li>
+    ))}
+  </ul>
+  <p class="reveal mt-5 rounded-md border border-dashed border-accent bg-card p-5 text-lg">
+    <strong class="text-accent-text">Casulo Indie · </strong>
+    {t.about.casulo}
+  </p>
+</section>

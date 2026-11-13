@@ -25,7 +25,12 @@ const pt = {
     cv: 'Currículo (PDF)',
     photoAlt: 'Foto de Juliana Acunha',
   },
-  awards: { eyebrow: 'conquistas', title: 'Prêmios', regional: 'etapa regional' },
+  awards: {
+    eyebrow: 'conquistas',
+    title: 'Prêmios',
+    regional: 'etapa regional',
+    intro: 'Prêmios da GameJam Plus conquistados com as equipes dos jogos em que ela trabalhou.',
+  },
   featured: { eyebrow: 'destaques', title: 'Trabalhos em destaque', cta: 'Ver estudo de caso' },
   board: {
     eyebrow: 'sound board',
@@ -34,6 +39,8 @@ const pt = {
     all: 'Todos',
     filterLabel: 'Filtrar sons por categoria',
     categories: { foley: 'Foley', ui: 'Interface', voice: 'Voz', chiptune: '8-bit', gameplay: 'Gameplay' },
+    showAll: 'Mostrar todos os sons',
+    showLess: 'Mostrar menos',
   },
   player: {
     play: 'Tocar',
@@ -58,7 +65,11 @@ const pt = {
   },
   about: {
     eyebrow: 'sobre',
-    title: 'Trajetória',
+    title: 'Quem é a Juliana',
+    facts: 'Resumo rápido',
+    location: 'Local',
+    degree: 'Formação',
+    openTo: 'Aberta a',
     experience: 'Experiência',
     education: 'Formação e certificados',
     present: 'atual',
@@ -172,7 +183,12 @@ const en: Ui = {
     cv: 'Resume (PDF)',
     photoAlt: 'Photo of Juliana Acunha',
   },
-  awards: { eyebrow: 'achievements', title: 'Awards', regional: 'regional stage' },
+  awards: {
+    eyebrow: 'achievements',
+    title: 'Awards',
+    regional: 'regional stage',
+    intro: 'GameJam Plus awards won with the teams of the games she worked on.',
+  },
   featured: { eyebrow: 'highlights', title: 'Featured work', cta: 'Read the case study' },
   board: {
     eyebrow: 'sound board',
@@ -181,6 +197,8 @@ const en: Ui = {
     all: 'All',
     filterLabel: 'Filter sounds by category',
     categories: { foley: 'Foley', ui: 'UI', voice: 'Voice', chiptune: '8-bit', gameplay: 'Gameplay' },
+    showAll: 'Show all sounds',
+    showLess: 'Show fewer',
   },
   player: {
     play: 'Play',
@@ -205,7 +223,11 @@ const en: Ui = {
   },
   about: {
     eyebrow: 'about',
-    title: 'Journey',
+    title: 'Meet Juliana',
+    facts: 'At a glance',
+    location: 'Location',
+    degree: 'Education',
+    openTo: 'Open to',
     experience: 'Experience',
     education: 'Education & certificates',
     present: 'present',

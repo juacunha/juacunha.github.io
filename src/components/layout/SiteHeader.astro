@@ -11,10 +11,10 @@ const { locale, alternate } = Astro.props;
 const t = useTranslations(locale);
 const home = url(homePath[locale]);
 const links = [
+  { href: `${home}#about`, label: t.nav.about },
   { href: `${home}#sounds`, label: t.nav.sounds },
   { href: `${home}#projects`, label: t.nav.projects },
   { href: `${home}#process`, label: t.nav.process },
-  { href: `${home}#about`, label: t.nav.about },
   { href: `${home}#contact`, label: t.nav.contact },
 ];
 const switchHref = url(alternate?.path ?? homePath[otherLocale(locale)]);
@@ -31,7 +31,7 @@ const switchHref = url(alternate?.path ?? homePath[otherLocale(locale)]);
           <li>
             <a
               href={link.href}
-              class="rounded-sm px-3 py-2 font-mono text-sm text-text-muted no-underline transition-colors hover:text-text"
+              class="nav-link relative rounded-sm px-3 py-2 font-mono text-sm text-text-muted no-underline transition-colors hover:text-text"
             >
               {link.label}
             </a>
@@ -73,4 +73,5 @@ const switchHref = url(alternate?.path ?? homePath[otherLocale(locale)]);
       </details>
     </nav>
   </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
 </header>

@@ -5,6 +5,7 @@ import { useTranslations } from '../i18n/ui';
 import { getProfile, getProjects } from '../lib/content';
 import { personJsonLd } from '../lib/jsonld';
 import About from './sections/About.astro';
+import Awards from './sections/Awards.astro';
 import Contact from './sections/Contact.astro';
 import Featured from './sections/Featured.astro';
 import Hero from './sections/Hero.astro';
@@ -33,11 +34,12 @@ const other = otherLocale(locale);
   jsonLd={personJsonLd(profile, locale, Astro.site)}
 >
   <Hero locale={locale} />
+  <About locale={locale} />
   <Reel locale={locale} />
   <Featured projects={projects} locale={locale} />
+  <Awards locale={locale} />
   <SoundBoard projects={projects} locale={locale} />
   <ProjectGrid projects={projects} locale={locale} />
   <Process locale={locale} />
-  <About locale={locale} />
   <Contact locale={locale} />
 </BaseLayout>

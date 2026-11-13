@@ -1,4 +1,4 @@
-﻿# Requirements — Site Portfólio da Juliana Acunha
+# Requirements — Site Portfólio da Juliana Acunha
 
 Fase 1 do Spec-Driven Development. Status: **v1 implementada (12/nov/2026)**, com as respostas da Juliana incorporadas. Itens marcados **(confirmar)** dependem de [perguntas-abertas.md](../context/perguntas-abertas.md); a estrutura não depende deles.
 
@@ -15,7 +15,7 @@ Substitui o portfólio no Notion, resolvendo os problemas P1–P14 de [notion-at
 | Posicionamento | **Game Sound Designer** (trilha, SFX, voz, implementação). Game design, arte e produção aparecem como competências de apoio, não como título | Decidido (pergunta 9) |
 | Idiomas | **PT-BR padrão em `/`, EN em `/en/`** | Decidido (pergunta 10) |
 | Identidade | Identidade A do [identidade-visual.md](../design/identidade-visual.md) (índigo + rosa-choque, Anton + JetBrains Mono). Gatos e avatar entram na v1, em pontos de personalidade (contato, 404) | Decidido (pergunta 13) |
-| Ordem da home | Hero com selos de prêmio → Reel → Destaques → Sound board (SFX) → Projetos → Processo (foley) → Sobre (experiência, formação, ferramentas, skills, idiomas, conquistas, Casulo Indie) → Contato | Implementado |
+| Ordem da home | Hero com selos de prêmio → Sobre (ficha rápida, experiência, formação, ferramentas, skills) → Reel → Destaques → Prêmios (fotos + Casulo Indie) → Sound board (prévia de 9 sons) → Projetos → Processo (foley) → Contato | Implementado (13/nov/2026: Sobre subiu para logo após o hero) |
 | Hospedagem | GitHub Pages na conta **dela** (`juacunha`). O site funciona tanto na raiz (`juacunha.github.io`) quanto em subcaminho (`/repo/`) | Decidido / nome do repositório em aberto |
 | Currículo | v1 serve o PDF do Canva dela como está; versão ATS gerada dos dados fica para v2 | Implementado |
 

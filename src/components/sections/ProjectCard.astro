@@ -24,7 +24,7 @@ const t = useTranslations(locale);
       sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
     />
-    <span class="absolute top-2 left-2 rounded-sm bg-bg/85 px-2 py-0.5 font-mono text-[0.7rem] uppercase">
+    <span class="absolute top-2 left-2 rounded-sm bg-bg/85 px-2 py-0.5 font-mono text-xs uppercase">
       {t.status[data.status]}
     </span>
   </div>
@@ -45,12 +45,10 @@ const t = useTranslations(locale);
     <p class="text-text-muted">{localize(data.hook, locale)}</p>
     <ul class="mt-auto flex flex-wrap gap-1.5 pt-2" aria-label={t.project.deliverables}>
       {data.deliverables.slice(0, 5).map((d) => (
-        <li class="rounded-sm border border-border px-2 py-0.5 font-mono text-[0.7rem]">
-          {t.deliverables[d]}
-        </li>
+        <li class="rounded-sm border border-border px-2 py-0.5 font-mono text-xs">{t.deliverables[d]}</li>
       ))}
       {data.deliverables.length > 5 && (
-        <li class="px-1 py-0.5 font-mono text-[0.7rem] text-text-muted">+{data.deliverables.length - 5}</li>
+        <li class="px-1 py-0.5 font-mono text-xs text-text-muted">+{data.deliverables.length - 5}</li>
       )}
     </ul>
   </div>

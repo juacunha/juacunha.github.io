@@ -32,7 +32,7 @@ const projects = await Promise.all(
     />
     <ul class="grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-4">
       {videos.map((v, i) => (
-        <li>
+        <li class="reveal">
           <LocalVideo
             video={v.data.video}
             title={localize(v.data.title, locale)}

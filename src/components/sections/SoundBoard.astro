@@ -14,13 +14,20 @@ interface Props {
 
 const { projects, locale } = Astro.props;
 const t = useTranslations(locale);
-const sounds = boardSounds(projects);
+// Intercala os projetos para a prévia não mostrar só um jogo.
+const byProject = Map.groupBy(boardSounds(projects), (s) => s.project.id);
+const longest = Math.max(...[...byProject.values()].map((g) => g.length));
+const sounds = Array.from({ length: longest }, (_, i) => [...byProject.values()].map((g) => g[i]))
+  .flat()
+  .filter(Boolean);
 const present = sfxCategories.filter((c) => sounds.some((s) => s.category === c));
+// Mantenha igual ao nth-child de .sound-list[data-collapsed] em global.css.
+const preview = 9;
 ---
 
 <section
   id="sounds"
-  class="scroll-mt-20 border-y border-border/60 bg-surface/40"
+  class="brand-rule relative scroll-mt-20 bg-surface/40"
   aria-labelledby="sounds-title"
   data-filter-scope
 >
@@ -34,17 +41,64 @@ const present = sfxCategories.filter((c) => sounds.some((s) => s.category === c)
         label: `${t.board.categories[c]} (${sounds.filter((s) => s.category === c).length})`,
       }))}
     />
-    <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <ul id="sound-list" class="sound-list grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {sounds.map((s) => (
         <li data-tags={s.category}>
           <SoundCard
             audio={s.audio}
             label={localize(s.label, locale)}
-            meta={`${s.project.data.title} · ${t.board.categories[s.category]}`}
+            meta={`${t.board.categories[s.category]} · ${s.project.data.title}`}
             locale={locale}
           />
         </li>
       ))}
     </ul>
+    {sounds.length > preview && (
+      <div class="mt-6 flex justify-center">
+        <button
+          type="button"
+          class="sound-more rounded-md border border-border bg-bg/60 px-5 py-3 font-semibold transition-colors hover:border-accent hover:text-accent-text"
+          aria-controls="sound-list"
+          aria-expanded="false"
+          data-label-more={`${t.board.showAll} (${sounds.length})`}
+          data-label-less={t.board.showLess}
+          hidden
+        >
+          {`${t.board.showAll} (${sounds.length})`}
+        </button>
+      </div>
+    )}
   </div>
 </section>
+
+<script>
+  // Sem JS a lista aparece inteira. Com JS, mostra uma prévia enquanto o filtro está em "Todos".
+  const list = document.querySelector<HTMLElement>('.sound-list');
+  const more = document.querySelector<HTMLButtonElement>('.sound-more');
+  if (list && more) {
+    let expanded = false;
+    let filtered = false;
+    const sync = () => {
+      list.toggleAttribute('data-collapsed', !expanded && !filtered);
+      more.hidden = filtered;
+      more.setAttribute('aria-expanded', String(expanded));
+      more.textContent = (expanded ? more.dataset.labelLess : more.dataset.labelMore) ?? '';
+    };
+    more.addEventListener('click', () => {
+      expanded = !expanded;
+      if (!expanded) list.closest('section')?.scrollIntoView({ block: 'start' });
+      sync();
+    });
+    list
+      .closest('[data-filter-scope]')
+      ?.querySelector('.filter-bar')
+      ?.addEventListener('click', (event) => {
+        const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-filter]');
+        if (button) {
+          filtered = (button.dataset.filter ?? '') !== '';
+          sync();
+        }
+      });
+    sync();
+  }
+</script>

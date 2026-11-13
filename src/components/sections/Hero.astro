@@ -25,16 +25,15 @@ const awardProjects = await Promise.all(
     <div class="bg-brand absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-40 blur-3xl"></div>
     <div class="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-indigo opacity-40 blur-3xl"></div>
   </div>
-  <Decor kind="halftone" class="absolute top-24 left-4 h-28 w-28 opacity-50 md:left-10" />
   <Decor kind="stripes" class="absolute bottom-36 left-0 hidden h-20 w-32 text-indigo md:block" />
 
   <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 pt-14 pb-16 md:grid-cols-[1.15fr_0.85fr] md:pt-20 md:pb-24">
-    <div class="relative animate-fade-up">
-      <p class="eyebrow">{t.hero.eyebrow}</p>
-      <h1 id="hero-title" class="heading-display mt-4 text-display">
+    <div class="relative">
+      <p class="eyebrow hero-in">{t.hero.eyebrow}</p>
+      <h1 id="hero-title" class="heading-display hero-in mt-4 text-display" style="--d: 80ms">
         Juliana <span class="text-accent-text">Acunha</span>
       </h1>
-      <p class="mt-5 inline-flex flex-wrap items-center gap-3">
+      <p class="hero-in mt-5 inline-flex flex-wrap items-center gap-3" style="--d: 180ms">
         <span class="selection-box px-3 py-1.5 font-mono text-sm md:text-base">
           <span class="handle -top-1 -left-1"></span>
           <span class="handle -top-1 -right-1"></span>
@@ -43,12 +42,14 @@ const awardProjects = await Promise.all(
           {localize(profile.label, locale)}
         </span>
       </p>
-      <p class="mt-5 max-w-xl text-lg text-text-muted md:text-xl">{localize(profile.tagline, locale)}</p>
-      <p class="mt-4 max-w-xl border-l-2 border-accent pl-4 text-lg italic">
+      <p class="hero-in mt-5 max-w-xl text-lg text-text-muted md:text-xl" style="--d: 260ms">
+        {localize(profile.tagline, locale)}
+      </p>
+      <p class="hero-in mt-4 max-w-xl border-l-2 border-accent pl-4 text-lg italic" style="--d: 340ms">
         “{localize(profile.intro, locale)}”
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-3">
+      <div class="hero-in mt-8 flex flex-wrap gap-3" style="--d: 420ms">
         <a
           href="#reel"
           class="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 font-semibold text-on-accent no-underline transition-colors hover:bg-accent-hover"
@@ -78,8 +79,9 @@ const awardProjects = await Promise.all(
       </div>
     </div>
 
-    <div class="relative mx-auto w-full max-w-sm md:max-w-none">
+    <div class="hero-photo relative mx-auto w-full max-w-sm md:max-w-none">
       <Decor kind="scribble" class="absolute -top-8 -right-6 z-0 w-40 md:w-52" />
+      <Decor kind="halftone" class="absolute -bottom-8 -left-8 z-0 h-32 w-32 opacity-60" />
       <div class="selection-box relative z-10 rotate-1 p-2">
         <span class="handle -top-1 -left-1"></span>
         <span class="handle -top-1 -right-1"></span>
@@ -98,7 +100,7 @@ const awardProjects = await Promise.all(
     </div>
   </div>
 
-  <div class="border-y border-border/60 bg-surface/60">
+  <div class="brand-rule relative bg-surface/60">
     <ul class="mx-auto flex max-w-6xl flex-wrap gap-3 px-5 py-4" aria-label={t.awards.title}>
       {awards.map((award, i) => (
         <li

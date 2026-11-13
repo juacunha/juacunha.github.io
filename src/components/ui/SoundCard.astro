@@ -27,7 +27,7 @@ const bars = info.peaks.map((p, i) => {
 
 <div
   class:list={[
-    'group flex items-center gap-3 rounded-md border border-border bg-card p-3 transition-colors hover:bg-card-hover',
+    'sound-card group flex items-center gap-3 rounded-md border border-border bg-card p-3 transition-colors hover:border-accent/60 hover:bg-card-hover',
     size === 'lg' && 'p-4',
   ]}
   data-sound
@@ -42,7 +42,7 @@ const bars = info.peaks.map((p, i) => {
     aria-label={`${t.player.play}: ${label}`}
     data-label-play={`${t.player.play}: ${label}`}
     data-label-pause={`${t.player.pause}: ${label}`}
-    class="relative flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent text-on-accent transition-colors hover:bg-accent-hover"
+    class="play-btn relative flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent text-on-accent transition-[background-color,transform] hover:scale-105 hover:bg-accent-hover active:scale-95"
   >
     <svg viewBox="0 0 20 20" class="h-4 w-4 group-[.is-playing]:hidden" aria-hidden="true">
       <path d="M6 4l11 6-11 6z" fill="currentColor"></path>
@@ -57,7 +57,7 @@ const bars = info.peaks.map((p, i) => {
     <p class="flex items-baseline gap-2">
       <span class="truncate font-semibold">{label}</span>
       {curated && (
-        <span class="shrink-0 font-mono text-[0.7rem] uppercase text-text-muted" title={t.player.curatedNote}>
+        <span class="shrink-0 font-mono text-xs uppercase text-text-muted" title={t.player.curatedNote}>
           · {t.player.curated}
         </span>
       )}

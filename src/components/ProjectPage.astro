@@ -111,7 +111,7 @@ const localVideos = data.videos.filter((v) => v.local);
     <dl class="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:auto-cols-fr md:grid-flow-col md:grid-cols-none">
       {meta.map((m) => (
         <div class="bg-card p-4 last:odd:col-span-2 md:last:odd:col-span-1">
-          <dt class="font-mono text-[0.7rem] text-text-muted uppercase">{m.label}</dt>
+          <dt class="font-mono text-xs text-text-muted uppercase">{m.label}</dt>
           <dd class="mt-1 font-semibold">{m.value}</dd>
         </div>
       ))}
