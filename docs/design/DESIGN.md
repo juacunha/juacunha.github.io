@@ -36,6 +36,17 @@ Gradiente da marca (hero, OG, faixas de seção):
 
 Sobre o gradiente, texto sempre branco e grande (ou dentro de uma placa `bg`/`card`).
 
+Fundo da página (pedido da Juliana, 13/nov/2026, a partir do banner): `--color-page-pink` `#FF0072` no canto inferior esquerdo e no superior direito, `--color-page-night` `#180B52` no meio.
+
+```css
+--gradient-page: linear-gradient(to top right, #FF0072 0%, #180B52 30%, #180B52 70%, #FF0072 100%);
+```
+
+- Fica numa camada fixa (`body::before`), então cada tela mostra a composição do banner durante a rolagem.
+- A faixa escura vai de 30% a 70% para manter legíveis os textos rosa e cinza; com a transição até 50%, o rosa cobria um terço da tela.
+- Cabeçalho e rodapé têm placa `bg/85`, porque ficam sempre sobre os cantos rosa.
+- O "Acunha" do hero usa `accent` (o mesmo rosa dos botões), não `accent-text`.
+
 ### Contrastes verificados (WCAG 2.2)
 
 | Combinação | Razão | Resultado |

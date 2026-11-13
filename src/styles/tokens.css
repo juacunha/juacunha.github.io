@@ -20,6 +20,9 @@
   --color-purple: #971a92;
   --color-magenta: #9c096d;
   --color-magenta-bright: #da0677;
+  /* Fundo da página, conforme o banner dela. */
+  --color-page-pink: #ff0072;
+  --color-page-night: #180b52;
 
   --font-display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, 'Cascadia Code', monospace;
@@ -52,6 +55,14 @@
 }
 
 :root {
+  /* Faixa central escura de 30% a 70%: com a transição até 50%, o rosa cobre um terço da tela e apaga textos rosa e cinza. */
+  --gradient-page: linear-gradient(
+    to top right,
+    var(--color-page-pink) 0%,
+    var(--color-page-night) 30%,
+    var(--color-page-night) 70%,
+    var(--color-page-pink) 100%
+  );
   --gradient-brand: linear-gradient(
     120deg,
     var(--color-accent) 0%,
